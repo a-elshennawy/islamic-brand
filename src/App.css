@@ -1,0 +1,9 @@
+@import url("./fonts.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: robotoSlab, changa;
+}
