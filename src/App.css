@@ -1,9 +1,22 @@
 @import url("./fonts.css");
 
+/*colors*/
+:root {
+    font-size: 16px;
+    --main-color: #000;
+    --secondary-color: #c5a059;
+    --white: #fff;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: robotoSlab, changa;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
