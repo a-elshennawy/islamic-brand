@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useHomeProducts } from "../../../hooks/useProducts";
 import ComponentLoader from "../../Loaders/ComponentLoader";
-import ProductCard from "../../ProductCard/ProductCard";
+import ProductCard from "../../Products/ProductCard/ProductCard";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,7 +11,6 @@ import "./RecentProducts.css";
 function RecentProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const products = homeProducts?.latest_products || [];
-  console.log(products);
 
   if (isLoading)
     return (
@@ -23,7 +22,7 @@ function RecentProducts() {
 
   return (
     <section className="recentProducts">
-      <h2 className="section-title">Latest Products</h2>
+      <h2 className="sectionTitle">latest products</h2>
 
       <Swiper
         modules={[Autoplay]}

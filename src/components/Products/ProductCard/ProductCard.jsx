@@ -2,7 +2,7 @@ import "./ProductCard.css";
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
-import { truncateName } from "../../utils/helpers";
+import { truncateName } from "../../../utils/helpers";
 
 function ProductCard({ product }) {
   return (
@@ -15,14 +15,21 @@ function ProductCard({ product }) {
           <img src={product.main_image} alt={product.name} />
         </div>
         <div className="info col-12">
-          <h5>{truncateName(product.name, 15)}</h5>
+          <h4>{truncateName(product.name, 20)}</h4>
           {product.discount_price ? (
             <>
-              <h5>{product.discount_price} L.E</h5>
+              <h3>
+                <strong>{product.discount_price} L.E</strong> &nbsp;
+                <small>
+                  <del className="text-muted">{product.original_price} L.E</del>
+                </small>
+              </h3>
             </>
           ) : (
             <>
-              <h5>{product.price} L.E</h5>
+              <h3>
+                <strong>{product.price} L.E</strong>
+              </h3>
             </>
           )}
           <AddToCartBtn />

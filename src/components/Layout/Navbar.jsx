@@ -1,4 +1,5 @@
-import { FaSearch, FaShoppingBag, FaUser } from "react-icons/fa";
+import { FaSearch, FaUser } from "react-icons/fa";
+import { RiShoppingBasket2Fill } from "react-icons/ri";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -11,7 +12,7 @@ function Navbar() {
             <FaUser size={18} />
           </button>
           <button className="actionBtn">
-            <FaShoppingBag size={18} />
+            <RiShoppingBasket2Fill size={24} />
           </button>
           <button className="actionBtn">
             <FaSearch size={18} />

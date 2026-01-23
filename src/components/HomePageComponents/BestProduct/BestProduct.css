@@ -1,0 +1,16 @@
+.bestProduct {
+    width: 90%;
+    margin: 0 auto !important;
+    .imgSide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 0.625rem;
+        }
+    }
+}
