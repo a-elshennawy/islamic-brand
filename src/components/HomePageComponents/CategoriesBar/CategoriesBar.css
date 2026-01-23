@@ -1,0 +1,38 @@
+.categoriesBar {
+    .categoryIcon {
+        position: relative;
+        cursor: pointer;
+        width: 12.5rem;
+        height: 12.5rem;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+
+        img {
+            width: 6.25rem;
+            height: 6.25rem;
+        }
+
+        &:before {
+            content: "";
+            background-color: var(--secondary-color);
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: scale(0);
+            z-index: -1;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover {
+            &:before {
+                transform: scale(1);
+            }
+        }
+    }
+}

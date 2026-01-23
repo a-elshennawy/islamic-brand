@@ -5,6 +5,7 @@
     font-size: 16px;
     --main-color: #000;
     --secondary-color: #c5a059;
+    --light-sec-color: #c6b79b;
     --white: #fff;
 }
 
@@ -13,10 +14,10 @@
 }
 
 body {
-    font-family: robotoSlab, changa;
+    font-family: robotoSlab, changa !important;
     margin: 0;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }

@@ -1,7 +1,13 @@
+import Categories from "../../components/HomePageComponents/CategoriesBar/CategoriesBar";
+import Hero from "../../components/HomePageComponents/Hero/Hero";
+import RecentProducts from "../../components/HomePageComponents/RecentProducts/RecentProducts";
+
 function Home() {
   return (
     <>
-      <h1>home page</h1>
+      <Hero />
+      <Categories />
+      <RecentProducts />
     </>
   );
 }
