@@ -1,0 +1,66 @@
+.reviews {
+    width: 75%;
+    margin: 0 auto;
+    text-transform: capitalize;
+
+    .sectionTitle {
+        font-weight: bold;
+    }
+
+    .reviewCard {
+        img {
+            width: 21.875rem;
+            height: 21.875rem;
+            border-radius: 0.625rem;
+        }
+    }
+}
+
+.reviewFullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1111;
+
+    .closeBtn {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        color: var(--white);
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .reviewImg {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 0.625rem;
+    }
+}
+
+.prevBtn,
+.nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prevBtn {
+    left: 1rem;
+}
+
+.nextBtn {
+    right: 1rem;
+}

@@ -4,6 +4,7 @@ import FeaturedProducts from "../../components/HomePageComponents/FeaturedProduc
 import Hero from "../../components/HomePageComponents/Hero/Hero";
 import Line from "../../components/HomePageComponents/Line/Line";
 import RecentProducts from "../../components/HomePageComponents/RecentProducts/RecentProducts";
+import Reviews from "../../components/HomePageComponents/Reviews/Reviews";
 
 function Home() {
   return (
@@ -16,6 +17,8 @@ function Home() {
       <BestProduct />
       <Line />
       <FeaturedProducts />
+      <Line />
+      <Reviews />
       <Line />
     </>
   );

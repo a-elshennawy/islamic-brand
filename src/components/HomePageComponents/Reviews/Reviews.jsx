@@ -1,0 +1,138 @@
+import "./Reviews.css";
+import { useReviews } from "../../../hooks/useGeneral";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import ComponentLoader from "../../Loaders/ComponentLoader";
+import { useState } from "react";
+import {
+  MdCancel,
+  MdKeyboardArrowRight,
+  MdKeyboardArrowLeft,
+} from "react-icons/md";
+import { motion, AnimatePresence } from "motion/react";
+
+function Reviews() {
+  const { data: reviewsArray, isLoading } = useReviews();
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const openImageViewer = (index) => {
+    setSelectedImageIndex(index);
+    setIsViewerOpen(true);
+  };
+
+  const closeImageViewer = () => {
+    setIsViewerOpen(false);
+  };
+
+  const showPrevImage = () => {
+    setSelectedImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + reviewsArray.length) % reviewsArray.length,
+    );
+  };
+
+  const showNextImage = () => {
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % reviewsArray.length);
+  };
+  if (isLoading)
+    return (
+      <section className="reviews">
+        <ComponentLoader />
+      </section>
+    );
+  if (reviewsArray.length === 0) return null;
+
+  return (
+    <>
+      <section className="reviews">
+        <h2 className="sectionTitle">reviews</h2>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={50}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+          className="reviewsSwiper p-3"
+        >
+          {reviewsArray.map((review, index) => (
+            <SwiperSlide
+              key={review.id}
+              onClick={() => openImageViewer(index)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="reviewCard p-0">
+                <img src={review.image} alt={review.name} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+      {/* full screen*/}
+
+      <AnimatePresence>
+        {isViewerOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="reviewFullscreen"
+            onClick={closeImageViewer}
+          >
+            <button
+              className="closeBtn"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeImageViewer();
+              }}
+            >
+              <MdCancel size={30} />
+            </button>
+            <button
+              className="prevBtn"
+              onClick={(e) => {
+                e.stopPropagation();
+                showPrevImage();
+              }}
+            >
+              <MdKeyboardArrowLeft size={40} />
+            </button>
+            <img
+              src={reviewsArray[selectedImageIndex].image}
+              alt="review image"
+              className="reviewImg"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              className="nextBtn"
+              onClick={(e) => {
+                e.stopPropagation();
+                showNextImage();
+              }}
+            >
+              <MdKeyboardArrowRight size={40} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+
+export default Reviews;
