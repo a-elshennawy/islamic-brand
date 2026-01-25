@@ -5,20 +5,19 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ComponentLoader from "../../Loaders/ComponentLoader";
 import { useState } from "react";
 import {
   MdCancel,
   MdKeyboardArrowRight,
   MdKeyboardArrowLeft,
 } from "react-icons/md";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion as Motion } from "motion/react";
+import SectionLoader from "../../Loaders/SectionLoader";
 
 function Reviews() {
   const { data: reviewsArray, isLoading } = useReviews();
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
   const openImageViewer = (index) => {
     setSelectedImageIndex(index);
     setIsViewerOpen(true);
@@ -38,12 +37,7 @@ function Reviews() {
   const showNextImage = () => {
     setSelectedImageIndex((prevIndex) => (prevIndex + 1) % reviewsArray.length);
   };
-  if (isLoading)
-    return (
-      <section className="reviews">
-        <ComponentLoader />
-      </section>
-    );
+  if (isLoading) return <SectionLoader />;
   if (reviewsArray.length === 0) return null;
 
   return (
@@ -87,7 +81,7 @@ function Reviews() {
 
       <AnimatePresence>
         {isViewerOpen && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -128,7 +122,7 @@ function Reviews() {
             >
               <MdKeyboardArrowRight size={40} />
             </button>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </>

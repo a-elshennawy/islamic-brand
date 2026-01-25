@@ -5,10 +5,13 @@ import Hero from "../../components/HomePageComponents/Hero/Hero";
 import Line from "../../components/HomePageComponents/Line/Line";
 import RecentProducts from "../../components/HomePageComponents/RecentProducts/RecentProducts";
 import Reviews from "../../components/HomePageComponents/Reviews/Reviews";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const [t] = useTranslation();
   return (
     <>
+      <title>{t("home_title")}</title>
       <Hero />
       <Categories />
       <Line />

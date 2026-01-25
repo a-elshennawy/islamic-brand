@@ -2,22 +2,18 @@ import "./FeaturedProducts.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useHomeProducts } from "../../../hooks/useProducts";
-import ComponentLoader from "../../Loaders/ComponentLoader";
 import ProductCard from "../../Products/ProductCard/ProductCard";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SectionLoader from "../../Loaders/SectionLoader";
 
 function FeaturedProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const products = homeProducts?.featured_products || [];
 
-  if (isLoading)
-    return (
-      <section className="featuredProducts">
-        <ComponentLoader />
-      </section>
-    );
+  if (isLoading) return <SectionLoader />;
+
   if (products.length === 0) return null;
 
   return (

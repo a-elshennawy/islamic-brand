@@ -1,18 +1,14 @@
 import "./BestProduct.css";
 import { useHomeProducts } from "../../../hooks/useProducts";
-import ComponentLoader from "../../Loaders/ComponentLoader";
 import ProductAddToCartBtn from "../../Products/ProductAddToCartBtn/ProductAddToCartBtn";
+import SectionLoader from "../../Loaders/SectionLoader";
 
 function BestProduct() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const BestProduct = homeProducts?.best_product || [];
 
-  if (isLoading)
-    return (
-      <section className="bestProduct">
-        <ComponentLoader />
-      </section>
-    );
+  if (isLoading) return <SectionLoader />;
+
   if (!BestProduct) return null;
 
   return (

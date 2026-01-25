@@ -7,6 +7,7 @@
     --secondary-color: #c5a059;
     --light-sec-color: #c6b79b;
     --white: #fff;
+    --glass-color: rgba(255, 255, 255, 0.2);
 }
 
 * {

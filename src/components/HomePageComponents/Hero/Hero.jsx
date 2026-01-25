@@ -2,21 +2,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { useSliders } from "../../../hooks/useGeneral";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
-import ComponentLoader from "../../Loaders/ComponentLoader";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Hero.css";
+import SectionLoader from "../../Loaders/SectionLoader";
 
 function Hero() {
   const { data: sliders, isLoading } = useSliders();
 
-  if (isLoading)
-    return (
-      <section className="hero">
-        <ComponentLoader />
-      </section>
-    );
+  if (isLoading) return <SectionLoader />;
 
   return (
     <section className="hero">
