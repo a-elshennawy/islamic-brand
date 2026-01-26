@@ -12,7 +12,7 @@ function CategoriesBar() {
 
   return (
     <>
-      <div className="categoriesBar row justify-content-center align-items-center gap-2 m-0 py-2">
+      <div className="categoriesBar row justify-content-center align-items-center gap-3 m-0 py-5">
         <AnimatePresence>
           {categoriesArray.map((category) => (
             <Motion.div

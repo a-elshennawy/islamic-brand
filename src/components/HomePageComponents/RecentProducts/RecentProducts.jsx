@@ -7,10 +7,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./RecentProducts.css";
 import SectionLoader from "../../Loaders/SectionLoader";
+import { useTranslation } from "react-i18next";
 
 function RecentProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const products = homeProducts?.latest_products || [];
+  const [t] = useTranslation();
 
   if (isLoading) return <SectionLoader />;
 
@@ -18,7 +20,7 @@ function RecentProducts() {
 
   return (
     <section className="recentProducts">
-      <h2 className="sectionTitle">latest products</h2>
+      <h2 className="HomeSectionTitle">{t("latest_products")}</h2>
 
       <Swiper
         modules={[Autoplay]}

@@ -13,11 +13,14 @@ import {
 } from "react-icons/md";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import SectionLoader from "../../Loaders/SectionLoader";
+import { useTranslation } from "react-i18next";
 
 function Reviews() {
   const { data: reviewsArray, isLoading } = useReviews();
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [t] = useTranslation();
+
   const openImageViewer = (index) => {
     setSelectedImageIndex(index);
     setIsViewerOpen(true);
@@ -43,7 +46,7 @@ function Reviews() {
   return (
     <>
       <section className="reviews">
-        <h2 className="sectionTitle">reviews</h2>
+        <h2 className="HomeSectionTitle">{t("reviews")}</h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}

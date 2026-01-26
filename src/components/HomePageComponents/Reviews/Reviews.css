@@ -3,10 +3,6 @@
     margin: 0 auto;
     text-transform: capitalize;
 
-    .sectionTitle {
-        font-weight: bold;
-    }
-
     .reviewCard {
         img {
             width: 21.875rem;

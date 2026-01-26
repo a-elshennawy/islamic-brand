@@ -7,10 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SectionLoader from "../../Loaders/SectionLoader";
+import { useTranslation } from "react-i18next";
 
 function FeaturedProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const products = homeProducts?.featured_products || [];
+  const [t] = useTranslation();
 
   if (isLoading) return <SectionLoader />;
 
@@ -19,7 +21,7 @@ function FeaturedProducts() {
   return (
     <>
       <section className="featuredProducts">
-        <h2 className="sectionTitle">featured products</h2>
+        <h2 className="HomeSectionTitle">{t("featured_products")}</h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}

@@ -3,7 +3,12 @@ nav {
     top: 0;
     margin: 0;
     padding: 0.625rem;
-    background-color: var(--main-color);
+    background: linear-gradient(
+        to right,
+        var(--secondary-color),
+        var(--main-color),
+        var(--secondary-color)
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;

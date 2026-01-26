@@ -7,10 +7,29 @@
         align-items: center;
 
         img {
-            width: 70%;
+            width: 75%;
             height: auto;
             margin: 0 auto;
             border-radius: 0.625rem;
+        }
+    }
+
+    .detailsSide {
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+            h3,
+            h5 {
+                display: inline;
+            }
+        }
+        .description {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
         }
     }
 }

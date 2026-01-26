@@ -5,5 +5,10 @@
   "discounts": "discounts",
   "contacts": "contacts",
   "reviews": "reviews",
-  "register_login": "register / login"
+  "register_login": "register / login",
+  "add_to_cart": "add to cart",
+  "L.E": "L.E",
+  "latest_products": "latest products",
+  "featured_products": "featured products",
+  "best_product": "best choice for you"
 }

@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
 import { truncateName } from "../../../utils/helpers";
+import { useTranslation } from "react-i18next";
 
 function ProductCard({ product }) {
+  const [t] = useTranslation();
   return (
     <>
       <div className="ProductCard row justify-content-center align-items-center text-center">
@@ -19,16 +21,23 @@ function ProductCard({ product }) {
           {product.discount_price ? (
             <>
               <h3>
-                <strong>{product.discount_price} L.E</strong> &nbsp;
+                <strong>
+                  {product.discount_price} {t("L.E")}
+                </strong>{" "}
+                &nbsp;
                 <small>
-                  <del className="text-muted">{product.original_price} L.E</del>
+                  <del className="text-muted">
+                    {product.original_price} {t("L.E")}
+                  </del>
                 </small>
               </h3>
             </>
           ) : (
             <>
               <h3>
-                <strong>{product.price} L.E</strong>
+                <strong>
+                  {product.price} {t("L.E")}
+                </strong>
               </h3>
             </>
           )}
