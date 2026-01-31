@@ -1,0 +1,6 @@
+.scrollBar {
+    position: fixed;
+    width: 0.125rem;
+    background-color: var(--secondary-color);
+    z-index: 9999;
+}

@@ -25,7 +25,7 @@ function Hero() {
       >
         {sliders?.map((slider) => (
           <SwiperSlide key={slider.id}>
-            <img src={slider.image} alt="slide" />
+            <img src={slider.image} alt="slide" loading="eager" />
           </SwiperSlide>
         ))}
 

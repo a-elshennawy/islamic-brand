@@ -51,6 +51,18 @@
             var(--secondary-color),
             var(--light-sec-color)
         );
+
+        .price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.313rem;
+
+            h5 {
+                text-decoration: line-through !important;
+                opacity: 0.7;
+            }
+        }
     }
 
     &:hover {

@@ -37,3 +37,12 @@ a {
     padding: 0.625rem;
     border-radius: 0.625rem;
 }
+
+&::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

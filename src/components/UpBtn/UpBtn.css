@@ -1,0 +1,15 @@
+.upBtn {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border: none;
+    width: 2.188rem;
+    height: 2.188rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
