@@ -115,7 +115,7 @@ nav {
 
             .sideMenuListItem {
                 cursor: pointer;
-                padding: 0.625rem;
+                padding: 0;
                 border-radius: 0.625rem;
                 color: var(--main-color);
                 background: var(--glass-color);
@@ -127,6 +127,9 @@ nav {
 
                 .sideMenuLink {
                     color: var(--main-color);
+                    display: block;
+                    width: 100%;
+                    padding: 0.625rem;
                 }
 
                 .arrowIcon {
@@ -147,6 +150,10 @@ nav {
                     box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
                     transform: translateY(-0.125rem);
                 }
+            }
+
+            .catListTrigger {
+                padding: 0.625rem;
             }
 
             .categoriesList {

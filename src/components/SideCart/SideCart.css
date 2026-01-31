@@ -1,0 +1,18 @@
+.sideCart {
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        var(--secondary-color),
+        var(--light-sec-color)
+    ) !important;
+
+    .sideCartheader {
+        .closeBtn {
+            position: absolute;
+            top: 0.625rem;
+            border: none;
+            background-color: transparent;
+            color: var(--white);
+        }
+    }
+}

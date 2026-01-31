@@ -32,16 +32,16 @@ function BestProduct() {
           className="detailsSide col-5"
           style={{ direction: isAr ? "rtl" : "ltr" }}
         >
-          <h5>{t("best_product")}</h5>
+          <div className="title">
+            <h5 className="mb-0">{t("best_product")}</h5>
+          </div>
           <h3>{BestProduct.name}</h3>
           {BestProduct.discount_price ? (
             <>
               <div className="price py-2">
-                <h5>
-                  <del>
-                    {BestProduct.original_price} {t("L.E")}
-                  </del>
-                </h5>
+                <h6>
+                  {BestProduct.original_price} {t("L.E")}
+                </h6>
                 <h3>
                   <strong>
                     {BestProduct.discount_price} {t("L.E")}

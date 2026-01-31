@@ -1,0 +1,31 @@
+.reviewsPage {
+    .reviews {
+        max-width: 100%;
+        margin: 0 auto;
+        column-count: 5;
+        column-gap: 0.313rem;
+
+        img {
+            border-radius: 0.625rem;
+            break-inside: avoid;
+            width: 100%;
+            margin: 0.313rem 0rem;
+            filter: brightness(80%);
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                filter: brightness(100%);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .reviewsPage {
+        .reviews {
+            column-count: 2;
+        }
+    }
+}

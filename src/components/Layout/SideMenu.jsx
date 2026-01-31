@@ -3,7 +3,7 @@ import { Box, Drawer } from "@mui/material";
 import { ImMenu } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 import logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useCategories } from "../../hooks/useGeneral";
 import { FaHome } from "react-icons/fa";
@@ -23,6 +23,7 @@ import LangSwitcher from "./LangSwitcher";
 function SideMenu() {
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [catDropOpen, setCatDropOpen] = useState(false);
   const { data: categories } = useCategories();
@@ -62,12 +63,16 @@ function SideMenu() {
           <div className="sideMenuContent">
             <ul className="sideMenuList p-0">
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/">
+                <Link
+                  className="sideMenuLink"
+                  to="/"
+                  onClick={toggleDrawer(false)}
+                >
                   {t("home")} <FaHome size={20} />
                 </Link>
               </li>
               <li
-                className="sideMenuListItem d-flex justify-content-between align-items-center mt-2 mb-1"
+                className="catListTrigger sideMenuListItem d-flex justify-content-between align-items-center mt-2 mb-1"
                 onClick={() => setCatDropOpen(!catDropOpen)}
               >
                 <span>
@@ -94,7 +99,11 @@ function SideMenu() {
                       className="categoriesList p-1"
                     >
                       {categoriesArray.map((category) => (
-                        <li className="sideMenuListItem my-1" key={category.id}>
+                        <li
+                          className="sideMenuListItem my-1"
+                          key={category.id}
+                          onClick={toggleDrawer(false)}
+                        >
                           <Link className="sideMenuLink" to="/">
                             {category.name}
                           </Link>
@@ -105,23 +114,39 @@ function SideMenu() {
                 )}
               </AnimatePresence>
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/">
+                <Link
+                  className="sideMenuLink"
+                  to="/"
+                  onClick={toggleDrawer(false)}
+                >
                   {t("contacts")} <BiSupport size={20} />
                 </Link>
               </li>
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/">
+                <Link
+                  className="sideMenuLink"
+                  to="/"
+                  onClick={toggleDrawer(false)}
+                >
                   {t("discounts")} <RiDiscountPercentFill size={20} />
                 </Link>
               </li>
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/">
+                <Link
+                  className="sideMenuLink"
+                  to="/reviews"
+                  onClick={toggleDrawer(false)}
+                >
                   {t("reviews")} <MdReviews size={20} />
                 </Link>
               </li>
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/">
-                  {t("register_login")}{" "}
+                <Link
+                  className="sideMenuLink"
+                  to="/"
+                  onClick={toggleDrawer(false)}
+                >
+                  {t("register_login")}
                   {isAr ? <TbLogin size={20} /> : <TbLogin2 size={20} />}
                 </Link>
               </li>
