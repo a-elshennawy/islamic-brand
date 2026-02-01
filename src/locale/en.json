@@ -1,6 +1,7 @@
 {
   "home_title": "Islamic Brand | Home",
   "review_page_title": "Islamic Brand | Reviews",
+  "product_details_page_title": "Islamic Brand | Product Details",
   "home": "home",
   "categories": "categories",
   "discounts": "discounts",
@@ -19,5 +20,11 @@
   "contact_info": "contact information",
   "contact_info_text": "If you have any questions, please Contact us at: info@islamic-brand.com",
   "phone_number": "phone : 01026555479",
-  "social_media": "social media"
+  "social_media": "social media",
+  "address": "address and location",
+  "location": "12, saed st. tanta, gharbia",
+  "working_hours": "saturday - friday : 8:00 am - 12:00 pm",
+  "privacy_policy": "privacy policy",
+  "return_policy": "return & replacement policy",
+  "copyRights": "all copy rights are reserved to islamic brand store - all rights are reserved"
 }

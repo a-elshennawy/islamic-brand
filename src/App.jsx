@@ -6,6 +6,7 @@ import Loader from "./components/Loaders/Loader";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Reviews = lazy(() => import("./pages/Reviews/Reviews"));
+const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="product-details/:slug" element={<ProductPage />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
           </Routes>

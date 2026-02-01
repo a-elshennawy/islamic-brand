@@ -1,4 +1,5 @@
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
@@ -20,7 +21,12 @@ function ProductCard({ product }) {
           <span className="wishlistBtn">
             <FaRegHeart size={20} />
           </span>
-          <img src={product.main_image} alt={product.name} loading="eager" />
+          <Link
+            to={`/product-details/${product.slug}`}
+            state={{ item: product }}
+          >
+            <img src={product.main_image} alt={product.name} loading="eager" />
+          </Link>
         </div>
         <div className="info col-12">
           <h4>{truncateName(product.name, 20)}</h4>

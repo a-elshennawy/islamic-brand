@@ -22,7 +22,6 @@ function Home() {
       <FeaturedProducts />
       <Line />
       <Reviews />
-      <Line />
     </>
   );
 }
