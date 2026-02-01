@@ -19,7 +19,7 @@ function BestProduct() {
     <>
       <section
         className="bestProduct row justify-content-center align-items-start gap-1 m-0"
-        style={{ direction: isAr ? "rtl" : "ltr" }}
+        dir={isAr ? "rtl" : "ltr"}
       >
         <div className="imgSide p-0 col-5">
           <img
@@ -28,10 +28,7 @@ function BestProduct() {
             loading="lazy"
           />
         </div>
-        <div
-          className="detailsSide col-5"
-          style={{ direction: isAr ? "rtl" : "ltr" }}
-        >
+        <div className="detailsSide col-5" dir={isAr ? "rtl" : "ltr"}>
           <div className="title">
             <h5 className="mb-0">{t("best_product")}</h5>
           </div>

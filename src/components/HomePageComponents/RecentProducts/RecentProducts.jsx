@@ -8,18 +8,20 @@ import "swiper/css/pagination";
 import "./RecentProducts.css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
+import { useIsAr } from "../../../hooks/useIsAr";
 
 function RecentProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const products = homeProducts?.latest_products || [];
   const [t] = useTranslation();
+  const isAr = useIsAr();
 
   if (isLoading) return <SectionLoader />;
 
   if (products.length === 0) return null;
 
   return (
-    <section className="recentProducts">
+    <section className="recentProducts" dir={isAr ? "rtl" : "ltr"}>
       <h2 className="HomeSectionTitle">{t("latest_products")}</h2>
 
       <Swiper

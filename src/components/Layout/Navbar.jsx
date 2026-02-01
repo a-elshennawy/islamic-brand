@@ -9,9 +9,9 @@ function Navbar() {
 
   return (
     <>
-      <nav style={{ direction: isAr ? "rtl" : "ltr" }}>
+      <nav dir={isAr ? "rtl" : "ltr"}>
         <SideMenu />
-        <div className="actions" style={{ direction: isAr ? "rtl" : "ltr" }}>
+        <div className="actions" dir={isAr ? "rtl" : "ltr"}>
           <button className="actionBtn">
             <FaSearch size={18} />
           </button>

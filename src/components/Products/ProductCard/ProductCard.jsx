@@ -14,7 +14,7 @@ function ProductCard({ product }) {
     <>
       <div
         className="ProductCard row justify-content-center align-items-center text-center"
-        style={{ direction: isAr ? "rtl" : "ltr" }}
+        dir={isAr ? "rtl" : "ltr"}
       >
         <div className="imgContainer p-0 col-12">
           <span className="wishlistBtn">

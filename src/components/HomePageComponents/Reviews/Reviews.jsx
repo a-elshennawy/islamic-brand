@@ -14,12 +14,14 @@ import {
 import { AnimatePresence, motion as Motion } from "motion/react";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
+import { useIsAr } from "../../../hooks/useIsAr";
 
 function Reviews() {
   const { data: reviewsArray, isLoading } = useReviews();
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [t] = useTranslation();
+  const isAr = useIsAr();
 
   const openImageViewer = (index) => {
     setSelectedImageIndex(index);
@@ -45,7 +47,7 @@ function Reviews() {
 
   return (
     <>
-      <section className="reviews">
+      <section className="reviews" dir={isAr ? "rtl" : "ltr"}>
         <h2 className="HomeSectionTitle">{t("reviews")}</h2>
         <Swiper
           modules={[Autoplay]}

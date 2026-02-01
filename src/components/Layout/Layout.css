@@ -167,3 +167,12 @@ nav {
         }
     }
 }
+
+footer {
+    background: linear-gradient(
+        to right,
+        var(--secondary-color),
+        var(--light-sec-color),
+        var(--secondary-color)
+    );
+}
