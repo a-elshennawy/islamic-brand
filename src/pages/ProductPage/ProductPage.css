@@ -1,0 +1,94 @@
+.productPage {
+    padding: 2rem 1rem;
+    .imgSide {
+        img {
+            width: 100%;
+            border-radius: 0.625rem;
+        }
+    }
+
+    .detailsSide {
+        .productCategory {
+            padding: 0.313rem;
+            border-radius: 0.625rem;
+            background: linear-gradient(
+                to right,
+                var(--secondary-color),
+                var(--light-sec-color)
+            );
+        }
+
+        .productPriceSection {
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+
+            h5 {
+                text-decoration: line-through;
+                opacity: 0.7;
+            }
+        }
+
+        .productVariationSection {
+            .varSection {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.313rem;
+
+                .colorOption {
+                    cursor: pointer;
+                    padding: 0.313rem;
+                    border-radius: 0.625rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.313rem;
+                    transition: all 0.3s ease-in-out;
+
+                    .colorCircle {
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        border-radius: 50%;
+                    }
+                }
+
+                .sizeBtn {
+                    border: 0.063rem solid var(--secondary-color);
+                    border-radius: 0.625rem;
+                    background-color: transparent;
+                    color: var(--white);
+                    padding: 0.313rem 0.625rem;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .out-of-stock-size {
+                    opacity: 0.5;
+                }
+
+                .selected {
+                    background-color: var(--secondary-color);
+                    color: var(--main-color);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .variationSelected {
+                text-transform: capitalize !important;
+                padding: 1.25rem 0.625rem;
+                border-radius: 0.625rem;
+                background: linear-gradient(
+                    to left,
+                    var(--secondary-color),
+                    var(--light-sec-color)
+                );
+
+                .img {
+                    img {
+                        width: 100%;
+                        border-radius: 0.625rem;
+                    }
+                }
+            }
+        }
+    }
+}

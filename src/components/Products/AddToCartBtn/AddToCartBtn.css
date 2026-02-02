@@ -11,6 +11,10 @@
     gap: 0.313rem;
     transition: all 0.3s ease-in-out;
 
+    a {
+        color: var(--main-color);
+    }
+
     &:hover {
         box-shadow: 0 0.25rem 0.625rem var(--main-color);
         transform: translateY(-0.125rem);

@@ -52,7 +52,7 @@ function ProductCard({ product }) {
               </h3>
             </>
           )}
-          <AddToCartBtn />
+          <AddToCartBtn product={product} />
         </div>
       </div>
     </>

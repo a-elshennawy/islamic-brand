@@ -9,6 +9,7 @@
   "reviews": "reviews",
   "register_login": "register / login",
   "add_to_cart": "add to cart",
+  "select_options": "select options",
   "L.E": "L.E",
   "latest_products": "latest products",
   "featured_products": "featured products",
@@ -26,5 +27,14 @@
   "working_hours": "saturday - friday : 8:00 am - 12:00 pm",
   "privacy_policy": "privacy policy",
   "return_policy": "return & replacement policy",
-  "copyRights": "all copy rights are reserved to islamic brand store - all rights are reserved"
+  "copyRights": "all copy rights are reserved to islamic brand store - all rights are reserved",
+  "colors": "colors",
+  "color": "color",
+  "sizes": "sizes",
+  "size": "size",
+  "price": "price",
+  "stock": "stock",
+  "selected_var": "selected variation",
+  "out_of_stock": "out of stock",
+  "in_stock": "available"
 }

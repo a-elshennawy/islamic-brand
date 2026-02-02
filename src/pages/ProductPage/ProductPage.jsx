@@ -1,14 +1,17 @@
 import "./ProductPage.css";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useIsAr } from "../../hooks/useIsAr";
 import { useProduct } from "../../hooks/useProducts";
 import SectionLoader from "../../components/Loaders/SectionLoader";
+import ProductImg from "./ProductImg";
+import ProductVariations from "./ProductVariations";
 
 function ProductPage() {
   const { slug } = useParams();
-  const location = useLocation();
   const navigate = useNavigate();
   const [t] = useTranslation();
+  const isAr = useIsAr();
   const { data: product, isLoading } = useProduct(slug || "");
 
   console.log(product);
@@ -25,8 +28,47 @@ function ProductPage() {
     <>
       <title>{t("product_details_page_title")}</title>
 
-      <section className="productPage">
-        <h1>{product.name}</h1>
+      <section
+        className="productPage row justify-content-center align-items-start gap-2 m-0"
+        dir={isAr ? "rtl" : "ltr"}
+      >
+        <ProductImg product={product} />
+        <div
+          className="detailsSide col-xl-6 col-lg-6 col-md-10 col-sm-10 col-12"
+          dir={isAr ? "rtl" : "ltr"}
+        >
+          <span className="productCategory">{product.category.name}</span>
+          <h3 className="productName my-2">{product.name}</h3>
+          {product.discount_price ? (
+            <>
+              <div className="productPriceSection py-2">
+                <h5>
+                  {product.original_price} {t("L.E")}
+                </h5>
+                <h3>
+                  <strong>
+                    {product.discount_price} {t("L.E")}
+                  </strong>
+                </h3>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="productPriceSection py-2">
+                <h3>
+                  <strong>
+                    {product.price} {t("L.E")}
+                  </strong>
+                </h3>
+              </div>
+            </>
+          )}
+          <div
+            className="productDescription"
+            dangerouslySetInnerHTML={{ __html: product.description }}
+          />
+          <ProductVariations product={product} />
+        </div>
       </section>
     </>
   );
