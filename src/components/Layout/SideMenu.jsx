@@ -3,7 +3,7 @@ import { Box, Drawer } from "@mui/material";
 import { ImMenu } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 import logo from "../../assets/images/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useCategories } from "../../hooks/useGeneral";
 import { FaHome } from "react-icons/fa";
@@ -18,12 +18,13 @@ import { RiDiscountPercentFill } from "react-icons/ri";
 import { TbLogin, TbLogin2 } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
+import useMobile from "../../hooks/useMobile";
 import LangSwitcher from "./LangSwitcher";
 
 function SideMenu() {
   const [t] = useTranslation();
   const isAr = useIsAr();
-  const navigate = useNavigate();
+  const { isMobile } = useMobile();
   const [open, setOpen] = useState(false);
   const [catDropOpen, setCatDropOpen] = useState(false);
   const { data: categories } = useCategories();
@@ -49,7 +50,7 @@ function SideMenu() {
           },
         }}
       >
-        <Box sx={{ width: 350 }} role="presentation">
+        <Box sx={{ width: isMobile ? 250 : 350 }} role="presentation">
           <div className="SideMenuHeader p-0">
             <img src={logo} alt="islamic brand logo" loading="lazy" />
             <button

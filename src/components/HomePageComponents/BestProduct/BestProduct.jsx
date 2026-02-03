@@ -4,12 +4,14 @@ import ProductAddToCartBtn from "../../Products/ProductAddToCartBtn/ProductAddTo
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import useMobile from "../../../hooks/useMobile";
 
 function BestProduct() {
   const { data: homeProducts, isLoading } = useHomeProducts();
   const BestProduct = homeProducts?.best_product || [];
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
 
   if (isLoading) return <SectionLoader />;
 
@@ -21,14 +23,18 @@ function BestProduct() {
         className="bestProduct row justify-content-center align-items-start gap-1 m-0"
         dir={isAr ? "rtl" : "ltr"}
       >
-        <div className="imgSide p-0 col-5">
+        <div className="imgSide p-0 col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12">
           <img
             src={BestProduct.main_image}
             alt={BestProduct.name}
             loading="lazy"
+            style={{ width: isMobile ? "100%" : "75%" }}
           />
         </div>
-        <div className="detailsSide col-5" dir={isAr ? "rtl" : "ltr"}>
+        <div
+          className="detailsSide col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12"
+          dir={isAr ? "rtl" : "ltr"}
+        >
           <div className="title">
             <h5 className="mb-0">{t("best_product")}</h5>
           </div>

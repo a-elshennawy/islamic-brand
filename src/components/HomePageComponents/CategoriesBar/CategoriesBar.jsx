@@ -1,6 +1,8 @@
 import "./CategoriesBar.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 import { useCategories } from "../../../hooks/useGeneral";
-import { AnimatePresence, motion as Motion } from "motion/react";
 import SectionLoader from "../../Loaders/SectionLoader";
 
 function CategoriesBar() {
@@ -12,21 +14,37 @@ function CategoriesBar() {
 
   return (
     <>
-      <div className="categoriesBar row justify-content-center align-items-center gap-3 m-0 py-5">
-        <AnimatePresence>
+      <div className="categoriesBar m-0 py-5">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={10}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          }}
+          className="categoriesSwiper p-3"
+        >
           {categoriesArray.map((category) => (
-            <Motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+            <SwiperSlide
               key={category.id}
-              className="categoryIcon text-center p-2 col-2"
+              className="categoryIcon text-center p-2"
             >
               <img src={category.image} alt={category.name} />
               <h4 className="m-0">{category.name}</h4>
-            </Motion.div>
+            </SwiperSlide>
           ))}
-        </AnimatePresence>
+        </Swiper>
       </div>
     </>
   );

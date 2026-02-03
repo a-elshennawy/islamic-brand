@@ -36,5 +36,6 @@
   "stock": "المخزون",
   "selected_var": "اختيارك",
   "out_of_stock": "غير متوفر",
-  "in_stock": "متوفر"
+  "in_stock": "متوفر",
+  "discount": "خصم"
 }

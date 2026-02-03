@@ -1,7 +1,5 @@
 .ProductCard {
     overflow: hidden;
-    border-radius: 0.625rem;
-    overflow: hidden;
     transition: all 0.3s ease-in-out;
 
     .imgContainer {
@@ -9,6 +7,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+
+        .discountBadge {
+            position: absolute;
+            top: 0.313rem;
+            right: 0.313rem;
+            background: linear-gradient(
+                to right,
+                var(--secondary-color),
+                var(--light-sec-color)
+            );
+            color: var(--white);
+            padding: 0.125rem;
+            text-decoration: line-through;
+            z-index: 2;
+        }
 
         .wishlistBtn {
             position: absolute;
@@ -38,34 +52,33 @@
             }
         }
 
-        img {
+        a {
             width: 100%;
-            height: 18.75rem;
-            margin: 0 auto;
-        }
-    }
-
-    .info {
-        background: linear-gradient(
-            45deg,
-            var(--secondary-color),
-            var(--light-sec-color)
-        );
-
-        .price {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 0.313rem;
 
-            h5 {
-                text-decoration: line-through !important;
-                opacity: 0.7;
+            img {
+                width: 100%;
+                margin: 0 auto;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
             }
         }
     }
 
-    &:hover {
-        transform: translateY(-0.313rem);
+    .info {
+        padding: 1.25rem 0.313rem;
+        .price {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.313rem;
+        }
     }
 }

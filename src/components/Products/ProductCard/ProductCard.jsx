@@ -6,36 +6,57 @@ import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
 import { truncateName } from "../../../utils/helpers";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import useMobile from "../../../hooks/useMobile";
 
 function ProductCard({ product }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
 
   return (
     <>
       <div
-        className="ProductCard row justify-content-center align-items-center text-center"
+        className="ProductCard row justify-content-center align-items-center"
         dir={isAr ? "rtl" : "ltr"}
       >
         <div className="imgContainer p-0 col-12">
-          <span className="wishlistBtn">
-            <FaRegHeart size={20} />
+          <span
+            className="wishlistBtn"
+            style={{
+              width: isMobile ? "1.25rem" : "2.5rem",
+              height: isMobile ? "1.25rem" : "2.5rem",
+            }}
+          >
+            <FaRegHeart size={isMobile ? 10 : 20} />
           </span>
+          {product.discount_price && (
+            <>
+              <span
+                className="discountBadge"
+                style={{ fontSize: isMobile ? ".625rem" : "" }}
+              >
+                {product.original_price} {t("L.E")}
+              </span>
+            </>
+          )}
+
           <Link
             to={`/product-details/${product.slug}`}
             state={{ item: product }}
           >
-            <img src={product.main_image} alt={product.name} loading="eager" />
+            <img
+              src={product.main_image}
+              alt={product.name}
+              loading="eager"
+              style={{ height: isMobile ? "9.375rem" : "18.75rem" }}
+            />
           </Link>
         </div>
         <div className="info col-12">
-          <h4>{truncateName(product.name, 20)}</h4>
+          <h4>{truncateName(product.name, isMobile ? 10 : 20)}</h4>
           {product.discount_price ? (
             <>
               <div className="price">
-                <h5>
-                  {product.original_price} {t("L.E")}
-                </h5>
                 <h3>
                   <strong>
                     {product.discount_price} {t("L.E")}

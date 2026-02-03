@@ -4,8 +4,6 @@ import { Autoplay } from "swiper/modules";
 import { useHomeProducts } from "../../../hooks/useProducts";
 import ProductCard from "../../Products/ProductCard/ProductCard";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";

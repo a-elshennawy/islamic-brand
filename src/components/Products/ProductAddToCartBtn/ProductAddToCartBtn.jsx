@@ -1,12 +1,13 @@
-import { RiShoppingBasket2Line } from "react-icons/ri";
+import { IoMdCart } from "react-icons/io";
 import { CgOptions } from "react-icons/cg";
 import "./ProductAddToCartBtn.css";
 import { useTranslation } from "react-i18next";
-import { useIsAr } from "../../../hooks/useIsAr";
+import { useState } from "react";
+import { AnimatePresence, motion as Motion } from "motion/react";
 
 function ProductAddToCartBtn({ product }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
-  const isAr = useIsAr();
 
   const hasVariations = product?.has_variations;
 
@@ -16,14 +17,45 @@ function ProductAddToCartBtn({ product }) {
         <>
           <button
             className="productAddToCartBtn my-2"
-            dir={isAr ? "rtl" : "ltr"}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             <Link
               to={`/product-details/${product.slug}`}
               state={{ item: product }}
             >
-              {t("select_options")}
-              <CgOptions size={24} />
+              <Motion.div
+                className="button-content"
+                key={isHovered ? "icon" : "text"}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <AnimatePresence mode="wait">
+                  {isHovered ? (
+                    <Motion.span
+                      key="icon"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <CgOptions size={24} />
+                    </Motion.span>
+                  ) : (
+                    <Motion.span
+                      key="text"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {t("select_options")}
+                    </Motion.span>
+                  )}
+                </AnimatePresence>
+              </Motion.div>
             </Link>
           </button>
         </>
@@ -31,10 +63,41 @@ function ProductAddToCartBtn({ product }) {
         <>
           <button
             className="productAddToCartBtn my-2"
-            dir={isAr ? "rtl" : "ltr"}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            {t("add_to_cart")}
-            <RiShoppingBasket2Line size={24} />
+            <Motion.div
+              className="button-content"
+              key={isHovered ? "icon" : "text"}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <AnimatePresence mode="wait">
+                {isHovered ? (
+                  <Motion.span
+                    key="icon"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <IoMdCart size={24} />
+                  </Motion.span>
+                ) : (
+                  <Motion.span
+                    key="text"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {t("add_to_cart")}
+                  </Motion.span>
+                )}
+              </AnimatePresence>
+            </Motion.div>
           </button>
         </>
       )}

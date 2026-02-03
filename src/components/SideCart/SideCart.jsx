@@ -3,12 +3,14 @@ import { useState } from "react";
 import { Box, Drawer } from "@mui/material";
 import { MdCancel } from "react-icons/md";
 import { useIsAr } from "../../hooks/useIsAr";
+import useMobile from "../../hooks/useMobile";
 import { useTranslation } from "react-i18next";
 import { RiShoppingBasket2Fill } from "react-icons/ri";
 
 function SideCart() {
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -31,7 +33,7 @@ function SideCart() {
           },
         }}
       >
-        <Box sx={{ width: 350 }} role="presentation">
+        <Box sx={{ width: isMobile ? 250 : 350 }} role="presentation">
           <div className="sideCartheader">
             <button
               className="closeBtn"

@@ -6,7 +6,7 @@ nav {
     background: linear-gradient(
         to right,
         var(--secondary-color),
-        var(--main-color),
+        var(--light-sec-color),
         var(--secondary-color)
     );
     display: flex;
@@ -14,6 +14,16 @@ nav {
     align-items: center;
     gap: 0.625rem;
     z-index: 1111;
+
+    .navLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 15%;
+        }
+    }
 
     .actions {
         display: flex;

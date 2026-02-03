@@ -3,6 +3,7 @@
 /*colors*/
 :root {
     font-size: 16px;
+    --body-background: #fff6df;
     --main-color: #000;
     --secondary-color: #c5a059;
     --light-sec-color: #c6b79b;
@@ -15,8 +16,8 @@
 }
 
 body {
-    background-color: var(--main-color) !important;
-    color: var(--white) !important;
+    background-color: var(--body-background) !important;
+    color: var(--main-color) !important;
     font-family: robotoSlab, changa !important;
     margin: 0;
 }
@@ -94,4 +95,10 @@ a {
 html {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
 }

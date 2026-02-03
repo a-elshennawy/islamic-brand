@@ -2,10 +2,6 @@
     .categoryIcon {
         position: relative;
         cursor: pointer;
-        width: 12.5rem;
-        height: 12.5rem;
-        border-radius: 50%;
-        background-color: var(--secondary-color);
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -36,5 +36,6 @@
   "stock": "stock",
   "selected_var": "selected variation",
   "out_of_stock": "out of stock",
-  "in_stock": "available"
+  "in_stock": "available",
+  "discount": "discount"
 }
