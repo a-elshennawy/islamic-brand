@@ -50,7 +50,7 @@ nav {
 
             &:before {
                 content: "";
-                background-color: var(--secondary-color);
+                background-color: var(--white);
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
@@ -63,7 +63,7 @@ nav {
 
             &:hover {
                 svg {
-                    color: var(--main-color);
+                    color: var(--secondary-color);
                 }
 
                 &:before {
@@ -82,6 +82,7 @@ nav {
 
 .langBtn {
     background: var(--glass-color);
+    color: var(--white);
     border: none;
     border-radius: 0.625rem;
     backdrop-filter: blur(1.875rem);
@@ -116,6 +117,7 @@ nav {
             top: 0.625rem;
             background-color: transparent;
             border: none;
+            color: var(--white);
         }
     }
 
@@ -127,7 +129,7 @@ nav {
                 cursor: pointer;
                 padding: 0;
                 border-radius: 0.625rem;
-                color: var(--main-color);
+                color: var(--white);
                 background: var(--glass-color);
                 backdrop-filter: blur(1.875rem);
                 -webkit-backdrop-filter: blur(1.25rem);
@@ -136,7 +138,7 @@ nav {
                 transition: all 0.3s ease-in-out;
 
                 .sideMenuLink {
-                    color: var(--main-color);
+                    color: var(--white);
                     display: block;
                     width: 100%;
                     padding: 0.625rem;
@@ -196,8 +198,8 @@ footer {
                 gap: 0.625rem;
 
                 span {
-                    width: 1.5rem;
-                    height: 1.5rem;
+                    width: 2.188rem;
+                    height: 2.188rem;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -208,13 +210,12 @@ footer {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: var(--white);
+                        color: var(--main-color);
                         transition: all 0.3s ease-in-out;
                     }
 
                     &:hover {
                         background-color: var(--white);
-                        transform: scale(1.1);
 
                         a {
                             color: var(--secondary-color);
@@ -266,7 +267,7 @@ footer {
             gap: 0.313rem;
 
             a {
-                color: var(--white);
+                color: var(--main-color);
             }
         }
     }

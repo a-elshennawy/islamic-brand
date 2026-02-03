@@ -16,6 +16,7 @@
                 var(--secondary-color),
                 var(--light-sec-color)
             );
+            color: var(--white);
         }
 
         .productPriceSection {
@@ -56,7 +57,7 @@
                     border: 0.063rem solid var(--secondary-color);
                     border-radius: 0.625rem;
                     background-color: transparent;
-                    color: var(--white);
+                    color: var(--main-color);
                     padding: 0.313rem 0.625rem;
                     transition: all 0.3s ease-in-out;
                 }
@@ -67,7 +68,7 @@
 
                 .selected {
                     background-color: var(--secondary-color);
-                    color: var(--main-color);
+                    color: var(--white);
                     transition: all 0.3s ease-in-out;
                 }
             }
@@ -81,6 +82,7 @@
                     var(--secondary-color),
                     var(--light-sec-color)
                 );
+                color: var(--white);
 
                 .img {
                     img {

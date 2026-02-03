@@ -3,7 +3,7 @@
     text-transform: capitalize;
     border: none;
     padding: 0.313rem;
-    background-color: var(--secondary-color);
+    background-color: var(--light-sec-color);
     color: var(--white);
     font-weight: bold;
     display: inline-flex;
@@ -20,6 +20,10 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+
+    &:hover {
+        background-color: var(--secondary-color);
     }
 }
 

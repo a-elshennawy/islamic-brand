@@ -15,6 +15,7 @@ import { AnimatePresence, motion as Motion } from "motion/react";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import useMobile from "../../../hooks/useMobile";
 
 function Reviews() {
   const { data: reviewsArray, isLoading } = useReviews();
@@ -22,6 +23,7 @@ function Reviews() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
 
   const openImageViewer = (index) => {
     setSelectedImageIndex(index);
@@ -48,7 +50,15 @@ function Reviews() {
   return (
     <>
       <section className="reviews" dir={isAr ? "rtl" : "ltr"}>
-        <h2 className="HomeSectionTitle">{t("reviews")}</h2>
+        <Motion.h2
+          initial={{ opacity: 0, x: isAr ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="HomeSectionTitle"
+        >
+          {t("reviews")}
+        </Motion.h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}
@@ -59,8 +69,8 @@ function Reviews() {
           }}
           breakpoints={{
             0: {
-              slidesPerView: 2,
-              spaceBetween: 30,
+              slidesPerView: 1,
+              spaceBetween: 50,
             },
             1024: {
               slidesPerView: 4,
@@ -75,9 +85,23 @@ function Reviews() {
               onClick={() => openImageViewer(index)}
               style={{ cursor: "pointer" }}
             >
-              <div className="reviewCard p-0">
-                <img src={review.image} alt={review.name} />
-              </div>
+              <Motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="reviewCard p-0"
+              >
+                <img
+                  src={review.image}
+                  alt={review.name}
+                  style={
+                    isMobile
+                      ? { width: "15.625rem", height: "15.625rem" }
+                      : { width: "21.875rem", height: "21.875rem" }
+                  }
+                />
+              </Motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

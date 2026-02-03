@@ -26,7 +26,7 @@ function SideMenu() {
   const isAr = useIsAr();
   const { isMobile } = useMobile();
   const [open, setOpen] = useState(false);
-  const [catDropOpen, setCatDropOpen] = useState(false);
+  const [catDropOpen, setCatDropOpen] = useState(true);
   const { data: categories } = useCategories();
   const categoriesArray = Array.isArray(categories) ? categories : [];
 

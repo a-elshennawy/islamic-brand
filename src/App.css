@@ -5,8 +5,8 @@
     font-size: 16px;
     --body-background: #fff6df;
     --main-color: #000;
-    --secondary-color: #c5a059;
-    --light-sec-color: #c6b79b;
+    --secondary-color: #ca9735;
+    --light-sec-color: #d1b887;
     --white: #fff;
     --glass-color: rgba(255, 255, 255, 0.2);
 }
@@ -34,6 +34,7 @@ a {
         var(--secondary-color),
         var(--light-sec-color)
     );
+    color: var(--white);
     width: fit-content;
     padding: 0.625rem;
     border-radius: 0.625rem;

@@ -23,6 +23,11 @@
                 var(--secondary-color),
                 var(--light-sec-color)
             );
+            color: var(--white);
+
+            h5 {
+                padding: 0.313rem;
+            }
         }
         .price {
             display: flex;

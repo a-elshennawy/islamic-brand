@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { motion as Motion } from "motion/react";
 
 function Footer() {
   const [t] = useTranslation();
@@ -9,7 +10,11 @@ function Footer() {
 
   return (
     <>
-      <footer
+      <Motion.footer
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
         className="row justify-content-center align-items-start gap-1 m-0 py-2"
         dir={isAr ? "rtl" : "ltr"}
       >
@@ -22,22 +27,22 @@ function Footer() {
             <div className="links py-2">
               <span>
                 <Link to="/" target="_blank">
-                  <FaFacebookF />
+                  <FaFacebookF size={20} />
                 </Link>
               </span>
               <span>
                 <Link to="/" target="_blank">
-                  <FaInstagram />
+                  <FaInstagram size={20} />
                 </Link>
               </span>
               <span>
                 <Link to="/" target="_blank">
-                  <FaTiktok />
+                  <FaTiktok size={20} />
                 </Link>
               </span>
               <span>
                 <Link to="https://wa.me/201026555479" target="_blank">
-                  <FaWhatsapp />
+                  <FaWhatsapp size={20} />
                 </Link>
               </span>
             </div>
@@ -72,7 +77,7 @@ function Footer() {
           </div>
           <p>{t("copyRights")}</p>
         </div>
-      </footer>
+      </Motion.footer>
     </>
   );
 }

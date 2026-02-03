@@ -2,7 +2,7 @@
     text-transform: capitalize;
     border: none;
     padding: 0.313rem;
-    background-color: var(--secondary-color);
+    background-color: var(--light-sec-color);
     color: var(--white);
     display: inline-flex;
     justify-content: center;
@@ -12,12 +12,17 @@
     transition: all 0.3s ease-in-out;
     position: relative;
     min-width: 8.75rem;
+
     a {
         color: var(--white);
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
+
+    &:hover {
+        background-color: var(--secondary-color);
     }
 }
 

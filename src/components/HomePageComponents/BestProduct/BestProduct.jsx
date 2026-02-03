@@ -5,6 +5,7 @@ import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
 import useMobile from "../../../hooks/useMobile";
+import { motion as Motion } from "motion/react";
 
 function BestProduct() {
   const { data: homeProducts, isLoading } = useHomeProducts();
@@ -23,15 +24,25 @@ function BestProduct() {
         className="bestProduct row justify-content-center align-items-start gap-1 m-0"
         dir={isAr ? "rtl" : "ltr"}
       >
-        <div className="imgSide p-0 col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12">
+        <Motion.div
+          initial={{ opacity: 0, x: isAr ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="imgSide p-0 col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12"
+        >
           <img
             src={BestProduct.main_image}
             alt={BestProduct.name}
             loading="lazy"
             style={{ width: isMobile ? "100%" : "75%" }}
           />
-        </div>
-        <div
+        </Motion.div>
+        <Motion.div
+          initial={{ opacity: 0, x: isAr ? -100 : 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="detailsSide col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12"
           dir={isAr ? "rtl" : "ltr"}
         >
@@ -68,7 +79,7 @@ function BestProduct() {
             dangerouslySetInnerHTML={{ __html: BestProduct.description }}
           />
           <ProductAddToCartBtn />
-        </div>
+        </Motion.div>
       </section>
     </>
   );

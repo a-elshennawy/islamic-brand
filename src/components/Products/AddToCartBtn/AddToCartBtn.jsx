@@ -1,5 +1,5 @@
 import "./AddToCartBtn.css";
-import { RiShoppingBasket2Line } from "react-icons/ri";
+import { IoMdCart } from "react-icons/io";
 import { CgOptions } from "react-icons/cg";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -81,7 +81,7 @@ function AddToCartBtn({ product }) {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <RiShoppingBasket2Line size={24} />
+                  <IoMdCart size={24} />
                 </Motion.span>
               ) : (
                 <Motion.span

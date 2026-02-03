@@ -7,6 +7,7 @@ import "swiper/css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import { motion as Motion } from "motion/react";
 
 function FeaturedProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
@@ -21,7 +22,15 @@ function FeaturedProducts() {
   return (
     <>
       <section className="featuredProducts" dir={isAr ? "rtl" : "ltr"}>
-        <h2 className="HomeSectionTitle">{t("featured_products")}</h2>
+        <Motion.h2
+          initial={{ opacity: 0, x: isAr ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="HomeSectionTitle"
+        >
+          {t("featured_products")}
+        </Motion.h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}

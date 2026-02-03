@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
 import { useProduct } from "../../hooks/useProducts";
 import SectionLoader from "../../components/Loaders/SectionLoader";
-import ProductImg from "./ProductImg";
-import ProductVariations from "./ProductVariations";
+import ProductImg from "../../components/ProductPageComponents/ProductImg";
+import ProductVariations from "../../components/ProductPageComponents/ProductVariations";
 
 function ProductPage() {
   const { slug } = useParams();

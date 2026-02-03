@@ -4,6 +4,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useCategories } from "../../../hooks/useGeneral";
 import SectionLoader from "../../Loaders/SectionLoader";
+import { motion as Motion } from "motion/react";
 
 function CategoriesBar() {
   const { data: categories, isLoading } = useCategories();
@@ -36,12 +37,16 @@ function CategoriesBar() {
           className="categoriesSwiper p-3"
         >
           {categoriesArray.map((category) => (
-            <SwiperSlide
-              key={category.id}
-              className="categoryIcon text-center p-2"
-            >
-              <img src={category.image} alt={category.name} />
-              <h4 className="m-0">{category.name}</h4>
+            <SwiperSlide key={category.id}>
+              <Motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="categoryIcon text-center p-0"
+              >
+                <img src={category.image} alt={category.name} />
+                <h4 className="m-0">{category.name}</h4>
+              </Motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

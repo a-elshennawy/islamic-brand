@@ -14,7 +14,7 @@
         }
 
         &:hover {
-            transform: translateY(-0.125rem);
+            transform: scale(1.1);
         }
     }
 }

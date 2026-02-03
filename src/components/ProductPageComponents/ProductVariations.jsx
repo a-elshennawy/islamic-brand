@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import VariationAddToCartBtn from "../../components/Products/VariationAddToCartBtn/VariationAddToCartBtn";
+import VariationAddToCartBtn from "../Products/VariationAddToCartBtn/VariationAddToCartBtn";
 import { AnimatePresence, motion as Motion } from "motion/react";
 function ProductVariations({ product }) {
   const [t] = useTranslation();
@@ -64,7 +64,7 @@ function ProductVariations({ product }) {
                   className={`sizeBtn ${isSelected ? "selected" : ""} ${
                     isOutOfStock ? "out-of-stock-size" : ""
                   }`}
-                  key={sizeItem.id}
+                  key={sizeItem.combination.id}
                   onClick={() =>
                     !isOutOfStock &&
                     handleSizeSelect(sizeItem, sizeItem.combination)
@@ -112,7 +112,7 @@ function ProductVariations({ product }) {
                     ? t("out_of_stock")
                     : t("in_stock")}
                 </h5>
-                <VariationAddToCartBtn />
+                <VariationAddToCartBtn product={selectedCombination} />
               </div>
             </Motion.div>
           )}

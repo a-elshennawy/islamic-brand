@@ -9,6 +9,7 @@ import "./RecentProducts.css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import { motion as Motion } from "motion/react";
 
 function RecentProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
@@ -22,7 +23,15 @@ function RecentProducts() {
 
   return (
     <section className="recentProducts" dir={isAr ? "rtl" : "ltr"}>
-      <h2 className="HomeSectionTitle">{t("latest_products")}</h2>
+      <Motion.h2
+        initial={{ opacity: 0, x: isAr ? 100 : -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="HomeSectionTitle"
+      >
+        {t("latest_products")}
+      </Motion.h2>
 
       <Swiper
         modules={[Autoplay]}

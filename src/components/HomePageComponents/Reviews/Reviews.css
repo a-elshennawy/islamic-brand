@@ -4,9 +4,10 @@
     text-transform: capitalize;
 
     .reviewCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
-            width: 21.875rem;
-            height: 21.875rem;
             border-radius: 0.625rem;
         }
     }
