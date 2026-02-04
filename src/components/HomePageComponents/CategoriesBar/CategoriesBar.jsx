@@ -3,11 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useCategories } from "../../../hooks/useGeneral";
+import useMobile from "../../../hooks/useMobile";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { motion as Motion } from "motion/react";
 
 function CategoriesBar() {
   const { data: categories, isLoading } = useCategories();
+  const { isMobile } = useMobile();
   const categoriesArray = Array.isArray(categories) ? categories : [];
 
   if (isLoading) return <SectionLoader />;
@@ -15,7 +17,10 @@ function CategoriesBar() {
 
   return (
     <>
-      <div className="categoriesBar m-0 py-5">
+      <div
+        className="categoriesBar m-0 mx-auto py-5"
+        style={{ width: isMobile ? "100%" : "65%" }}
+      >
         <Swiper
           modules={[Autoplay]}
           spaceBetween={10}
@@ -42,7 +47,7 @@ function CategoriesBar() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="categoryIcon text-center p-0"
+                className="categoryIcon text-center p-0 mx-auto"
               >
                 <img src={category.image} alt={category.name} />
                 <h4 className="m-0">{category.name}</h4>

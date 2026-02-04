@@ -1,5 +1,6 @@
 .categoriesBar {
     .categoryIcon {
+        width: fit-content;
         position: relative;
         cursor: pointer;
         display: flex;

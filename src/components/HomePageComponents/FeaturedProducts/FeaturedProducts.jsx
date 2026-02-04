@@ -23,8 +23,8 @@ function FeaturedProducts() {
     <>
       <section className="featuredProducts" dir={isAr ? "rtl" : "ltr"}>
         <Motion.h2
-          initial={{ opacity: 0, x: isAr ? 100 : -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="HomeSectionTitle"
