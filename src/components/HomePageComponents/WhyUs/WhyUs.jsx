@@ -12,7 +12,6 @@ function WhyUs() {
   const [t] = useTranslation();
   const { isMobile } = useMobile();
 
-  console.log(chooseUsArray);
   return (
     <>
       <section

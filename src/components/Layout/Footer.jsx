@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { motion as Motion } from "motion/react";
 
-function Footer() {
+function Footer({ settings }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
 
@@ -20,28 +20,33 @@ function Footer() {
       >
         <div className="footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12">
           <h4>{t("contact_info")}</h4>
-          <p>{t("contact_info_text")}</p>
-          <p>{t("phone_number")}</p>
+          <p>
+            {t("contact_info_text")} {settings?.email}
+          </p>
+          <p>{settings?.phone}</p>
           <div className="socialMedia">
             <p className="mb-0">{t("social_media")} :</p>
             <div className="links py-2">
               <span>
-                <Link to="/" target="_blank">
+                <Link to={settings?.facebook} target="_blank">
                   <FaFacebookF size={20} />
                 </Link>
               </span>
               <span>
-                <Link to="/" target="_blank">
+                <Link to={settings?.instagram} target="_blank">
                   <FaInstagram size={20} />
                 </Link>
               </span>
               <span>
-                <Link to="/" target="_blank">
+                <Link to={settings?.tiktok} target="_blank">
                   <FaTiktok size={20} />
                 </Link>
               </span>
               <span>
-                <Link to="https://wa.me/201026555479" target="_blank">
+                <Link
+                  to={`https://wa.me/${settings?.whatsapp}`}
+                  target="_blank"
+                >
                   <FaWhatsapp size={20} />
                 </Link>
               </span>
@@ -50,8 +55,15 @@ function Footer() {
         </div>
         <div className="footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12">
           <h4>{t("address")}</h4>
-          <p>{t("location")}</p>
-          <p>{t("working_hours")}</p>
+          <p>
+            {settings?.address} - {settings?.street}
+          </p>
+          <p>
+            {settings?.day_from} - {settings?.day_to}
+          </p>
+          <p>
+            {settings?.available_from} - {settings?.available_to}
+          </p>
         </div>
         <div className="footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12">
           <h4>{t("subscribe_to_newsteller")}</h4>
@@ -72,8 +84,8 @@ function Footer() {
         <hr />
         <div className="footerCol col-12 text-center py-2">
           <div className="pageLinks pb-4">
-            <Link to="/">{t("privacy_policy")}</Link>|
-            <Link to="/">{t("return_policy")}</Link>
+            <Link to="/privacy-policy">{t("privacy_policy")}</Link>|
+            <Link to="/exchange-return">{t("return_policy")}</Link>
           </div>
           <p>{t("copyRights")}</p>
         </div>

@@ -6,6 +6,7 @@ import { useProduct } from "../../hooks/useProducts";
 import SectionLoader from "../../components/Loaders/SectionLoader";
 import ProductImg from "../../components/ProductPageComponents/ProductImg";
 import ProductVariations from "../../components/ProductPageComponents/ProductVariations";
+import BackBtn from "../../components/Btns/BackBtn";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -27,7 +28,7 @@ function ProductPage() {
   return (
     <>
       <title>{t("product_details_page_title")}</title>
-
+      <BackBtn />
       <section
         className="productPage row justify-content-center align-items-start gap-2 m-0"
         dir={isAr ? "rtl" : "ltr"}

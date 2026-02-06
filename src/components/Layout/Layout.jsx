@@ -6,8 +6,10 @@ import ScrollBar from "../ScrollBar/ScrollBar";
 import UpBtn from "../UpBtn/UpBtn";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useSettings } from "../../hooks/useGeneral";
 
 function Layout() {
+  const { data, isLoading } = useSettings();
   const location = useLocation();
 
   useEffect(() => {
@@ -20,7 +22,7 @@ function Layout() {
       <ScrollBar />
       <Outlet />
       <UpBtn />
-      <Footer />
+      <Footer settings={data} />
     </>
   );
 }

@@ -89,6 +89,17 @@ a {
     right: 1rem;
 }
 
+.toHomeBtn,
+.backBtn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    border-radius: 0.625rem;
+    margin: 1rem;
+    padding: 0.313rem 0.625rem;
+}
+
 &::-webkit-scrollbar {
     display: none;
 }
