@@ -39,7 +39,7 @@ function WhyUs() {
             },
           }}
         >
-          {chooseUsArray.map((item) => (
+          {chooseUsArray?.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="whyChooseItem py-2 px-1">
                 <div className="imgContainer p-2 mx-auto">
