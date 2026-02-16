@@ -3,8 +3,6 @@ import SideMenu from "./SideMenu";
 import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
 import SideCart from "../SideCart/SideCart";
-import logo from "/logo.png";
-import { Link } from "react-router-dom";
 
 function Navbar() {
   const isAr = useIsAr();
@@ -12,24 +10,24 @@ function Navbar() {
 
   return (
     <>
-      <nav dir={isAr ? "rtl" : "ltr"}>
-        <SideMenu />
-        {!isMobile && (
-          <Link to="/" className="navLogo">
-            <img src={logo} alt="logo" loading="lazy" />
-          </Link>
-        )}
+      <div className="navContainer">
+        <nav
+          dir={isAr ? "rtl" : "ltr"}
+          style={{ width: isMobile ? "90%" : "70%" }}
+        >
+          <SideMenu />
 
-        <div className="actions" dir={isAr ? "rtl" : "ltr"}>
-          <button className="actionBtn">
-            <FaSearch size={18} />
-          </button>
-          <SideCart />
-          <button className="actionBtn">
-            <FaUser size={18} />
-          </button>
-        </div>
-      </nav>
+          <div className="actions" dir={isAr ? "rtl" : "ltr"}>
+            <button className="actionBtn">
+              <FaSearch size={18} />
+            </button>
+            <SideCart />
+            <button className="actionBtn">
+              <FaUser size={18} />
+            </button>
+          </div>
+        </nav>
+      </div>
     </>
   );
 }

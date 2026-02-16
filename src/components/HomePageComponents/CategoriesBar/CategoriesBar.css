@@ -10,8 +10,8 @@
         transition: all 0.3s ease-in-out;
 
         img {
-            width: 6.25rem;
-            height: 6.25rem;
+            width: 100%;
+            height: auto;
         }
 
         &:hover {

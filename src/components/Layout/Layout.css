@@ -1,73 +1,68 @@
-nav {
-    position: sticky;
+.navContainer {
+    padding: 1.25rem 0;
+    width: 100%;
+    position: fixed;
     top: 0;
-    margin: 0;
-    padding: 0.625rem;
-    background: linear-gradient(
-        to right,
-        var(--secondary-color),
-        var(--light-sec-color),
-        var(--secondary-color)
-    );
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.625rem;
+
+    pointer-events: none;
     z-index: 1111;
 
-    .navLogo {
+    nav {
+        position: sticky;
+        margin: 0 auto;
+        padding: 0.625rem;
+        background-color: var(--secondary-color);
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            width: 15%;
-        }
-    }
-
-    .actions {
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 0.625rem;
+        border-radius: 1.875rem;
+        pointer-events: auto;
 
-        .actionBtn {
-            position: relative;
-            display: inline-flex;
+        .actions {
+            display: flex;
             justify-content: center;
             align-items: center;
-            background-color: transparent;
-            border: none;
-            width: 2.188rem;
-            height: 2.188rem;
-            border-radius: 50%;
-            transition: all 0.3s ease-in-out;
+            gap: 0.625rem;
 
-            svg {
-                color: var(--white);
-                transition: all 0.3s ease-in-out;
-            }
-
-            &:before {
-                content: "";
-                background-color: var(--white);
-                width: 100%;
-                height: 100%;
+            .actionBtn {
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                border: none;
+                width: 2.188rem;
+                height: 2.188rem;
                 border-radius: 50%;
-                position: absolute;
-                inset: 0;
-                transform: scale(0);
-                z-index: -1;
                 transition: all 0.3s ease-in-out;
-            }
 
-            &:hover {
                 svg {
-                    color: var(--secondary-color);
+                    color: var(--white);
+                    transition: all 0.3s ease-in-out;
                 }
 
                 &:before {
-                    transform: scale(1);
+                    content: "";
+                    background-color: var(--white);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    position: absolute;
+                    inset: 0;
+                    transform: scale(0);
+                    z-index: -1;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    svg {
+                        color: var(--secondary-color);
+                    }
+
+                    &:before {
+                        transform: scale(1);
+                    }
                 }
             }
         }
@@ -75,9 +70,44 @@ nav {
 }
 
 .sideMenuBtn {
-    border: none;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
-    color: var(--white);
+    border: none;
+    width: 2.188rem;
+    height: 2.188rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+
+    svg {
+        color: var(--white);
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:before {
+        content: "";
+        background-color: var(--white);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        inset: 0;
+        transform: scale(0);
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        svg {
+            color: var(--secondary-color);
+        }
+
+        &:before {
+            transform: scale(1);
+        }
+    }
 }
 
 .langBtn {
