@@ -46,7 +46,6 @@ function ProductVariations({ product }) {
                   className="colorCircle"
                   style={{ backgroundColor: color.value }}
                 ></div>
-                <span className="colorName">{color.name}</span>
               </div>
             );
           })}
