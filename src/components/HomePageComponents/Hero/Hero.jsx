@@ -1,34 +1,37 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import { useSliders } from "../../../hooks/useGeneral";
-import "swiper/css";
-
 import "./Hero.css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import useMobile from "../../../hooks/useMobile";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Hero() {
   const { isMobile } = useMobile();
   const { data: sliders, isLoading } = useSliders();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!sliders || sliders.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % sliders.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [sliders]);
 
   if (isLoading) return <SectionLoader />;
 
   return (
     <section className="hero" style={{ height: isMobile ? "auto" : "80dvh" }}>
-      <Swiper
-        modules={[Autoplay]}
-        loop={true}
-        autoplay={{ delay: 3500, disableOnInteraction: false }}
-        navigation={{ prevEl: ".navPrev", nextEl: ".navNext" }}
-        pagination={{ clickable: true }}
-        className="heroSwiper"
-      >
-        {sliders?.map((slider) => (
-          <SwiperSlide key={slider.id}>
-            <img src={slider.image} alt="slide" loading="eager" />
-          </SwiperSlide>
+      <div className="imgContainer" style={{ width: isMobile ? "95%" : "85%" }}>
+        {sliders?.map((slide, index) => (
+          <img
+            key={slide.id || index}
+            src={slide.image}
+            alt="Hero"
+            className={index === currentIndex ? "active" : ""}
+          />
         ))}
-      </Swiper>
+      </div>
     </section>
   );
 }
