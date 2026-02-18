@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--secondary-color);
+    color: var(--white);
     border: none;
     width: 2.188rem;
     height: 2.188rem;

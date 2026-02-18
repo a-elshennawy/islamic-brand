@@ -18,7 +18,7 @@ function CategoriesBar() {
   return (
     <>
       <div
-        className="categoriesBar m-0 mx-auto py-5"
+        className="categoriesBar m-0 mx-auto py-3"
         style={{ width: isMobile ? "100%" : "65%" }}
       >
         <Swiper
@@ -49,8 +49,8 @@ function CategoriesBar() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="categoryIcon text-center p-0 mx-auto"
               >
-                <img src={category.image} alt={category.name} />
-                <h4 className="m-0">{category.name}</h4>
+                <img src={category.image} alt={category.name} loading="lazy" />
+                <h4 className="mt-1 mb-0">{category.name}</h4>
               </Motion.div>
             </SwiperSlide>
           ))}

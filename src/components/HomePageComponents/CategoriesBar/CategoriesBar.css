@@ -13,6 +13,10 @@
             width: 100%;
             height: auto;
         }
+        h4 {
+            color: var(--secondary-color);
+            font-weight: bolder;
+        }
 
         &:hover {
             transform: scale(1.1);

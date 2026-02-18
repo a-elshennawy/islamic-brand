@@ -1,6 +1,6 @@
 .bestProduct {
     width: 90%;
-    margin: 0 auto !important;
+    margin: 1.25rem auto !important;
     .imgSide {
         display: flex;
         justify-content: center;
@@ -16,7 +16,7 @@
     .detailsSide {
         .title {
             width: fit-content;
-            padding: 0.313rem;
+            padding: 0.188rem;
             border-radius: 0.625rem;
             background: linear-gradient(
                 to bottom,

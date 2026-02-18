@@ -28,7 +28,7 @@ function RecentProducts() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="HomeSectionTitle"
+        className="HomeSectionTitle mb-3"
       >
         {t("latest_products")}
       </Motion.h2>

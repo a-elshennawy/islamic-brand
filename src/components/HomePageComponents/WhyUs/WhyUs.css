@@ -10,7 +10,7 @@
         );
         width: fit-content;
         color: var(--white);
-        border-radius: 0.625rem;
+        border-radius: 0rem 0rem 1.25rem 1.25rem;
         padding: 0.625rem;
     }
 

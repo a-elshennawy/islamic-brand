@@ -1,7 +1,9 @@
 .addToCartBtn {
     text-transform: capitalize;
     border: none;
-    padding: 0.313rem;
+    border-radius: 0.625rem;
+    width: 100%;
+    padding: 0.625rem;
     background-color: var(--light-sec-color);
     color: var(--white);
     display: inline-flex;
@@ -11,7 +13,6 @@
     gap: 0.313rem;
     transition: all 0.3s ease-in-out;
     position: relative;
-    min-width: 8.75rem;
 
     a {
         color: var(--white);

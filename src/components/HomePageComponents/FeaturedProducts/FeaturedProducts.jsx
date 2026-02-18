@@ -27,7 +27,7 @@ function FeaturedProducts() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="HomeSectionTitle"
+          className="HomeSectionTitle mb-3"
         >
           {t("featured_products")}
         </Motion.h2>
