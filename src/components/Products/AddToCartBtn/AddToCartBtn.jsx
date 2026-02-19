@@ -16,7 +16,7 @@ function AddToCartBtn({ product }) {
     <>
       {hasVariations ? (
         <button
-          className="addToCartBtn my-2"
+          className="addToCartBtn mt-2"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

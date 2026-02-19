@@ -9,6 +9,7 @@ import "./RecentProducts.css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
+import useMobile from "../../../hooks/useMobile";
 import { motion as Motion } from "motion/react";
 
 function RecentProducts() {
@@ -16,13 +17,18 @@ function RecentProducts() {
   const products = homeProducts?.latest_products || [];
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
 
   if (isLoading) return <SectionLoader />;
 
   if (products.length === 0) return null;
 
   return (
-    <section className="recentProducts" dir={isAr ? "rtl" : "ltr"}>
+    <section
+      className="recentProducts"
+      dir={isAr ? "rtl" : "ltr"}
+      style={{ width: isMobile ? "100%" : "75%" }}
+    >
       <Motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

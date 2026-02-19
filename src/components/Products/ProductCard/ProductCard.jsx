@@ -22,7 +22,7 @@ function ProductCard({ product }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="ProductCard row justify-content-center align-items-center"
+          className="ProductCard row justify-content-center align-items-center m-0 p-2"
           dir={isAr ? "rtl" : "ltr"}
         >
           <Motion.div
@@ -39,7 +39,7 @@ function ProductCard({ product }) {
                 height: isMobile ? "1.25rem" : "2.5rem",
               }}
             >
-              <FaRegHeart size={isMobile ? 10 : 20} />
+              <FaRegHeart size={20} />
             </span>
             {product.discount_price && (
               <>
@@ -60,29 +60,34 @@ function ProductCard({ product }) {
                 src={product.main_image}
                 alt={product.name}
                 loading="eager"
-                style={{ height: isMobile ? "9.375rem" : "18.75rem" }}
+                style={{ height: isMobile ? "12.5rem" : "18.75rem" }}
               />
             </Link>
           </Motion.div>
-          <div className="info col-12">
-            <h4>{truncateName(product.name, isMobile ? 10 : 20)}</h4>
+          <div
+            className="info col-12 px-0"
+            style={{ fontSize: isMobile ? "1rem" : "" }}
+          >
+            <h4 style={{ fontSize: isMobile ? "1rem" : "" }}>
+              {truncateName(product.name, isMobile ? 15 : 20)}
+            </h4>
             {product.discount_price ? (
               <>
                 <div className="price">
-                  <h3>
+                  <h4 style={{ fontSize: isMobile ? "1rem" : "" }}>
                     <strong>
                       {product.discount_price} {t("L.E")}
                     </strong>
-                  </h3>
+                  </h4>
                 </div>
               </>
             ) : (
               <>
-                <h3>
+                <h4 style={{ fontSize: isMobile ? "1rem" : "" }}>
                   <strong>
                     {product.price} {t("L.E")}
                   </strong>
-                </h3>
+                </h4>
               </>
             )}
             <AddToCartBtn product={product} />

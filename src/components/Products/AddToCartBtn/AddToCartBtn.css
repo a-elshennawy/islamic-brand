@@ -4,26 +4,21 @@
     border-radius: 0.625rem;
     width: 100%;
     padding: 0.625rem;
-    background-color: var(--light-sec-color);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--secondary-color);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     gap: 0.313rem;
-    transition: all 0.3s ease-in-out;
     position: relative;
 
     a {
-        color: var(--white);
+        color: var(--secondary-color);
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-    }
-
-    &:hover {
-        background-color: var(--secondary-color);
     }
 }
 
@@ -33,4 +28,10 @@
     align-items: center;
     width: 100%;
     height: 2rem;
+}
+
+@media (max-width: 768px) {
+    .addToCartBtn {
+        padding: 0.313rem;
+    }
 }
