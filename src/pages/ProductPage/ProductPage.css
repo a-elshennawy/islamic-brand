@@ -2,9 +2,29 @@
     padding: 2rem 1rem;
     padding-top: 5.938rem;
     .imgSide {
-        img {
-            width: 100%;
+        .mainImg {
+            img {
+                width: 100%;
+                border-radius: 0.625rem;
+            }
+        }
+
+        .thumbnails {
+            background: linear-gradient(
+                to right,
+                var(--secondary-color),
+                var(--light-sec-color)
+            );
             border-radius: 0.625rem;
+            .thumbnailsSwiper {
+                .thumbnailImg {
+                    img {
+                        width: 100%;
+                        border-radius: 0.625rem;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 
