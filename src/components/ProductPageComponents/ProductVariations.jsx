@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import VariationAddToCartBtn from "../Products/VariationAddToCartBtn/VariationAddToCartBtn";
 import { AnimatePresence, motion as Motion } from "motion/react";
+
 function ProductVariations({ product }) {
   const [t] = useTranslation();
   const [selectedColor, setSelectedColor] = useState(null);
@@ -16,6 +17,14 @@ function ProductVariations({ product }) {
       (group) => group.color.id === colorId,
     );
     return colorGroup ? colorGroup.sizes : [];
+  };
+
+  const getSelectedColorImage = () => {
+    if (!selectedColor) return null;
+    const colorGroup = product.grouped_variations.find(
+      (group) => group.color.id === selectedColor.id,
+    );
+    return colorGroup ? colorGroup.main_image : null;
   };
 
   const handleColorSelect = (color) => {
@@ -87,7 +96,7 @@ function ProductVariations({ product }) {
             >
               <div className="img p-0 col-xl-4 col-lg-4 col-md-10 col-sm-10 col-12">
                 <img
-                  src={selectedCombination.main_image}
+                  src={getSelectedColorImage()} // ← Use this instead
                   alt={`${selectedColor.name} - ${selectedSize.name}`}
                   loading="eager"
                 />
