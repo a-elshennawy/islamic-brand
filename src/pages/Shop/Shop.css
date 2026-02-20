@@ -1,3 +1,22 @@
 .shopPage {
     min-height: 100dvh;
+    text-transform: capitalize !important;
+
+    .FilterItem {
+        display: flex;
+        align-items: center;
+        gap: 0.313rem;
+
+        .checkBoxInp {
+            background-color: var(--white);
+            width: 1rem;
+            height: 1rem;
+            border: 0.063rem solid var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .checked {
+            background-color: var(--secondary-color);
+        }
+    }
 }
