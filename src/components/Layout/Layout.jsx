@@ -17,13 +17,13 @@ function Layout() {
   const location = useLocation();
   const { isMobile } = useMobile();
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
