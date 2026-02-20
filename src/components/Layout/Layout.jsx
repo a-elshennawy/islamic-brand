@@ -8,10 +8,18 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useSettings } from "../../hooks/useGeneral";
 import TopBar from "./TopBar";
+import MobileBottomBar from "./MobileBottomBar";
+import Loader from "../Loaders/Loader";
+import useMobile from "../../hooks/useMobile";
 
 function Layout() {
   const { data, isLoading } = useSettings();
   const location = useLocation();
+  const { isMobile } = useMobile();
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,6 +33,7 @@ function Layout() {
       <Outlet />
       <UpBtn />
       <Footer settings={data} />
+      {isMobile && <MobileBottomBar />}
     </>
   );
 }

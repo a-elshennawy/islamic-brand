@@ -1,6 +1,6 @@
 .Loader {
     position: relative;
-    background-color: var(--white);
+    background-color: var(--body-background);
     width: 100dvw;
     height: 100dvh;
 
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--body-background);
     height: 100dvh;
     width: 100%;
 }

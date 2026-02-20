@@ -345,6 +345,27 @@ footer {
     }
 }
 
+.mobileBottomNav {
+    background-color: var(--white);
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.313rem;
+    padding: 0.625rem 0.313rem;
+    z-index: 1111;
+
+    .mobileNavItem {
+        display: flex;
+        flex-direction: column;
+        gap: 0.313rem;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary-color);
+    }
+}
+
 @keyframes scroll {
     from {
         transform: translateX(0);

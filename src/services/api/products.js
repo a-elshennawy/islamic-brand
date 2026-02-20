@@ -8,4 +8,6 @@ export const productsApi = {
   getProductBySlug: (slug) => apiClient.get(`/products/${slug}`),
 
   searchProducts: (params) => apiClient.get("/products/search", { params }),
+
+  getRelatedProducts: (slug) => apiClient.get(`/products/${slug}/related`),
 };

@@ -11,6 +11,7 @@ import { FaFilter } from "react-icons/fa";
 import { Box, Drawer } from "@mui/material";
 import { useState } from "react";
 import { MdCancel } from "react-icons/md";
+import SectionLoader from "../../components/Loaders/SectionLoader";
 
 function Shop() {
   const [t] = useTranslation();
@@ -21,7 +22,7 @@ function Shop() {
   const currentCategoryId = category_id?.toString();
   const [open, setOpen] = useState(false);
 
-  const { data, isLoading, error } = useProducts(
+  const { data, isLoading, isError } = useProducts(
     {
       category_id: currentCategoryId,
     },
@@ -31,7 +32,7 @@ function Shop() {
   const {
     data: categories,
     isLoading: categoriesLoading,
-    error: categoriesError,
+    isError: categoriesError,
   } = useCategories();
 
   const products = data?.data;
@@ -45,6 +46,21 @@ function Shop() {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const pageIsLoading = isLoading || categoriesLoading;
+  const pageIsError = isError || categoriesError;
+
+  if (pageIsLoading) {
+    return (
+      <>
+        <SectionLoader />
+      </>
+    );
+  }
+
+  if (pageIsError) {
+    navigate("/");
+  }
 
   return (
     <>

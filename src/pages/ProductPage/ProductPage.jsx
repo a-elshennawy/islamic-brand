@@ -7,6 +7,7 @@ import SectionLoader from "../../components/Loaders/SectionLoader";
 import ProductImg from "../../components/ProductPageComponents/ProductImg";
 import ProductVariations from "../../components/ProductPageComponents/ProductVariations";
 import ProductAddToCartBtn from "../../components/Products/ProductAddToCartBtn/ProductAddToCartBtn";
+import RelatedProducts from "../../components/ProductPageComponents/RelatedProducts";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -14,8 +15,6 @@ function ProductPage() {
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { data: product, isLoading } = useProduct(slug || "");
-
-  console.log(product);
 
   if (isLoading) {
     return <SectionLoader />;
@@ -73,6 +72,8 @@ function ProductPage() {
             <ProductAddToCartBtn product={product} />
           )}
         </div>
+
+        <RelatedProducts slug={product.slug} />
       </section>
     </>
   );

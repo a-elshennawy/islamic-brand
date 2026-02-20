@@ -114,4 +114,22 @@
             }
         }
     }
+
+    .relatedProducts {
+        h3 {
+            text-transform: capitalize;
+            color: var(--white);
+            background: linear-gradient(
+                to right,
+                var(--light-sec-color),
+                var(--secondary-color),
+                var(--light-sec-color)
+            );
+            width: fit-content;
+            margin: 0 auto;
+            font-weight: bold;
+            padding: 0.313rem;
+            border-radius: 0.625rem;
+        }
+    }
 }

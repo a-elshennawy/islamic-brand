@@ -23,6 +23,14 @@ export const useProduct = (slug) => {
   });
 };
 
+export const useRelatedProducts = (slug) => {
+  return useQuery({
+    queryKey: ["products", "related", slug],
+    queryFn: () => productsApi.getRelatedProducts(slug),
+    enabled: !!slug,
+  });
+};
+
 export const useSearchProducts = () => {
   const queryClient = useQueryClient();
 

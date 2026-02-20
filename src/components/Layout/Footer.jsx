@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
+import useMobile from "../../hooks/useMobile";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { motion as Motion } from "motion/react";
@@ -7,6 +8,7 @@ import { motion as Motion } from "motion/react";
 function Footer({ settings }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { isMobile } = useMobile();
 
   return (
     <>
@@ -15,18 +17,22 @@ function Footer({ settings }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="row justify-content-center align-items-start gap-1 m-0 py-2"
+        className={`row justify-content-center align-items-start m-0 py-2 ${isMobile ? "gap-3" : "gap-1"}`}
         dir={isAr ? "rtl" : "ltr"}
       >
-        <div className="footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12">
+        <div
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
+        >
           <h4>{t("contact_info")}</h4>
-          <p>
-            {t("contact_info_text")} {settings?.email}
+          <p className="m-0">
+            {t("contact_info_text")} <br /> {settings?.email}
           </p>
           <p>{settings?.phone}</p>
           <div className="socialMedia">
             <p className="mb-0">{t("social_media")} :</p>
-            <div className="links py-2">
+            <div
+              className={`links py-2 ${isMobile ? "justify-content-center" : ""}`}
+            >
               <span>
                 <Link to={settings?.facebook} target="_blank">
                   <FaFacebookF size={20} />
@@ -53,19 +59,23 @@ function Footer({ settings }) {
             </div>
           </div>
         </div>
-        <div className="footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12">
+        <div
+          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
+        >
           <h4>{t("address")}</h4>
-          <p>
+          <p className="m-0">
             {settings?.address} - {settings?.street}
           </p>
-          <p>
+          <p className="m-0">
             {settings?.day_from} - {settings?.day_to}
           </p>
-          <p>
+          <p className="m-0">
             {settings?.available_from} - {settings?.available_to}
           </p>
         </div>
-        <div className="footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12">
+        <div
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
+        >
           <h4>{t("subscribe_to_newsteller")}</h4>
           <p>{t("susbcribe_text")}</p>
           <form dir={isAr ? "rtl" : "ltr"}>

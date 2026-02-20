@@ -36,6 +36,8 @@
             position: absolute;
             top: 0;
             left: 0;
+            width: 1.875rem;
+            height: 1.875rem;
             padding: 0.313rem;
             background-color: var(--secondary-color);
             border-radius: 0 0 0.625rem 0;

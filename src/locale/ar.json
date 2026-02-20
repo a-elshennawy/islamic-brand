@@ -23,7 +23,7 @@
   "contact_info_text": "اذا كان لديك اي سؤال, برجاء التواصل معنا على :",
   "phone_number": "رقم الهاتف : 01026555479",
   "social_media": "وسائل التواصل الاجتماعي",
-  "address": "العنوان والموقع",
+  "address": "العنوان والمواعيد",
   "location": "12 شارع سعيد / طنطا - الغربيه",
   "working_hours": "السبت - الجمعه : 8 ص - 12 م",
   "privacy_policy": "سياسة الخصوصية",
@@ -40,5 +40,8 @@
   "in_stock": "متوفر",
   "discount": "خصم",
   "why_choose_us": "ليه تختارينا",
-  "filter by category": "تصنيف بالأقسام"
+  "filter by category": "تصنيف بالأقسام",
+  "related products": "منتجات قد تعجبك",
+  "shop": "المتجر",
+  "account": "الحساب"
 }
