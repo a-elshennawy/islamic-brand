@@ -7,6 +7,7 @@ import UpBtn from "../UpBtn/UpBtn";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useSettings } from "../../hooks/useGeneral";
+import TopBar from "./TopBar";
 
 function Layout() {
   const { data, isLoading } = useSettings();
@@ -18,6 +19,7 @@ function Layout() {
 
   return (
     <>
+      <TopBar />
       <Navbar />
       <ScrollBar />
       <Outlet />

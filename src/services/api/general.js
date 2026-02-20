@@ -10,4 +10,6 @@ export const generalApi = {
   getChooseUs: () => apiClient.get("/choose-us"),
 
   getReviews: () => apiClient.get("/reviews"),
+
+  getMarquee: () => apiClient.get("/marques"),
 };

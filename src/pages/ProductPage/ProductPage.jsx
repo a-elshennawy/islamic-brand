@@ -6,6 +6,7 @@ import { useProduct } from "../../hooks/useProducts";
 import SectionLoader from "../../components/Loaders/SectionLoader";
 import ProductImg from "../../components/ProductPageComponents/ProductImg";
 import ProductVariations from "../../components/ProductPageComponents/ProductVariations";
+import ProductAddToCartBtn from "../../components/Products/ProductAddToCartBtn/ProductAddToCartBtn";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -66,7 +67,11 @@ function ProductPage() {
             className="productDescription"
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
-          <ProductVariations product={product} />
+          {product?.has_variations ? (
+            <ProductVariations product={product} />
+          ) : (
+            <ProductAddToCartBtn product={product} />
+          )}
         </div>
       </section>
     </>

@@ -1,4 +1,46 @@
+.topBar {
+    position: sticky;
+    top: 0;
+    overflow: auto !important;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.5rem 0;
+    z-index: 11;
+    width: 100%;
+
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        width: 100%;
+        direction: ltr;
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            flex-shrink: 0;
+            direction: ltr;
+            animation: scroll 50s linear infinite;
+
+            .marquee-content {
+                flex-shrink: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: max-content;
+
+                .marquee-item {
+                    padding-right: 4rem;
+                    white-space: nowrap;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
 .navContainer {
+    margin-top: 2.5rem;
     padding: 1.25rem 0;
     width: 100%;
     position: fixed;
@@ -300,5 +342,15 @@ footer {
                 color: var(--main-color);
             }
         }
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }

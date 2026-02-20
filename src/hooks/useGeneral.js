@@ -39,3 +39,11 @@ export const useReviews = (limit) => {
     staleTime: 10 * 60 * 1000,
   });
 };
+
+export const useMarquee = () => {
+  return useQuery({
+    queryKey: ["marquee"],
+    queryFn: () => generalApi.getMarquee(),
+    staleTime: 10 * 60 * 1000,
+  });
+};

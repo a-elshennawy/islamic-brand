@@ -105,7 +105,10 @@ function SideMenu() {
                           key={category.id}
                           onClick={toggleDrawer(false)}
                         >
-                          <Link className="sideMenuLink" to="/">
+                          <Link
+                            className="sideMenuLink"
+                            to={`/shop/category_id/${category.id}`}
+                          >
                             {category.name}
                           </Link>
                         </li>

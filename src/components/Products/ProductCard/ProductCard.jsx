@@ -9,7 +9,7 @@ import { useIsAr } from "../../../hooks/useIsAr";
 import useMobile from "../../../hooks/useMobile";
 import { AnimatePresence, motion as Motion } from "motion/react";
 
-function ProductCard({ product }) {
+function ProductCard({ product, className }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { isMobile } = useMobile();
@@ -22,7 +22,7 @@ function ProductCard({ product }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="ProductCard row justify-content-center align-items-center m-0 p-2"
+          className={`ProductCard row justify-content-center align-items-center m-0 p-2 ${className}`}
           dir={isAr ? "rtl" : "ltr"}
         >
           <Motion.div

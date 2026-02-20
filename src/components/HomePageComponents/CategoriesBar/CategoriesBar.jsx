@@ -6,8 +6,10 @@ import { useCategories } from "../../../hooks/useGeneral";
 import useMobile from "../../../hooks/useMobile";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { motion as Motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 function CategoriesBar() {
+  const navigate = useNavigate();
   const { data: categories, isLoading } = useCategories();
   const { isMobile } = useMobile();
   const categoriesArray = Array.isArray(categories) ? categories : [];
@@ -18,7 +20,7 @@ function CategoriesBar() {
   return (
     <>
       <div
-        className="categoriesBar m-0 mx-auto py-3"
+        className="categoriesBar m-0 mx-auto py-5"
         style={{ width: isMobile ? "100%" : "65%" }}
       >
         <Swiper
@@ -48,6 +50,7 @@ function CategoriesBar() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="categoryIcon text-center p-0 mx-auto"
+                onClick={() => navigate(`/shop/category_id/${category.id}`)}
               >
                 <img src={category.image} alt={category.name} loading="lazy" />
                 <h4 className="mt-1 mb-0">{category.name}</h4>

@@ -10,7 +10,7 @@ function ProductVariations({ product }) {
   const [selectedCombination, setSelectedCombination] = useState(null);
 
   // get all colors
-  const allColors = product.grouped_variations.map((group) => group.color);
+  const allColors = product?.grouped_variations?.map((group) => group.color);
 
   const getAvailableSizesForColor = (colorId) => {
     const colorGroup = product.grouped_variations.find(
