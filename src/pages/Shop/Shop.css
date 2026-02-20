@@ -2,21 +2,78 @@
     min-height: 100dvh;
     text-transform: capitalize !important;
 
-    .FilterItem {
-        display: flex;
-        align-items: center;
-        gap: 0.313rem;
+    .filter {
+        background: linear-gradient(
+            to bottom,
+            var(--secondary-color),
+            var(--light-sec-color)
+        ) !important;
+        border-radius: 0.625rem;
 
-        .checkBoxInp {
-            background-color: var(--white);
-            width: 1rem;
-            height: 1rem;
-            border: 0.063rem solid var(--secondary-color);
-            border-radius: 50%;
+        .FilterItem {
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+
+            .checkBoxInp {
+                background-color: var(--white);
+                width: 1rem;
+                height: 1rem;
+                border: 0.063rem solid var(--secondary-color);
+                border-radius: 50%;
+            }
+
+            .checked {
+                background-color: var(--secondary-color);
+            }
         }
+    }
 
-        .checked {
-            background-color: var(--secondary-color);
+    .filterBtn {
+        background-color: transparent;
+        border: none;
+        width: fit-content;
+        color: var(--secondary-color);
+    }
+}
+
+.sideFilter {
+    background: linear-gradient(
+        to bottom,
+        var(--secondary-color),
+        var(--light-sec-color)
+    ) !important;
+
+    .sideFilterHeader {
+        position: relative;
+
+        .closeBtn {
+            position: absolute;
+            top: 0;
+            border: none;
+            background-color: transparent;
+            color: var(--white);
+        }
+    }
+
+    .sideFilterContent {
+        .FilterItem {
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+
+            .checkBoxInp {
+                background-color: var(--white);
+                width: 1rem;
+                height: 1rem;
+                border: 0.063rem solid var(--secondary-color);
+                border-radius: 50%;
+            }
+
+            .checked {
+                background-color: var(--secondary-color);
+                border-color: var(--white);
+            }
         }
     }
 }
