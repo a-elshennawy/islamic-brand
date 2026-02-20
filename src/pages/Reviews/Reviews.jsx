@@ -43,8 +43,7 @@ function Reviews() {
   return (
     <>
       <title>{t("review_page_title")}</title>
-      <BackBtn />
-      <section className="reviewsPage text-center py-2 container-fluid">
+      <section className="reviewsPage text-center mt-5 p-2 pt-5 container-fluid">
         <h2>{t("reviews")}</h2>
         <div className="reviews py-3 px-2">
           {reviewsArray?.map((review, index) => (

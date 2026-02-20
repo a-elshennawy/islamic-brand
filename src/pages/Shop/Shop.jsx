@@ -64,6 +64,7 @@ function Shop() {
 
   return (
     <>
+      <title>{t("shop_page_title")}</title>
       <section className="shopPage">
         <Hero />
         <div
