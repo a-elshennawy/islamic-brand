@@ -17,22 +17,22 @@ function MobileBottomBar() {
         style={{ direction: isAr ? "rtl" : "ltr" }}
       >
         <div className="mobileNavItem" onClick={() => navigate("/")}>
-          <FaHome size={35} />
+          <FaHome size={28} />
           <span>{t("home")}</span>
         </div>
         <div
           className="mobileNavItem"
           onClick={() => navigate("/shop/category_id/21")}
         >
-          <FaBagShopping size={35} />
+          <FaBagShopping size={28} />
           <span>{t("shop")}</span>
         </div>
         <div className="mobileNavItem" onClick={() => navigate("/reviews")}>
-          <MdReviews size={35} />
+          <MdReviews size={28} />
           <span>{t("reviews")}</span>
         </div>
         <div className="mobileNavItem" onClick={() => navigate("/")}>
-          <FaUser size={35} />
+          <FaUser size={28} />
           <span>{t("account")}</span>
         </div>
       </div>
