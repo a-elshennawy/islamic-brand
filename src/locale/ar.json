@@ -56,5 +56,16 @@
   "lowest price": "الأقل سعرا",
   "highest price": "الأعلى سعرا",
   "search results for": "نتائج البحث عن",
-  "nothing to view": "لا يوجد نتائج للبحث"
+  "nothing to view": "لا يوجد نتائج للبحث",
+  "sign up": "انشاء حساب جديد",
+  "log in": "تسجيل دخول",
+  "email": "البريد الالكتروني",
+  "whatsApp": "واتساب",
+  "phone": "رقم الهاتف",
+  "password": "كلمة المرور",
+  "confirm password": "تأكيد كلمة المرور",
+  "register": "تسجيل",
+  "Already have an account?": "لديك حساب بالفعل ؟",
+  "Don't have an account?": "ليس لديك حساب ؟",
+  "sign in with": "تسجيل بواسطة"
 }

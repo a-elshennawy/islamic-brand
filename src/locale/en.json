@@ -56,5 +56,16 @@
   "lowest price": "lowest price",
   "highest price": "highest price",
   "search results for": "Search Results For",
-  "nothing to view": "nothing to view"
+  "nothing to view": "nothing to view",
+  "sign up": "sign up",
+  "log in": "log in",
+  "email": "email",
+  "whatsApp": "whatsApp",
+  "phone": "phone",
+  "password": "password",
+  "confirm password": "confirm password",
+  "register": "register",
+  "Already have an account?": "Already have an account?",
+  "Don't have an account?": "Don't have an account?",
+  "sign in with": "sign in with"
 }

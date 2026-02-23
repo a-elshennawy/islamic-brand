@@ -53,6 +53,7 @@ function Search() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={t("product name")}
+              style={{ width: isMobile ? "80%" : "50%" }}
             />
             <button type="submit" className="my-2 mx-auto">
               {t("search")}

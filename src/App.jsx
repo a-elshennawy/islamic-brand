@@ -15,6 +15,7 @@ const ExchangeReturn = lazy(
   () => import("./pages/ExchangeReturn/ExchangeReturn"),
 );
 const Privacy = lazy(() => import("./pages/Privacy/Privacy"));
+const Auth = lazy(() => import("./pages/Auth/Auth"));
 
 function App() {
   const [t] = useTranslation();
@@ -35,6 +36,7 @@ function App() {
               <Route path="reviews" element={<Reviews />} />
               <Route path="exchange-return" element={<ExchangeReturn />} />
               <Route path="privacy-policy" element={<Privacy />} />
+              <Route path="auth" element={<Auth />} />
             </Route>
           </Routes>
         </Suspense>

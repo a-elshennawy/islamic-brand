@@ -1,0 +1,96 @@
+.authPage {
+    padding: 5.938rem 0rem 1.25rem 0rem;
+    min-height: 60dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    .logForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.313rem;
+        text-align: center;
+        padding: 0.625rem;
+        background: linear-gradient(
+            to bottom,
+            var(--secondary-color),
+            var(--white)
+        );
+        border-radius: 0.625rem;
+
+        h2 {
+            text-transform: capitalize;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .inputContainer {
+            width: 100%;
+            position: relative;
+
+            label {
+                display: block;
+                color: var(--white);
+                text-transform: capitalize;
+                font-weight: bolder;
+            }
+
+            input {
+                width: 100%;
+                padding: 0.313rem;
+                border: none;
+                border-radius: 0.313rem;
+                color: var(--secondary-color);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .showPassBtn {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                color: var(--secondary-color);
+            }
+        }
+
+        .submitBtn {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.313rem 0.625rem;
+            border-radius: 1.25rem;
+            color: var(--white);
+        }
+
+        p {
+            color: var(--secondary-color);
+            font-weight: bolder;
+        }
+    }
+
+    .socialLogIn {
+        h4 {
+            text-transform: capitalize;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .socialBtns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.313rem;
+
+            button {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}

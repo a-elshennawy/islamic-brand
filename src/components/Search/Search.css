@@ -7,7 +7,6 @@
         position: absolute;
         top: 50%;
         width: 100%;
-        /*left: 50%;*/
         transform: translateY(-50%);
 
         h6 {
@@ -17,7 +16,6 @@
         }
 
         input {
-            width: 50%;
             border: none;
             padding: 0.625rem;
             border-radius: 1.25rem;
