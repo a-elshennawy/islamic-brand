@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "./UpBtn.css";
 import { FaChevronUp } from "react-icons/fa";
 import { AnimatePresence, motion as Motion } from "motion/react";
+import useMobile from "../../hooks/useMobile";
 
 function UpBtn() {
   const [isVisible, setIsVisible] = useState(false);
+  const { isMobile } = useMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ function UpBtn() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="upBtn"
+              className={`upBtn ${isMobile ? "inMobile" : ""}`}
               onClick={handleScrollToTop}
             >
               <FaChevronUp />

@@ -24,6 +24,14 @@ export const useCategories = () => {
   });
 };
 
+export const useCategoriesBanners = () => {
+  return useQuery({
+    queryKey: ["categories-banners"],
+    queryFn: () => generalApi.getCategoriesBanners(),
+    staleTime: 10 * 60 * 1000,
+  });
+};
+
 export const useChooseUs = () => {
   return useQuery({
     queryKey: ["choose-us"],

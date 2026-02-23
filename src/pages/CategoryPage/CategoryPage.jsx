@@ -1,7 +1,6 @@
-import "./Shop.css";
-import Hero from "../../components/HomePageComponents/Hero/Hero";
+import "./CategoryPage.css";
 import { useProducts } from "../../hooks/useProducts";
-import { useCategories } from "../../hooks/useGeneral";
+import { useCategories, useCategoriesBanners } from "../../hooks/useGeneral";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../../components/Products/ProductCard/ProductCard";
 import { useTranslation } from "react-i18next";
@@ -13,7 +12,7 @@ import { useState } from "react";
 import { MdCancel } from "react-icons/md";
 import SectionLoader from "../../components/Loaders/SectionLoader";
 
-function Shop() {
+function CategoryPage() {
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { isMobile } = useMobile();
@@ -34,6 +33,20 @@ function Shop() {
     isLoading: categoriesLoading,
     isError: categoriesError,
   } = useCategories();
+  const IntCategoryId = parseInt(currentCategoryId);
+  const categoryName = categories?.find(
+    (category) => category.id === IntCategoryId,
+  )?.name;
+
+  const {
+    data: banners,
+    isLoading: isBannersLoading,
+    isError: isBannerError,
+  } = useCategoriesBanners();
+
+  const targetBanner = banners?.find(
+    (item) => item.category.id === IntCategoryId,
+  )?.image;
 
   const products = data?.data;
 
@@ -47,8 +60,8 @@ function Shop() {
     setOpen(newOpen);
   };
 
-  const pageIsLoading = isLoading || categoriesLoading;
-  const pageIsError = isError || categoriesError;
+  const pageIsLoading = isLoading || categoriesLoading || isBannersLoading;
+  const pageIsError = isError || categoriesError || isBannerError;
 
   if (pageIsLoading) {
     return (
@@ -64,9 +77,11 @@ function Shop() {
 
   return (
     <>
-      <title>{t("shop_page_title")}</title>
-      <section className="shopPage">
-        <Hero />
+      <title>{`${t("brand_name")} | ${categoryName} `}</title>
+      <section className="CategoryPage">
+        <div className="banner">
+          <img src={targetBanner} alt="category banner" loading="lazy" />
+        </div>
         <div
           className="row justify-content-center align-items-start m-0 py-5 "
           style={{ direction: isAr ? "rtl" : "ltr" }}
@@ -156,4 +171,4 @@ function Shop() {
     </>
   );
 }
-export default Shop;
+export default CategoryPage;

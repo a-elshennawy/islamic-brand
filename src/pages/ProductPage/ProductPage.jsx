@@ -26,7 +26,7 @@ function ProductPage() {
 
   return (
     <>
-      <title>{t("product_details_page_title")}</title>
+      <title>{product?.name}</title>
       <section
         className="productPage row justify-content-center align-items-start gap-2 m-0"
         dir={isAr ? "rtl" : "ltr"}

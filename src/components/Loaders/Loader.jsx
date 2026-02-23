@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo.png";
+import logo from "/icon.png";
 import "./loaders.css";
 import useMobile from "../../hooks/useMobile";
 

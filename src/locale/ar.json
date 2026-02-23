@@ -1,4 +1,5 @@
 {
+  "brand_name": "اسلاميك براند",
   "home_title": "اسلاميك براند | الرئيسية",
   "review_page_title": "اسلاميك براند | الاراء",
   "product_details_page_title": "اسلاميك براند | تفاصيل المنتج",
@@ -46,5 +47,14 @@
   "filter by category": "تصنيف بالأقسام",
   "related products": "منتجات قد تعجبك",
   "shop": "المتجر",
-  "account": "الحساب"
+  "account": "الحساب",
+  "view all": "عرض الكل",
+  "search products": "البحث عن منتجات",
+  "search": "البحث",
+  "product name": "اسم المنتج",
+  "filter by price": "تصنيف حسب السعر",
+  "lowest price": "الأقل سعرا",
+  "highest price": "الأعلى سعرا",
+  "search results for": "نتائج البحث عن",
+  "nothing to view": "لا يوجد نتائج للبحث"
 }

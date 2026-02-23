@@ -14,3 +14,8 @@
     cursor: pointer;
     z-index: 1000;
 }
+
+.inMobile {
+    bottom: 5.313rem;
+    right: 0.625rem;
+}

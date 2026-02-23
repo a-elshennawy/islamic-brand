@@ -12,4 +12,6 @@ export const generalApi = {
   getReviews: () => apiClient.get("/reviews"),
 
   getMarquee: () => apiClient.get("/marques"),
+
+  getCategoriesBanners: () => apiClient.get("/category-banners"),
 };

@@ -7,6 +7,9 @@ import RecentProducts from "../../components/HomePageComponents/RecentProducts/R
 // import Reviews from "../../components/HomePageComponents/Reviews/Reviews";
 import { useTranslation } from "react-i18next";
 import WhyUs from "../../components/HomePageComponents/WhyUs/WhyUs";
+import ProductsOfCategory from "../../components/HomePageComponents/ProductsOfCategory/ProductsOfCategory";
+
+// available category id => 22 / 26 / 23 / 21
 
 function Home() {
   const [t] = useTranslation();
@@ -18,11 +21,17 @@ function Home() {
       <Line />
       <RecentProducts />
       <Line />
+      <ProductsOfCategory categoryId={21} />
+      <Line />
       <BestProduct />
+      <Line />
+      <ProductsOfCategory categoryId={26} />
       <Line />
       <FeaturedProducts />
       <Line />
       {/* <Reviews />*/}
+      <Line />
+      <ProductsOfCategory categoryId={23} />
       <Line />
       <WhyUs />
     </>

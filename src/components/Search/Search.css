@@ -1,0 +1,44 @@
+.searchDrawer {
+    position: relative;
+    background-color: var(--glass-color) !important;
+    backdrop-filter: blur(0.625rem);
+
+    .inputContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h6 {
+            font-weight: bolder;
+            color: var(--white);
+            text-transform: capitalize;
+        }
+
+        input {
+            border: none;
+            padding: 0.313rem;
+            border-radius: 0.313rem;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                font-size: small;
+                opacity: 0.7;
+                text-transform: capitalize;
+            }
+        }
+
+        button {
+            display: block;
+            border: none;
+            border-radius: 0.313rem;
+            padding: 0.313rem 0.625rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-transform: capitalize;
+        }
+    }
+}

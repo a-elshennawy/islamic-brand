@@ -1,4 +1,5 @@
 {
+  "brand_name": "Islamic Brand",
   "home_title": "Islamic Brand | Home",
   "review_page_title": "Islamic Brand | Reviews",
   "product_details_page_title": "Islamic Brand | Product Details",
@@ -46,5 +47,14 @@
   "filter by category": "filter by category",
   "related products": "related products",
   "shop": "shop",
-  "account": "account"
+  "account": "account",
+  "view all": "view all",
+  "search products": "search products",
+  "search": "search",
+  "product name": "product name",
+  "filter by price": "filter by price",
+  "lowest price": "lowest price",
+  "highest price": "highest price",
+  "search results for": "Search Results For",
+  "nothing to view": "nothing to view"
 }

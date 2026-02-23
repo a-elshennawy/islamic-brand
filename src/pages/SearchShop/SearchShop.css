@@ -1,0 +1,26 @@
+.resultProducts {
+    .mobSideFilterTrigger {
+        border: none;
+        background-color: transparent;
+        width: fit-content;
+    }
+}
+
+.mobFilter {
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        var(--secondary-color),
+        var(--light-sec-color)
+    ) !important;
+    color: var(--white) !important;
+    font-weight: bolder;
+
+    .closeBtn {
+        position: absolute;
+        top: 0.313rem;
+        border: none;
+        background-color: transparent;
+        color: var(--white);
+    }
+}

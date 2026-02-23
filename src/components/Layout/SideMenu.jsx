@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Drawer } from "@mui/material";
 import { ImMenu } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
-import logo from "../../assets/images/logo.png";
+import logo from "/Newlogo.png";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useCategories } from "../../hooks/useGeneral";
@@ -32,6 +32,11 @@ function SideMenu() {
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
+  };
+
+  const onClickContacts = () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    setOpen(false);
   };
 
   return (
@@ -118,11 +123,7 @@ function SideMenu() {
                 )}
               </AnimatePresence>
               <li className="sideMenuListItem my-2">
-                <Link
-                  className="sideMenuLink"
-                  to="/"
-                  onClick={toggleDrawer(false)}
-                >
+                <Link className="sideMenuLink" to="/" onClick={onClickContacts}>
                   {t("contacts")} <BiSupport size={20} />
                 </Link>
               </li>

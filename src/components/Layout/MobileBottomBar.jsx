@@ -1,6 +1,7 @@
-import { FaHome, FaUser } from "react-icons/fa";
-import { FaBagShopping } from "react-icons/fa6";
-import { MdReviews } from "react-icons/md";
+import { CiUser } from "react-icons/ci";
+import { IoHomeOutline } from "react-icons/io5";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { TfiComments } from "react-icons/tfi";
 import { useIsAr } from "../../hooks/useIsAr";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -17,22 +18,22 @@ function MobileBottomBar() {
         style={{ direction: isAr ? "rtl" : "ltr" }}
       >
         <div className="mobileNavItem" onClick={() => navigate("/")}>
-          <FaHome size={28} />
+          <IoHomeOutline size={28} />
           <span>{t("home")}</span>
         </div>
         <div
           className="mobileNavItem"
           onClick={() => navigate("/shop/category_id/21")}
         >
-          <FaBagShopping size={28} />
+          <MdOutlineShoppingBag size={28} />
           <span>{t("shop")}</span>
         </div>
         <div className="mobileNavItem" onClick={() => navigate("/reviews")}>
-          <MdReviews size={28} />
+          <TfiComments size={28} />
           <span>{t("reviews")}</span>
         </div>
         <div className="mobileNavItem" onClick={() => navigate("/")}>
-          <FaUser size={28} />
+          <CiUser size={28} />
           <span>{t("account")}</span>
         </div>
       </div>

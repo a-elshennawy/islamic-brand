@@ -1,9 +1,5 @@
 .ProductCard {
-    background: linear-gradient(
-        45deg,
-        var(--secondary-color),
-        var(--light-sec-color)
-    );
+    background: linear-gradient(to bottom, var(--secondary-color), transparent);
     border-radius: 0.625rem;
     overflow: hidden;
     transition: all 0.3s ease-in-out;

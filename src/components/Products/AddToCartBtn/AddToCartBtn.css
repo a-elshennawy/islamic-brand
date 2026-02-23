@@ -4,8 +4,8 @@
     border-radius: 0.625rem;
     width: 100%;
     padding: 0.625rem;
-    background-color: var(--white);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--white);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
     position: relative;
 
     a {
-        color: var(--secondary-color);
+        color: var(--white);
         display: flex;
         justify-content: center;
         align-items: center;
