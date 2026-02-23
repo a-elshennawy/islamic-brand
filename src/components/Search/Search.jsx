@@ -41,7 +41,7 @@ function Search() {
           },
         }}
       >
-        <Box sx={{ height: isMobile ? 250 : 350 }} role="presentation">
+        <Box sx={{ height: isMobile ? 250 : 300 }} role="presentation">
           <form
             onSubmit={handleSearch}
             className="inputContainer p-0 text-center"

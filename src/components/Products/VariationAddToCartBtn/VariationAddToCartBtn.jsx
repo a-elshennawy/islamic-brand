@@ -1,14 +1,12 @@
 import "./VariationAddToCartBtn.css";
 import { IoMdCart } from "react-icons/io";
 import { useTranslation } from "react-i18next";
-import { useIsAr } from "../../../hooks/useIsAr";
 import { useState } from "react";
 import { AnimatePresence, motion as Motion } from "motion/react";
 
 function VariationAddToCartBtn({ product }) {
   const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
-  const isAr = useIsAr();
 
   return (
     <>

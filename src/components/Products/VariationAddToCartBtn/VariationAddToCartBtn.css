@@ -1,6 +1,7 @@
 .variationAddToCartBtn {
     text-transform: capitalize;
     border: none;
+    border-radius: 0.625rem;
     padding: 0.313rem;
     background-color: var(--white);
     color: var(--secondary-color);
