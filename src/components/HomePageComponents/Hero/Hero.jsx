@@ -21,7 +21,10 @@ function Hero() {
   if (isLoading) return <SectionLoader />;
 
   return (
-    <section className="hero" style={{ height: isMobile ? "auto" : "80dvh" }}>
+    <section
+      className="hero pb-2"
+      style={{ height: isMobile ? "auto !important" : "100dvh !important" }}
+    >
       <div className="imgContainer" style={{ width: isMobile ? "95%" : "85%" }}>
         {sliders?.map((slide, index) => (
           <img

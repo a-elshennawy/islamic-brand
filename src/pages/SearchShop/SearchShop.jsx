@@ -13,7 +13,7 @@ import { Box, Drawer } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import noResultsIcon from "../../assets/images/no-results.svg";
-import { FcFilledFilter } from "react-icons/fc";
+import { FaFilter } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 
 const MAX = 2000;
@@ -79,7 +79,7 @@ function SearchShop() {
                 className="mobSideFilterTrigger"
                 onClick={toggleDrawer(true)}
               >
-                <FcFilledFilter size={30} />
+                <FaFilter size={20} />
               </button>
             </div>
             <Drawer
@@ -179,7 +179,7 @@ function SearchShop() {
           </>
         )}
 
-        <div className="col-9 row justify-content-center align-items-center gap-1 m-0">
+        <div className="col-xl-9 col-lg-9 col-md-10 col-sm-12 col-12 row justify-content-center align-items-center gap-1 m-0">
           {data?.length > 0 ? (
             data?.map((product) => (
               <ProductCard

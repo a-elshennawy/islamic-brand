@@ -3,6 +3,7 @@
         border: none;
         background-color: transparent;
         width: fit-content;
+        color: var(--secondary-color);
     }
 }
 

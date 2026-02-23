@@ -2,7 +2,6 @@ import { useCategories, useCategoriesBanners } from "../../../hooks/useGeneral";
 import { useProducts } from "../../../hooks/useProducts";
 import useMobile from "../../../hooks/useMobile";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -46,8 +45,6 @@ function ProductsOfCategory({ categoryId }) {
   } = useProducts({
     category_id: categoryId,
   });
-
-  console.log(products);
 
   const loading = isBannersLoading || isCategoriesLoading || isProductsLoading;
   const error = isBannerError || isCategoriesError || isProductsError;
