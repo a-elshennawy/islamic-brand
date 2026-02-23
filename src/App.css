@@ -32,6 +32,10 @@ a {
     text-decoration: none !important;
 }
 
+section {
+    overflow-x: hidden !important;
+}
+
 .homeProductsCategorySection {
     padding: 1.25rem 0rem;
 

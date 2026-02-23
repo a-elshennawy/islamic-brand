@@ -68,7 +68,7 @@ function ProductsOfCategory({ categoryId }) {
     <>
       <section
         className="homeProductsCategorySection text-center"
-        style={{ width: isMobile ? "100%" : "75%", margin: "auto" }}
+        style={{ width: isMobile ? "90%" : "75%", margin: "auto" }}
       >
         <Motion.div
           initial={{ opacity: 0 }}
@@ -87,13 +87,8 @@ function ProductsOfCategory({ categoryId }) {
             {t("view all")}
           </button>
           <Swiper
-            modules={[Autoplay]}
             spaceBetween={50}
             loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
             breakpoints={{
               0: {
                 slidesPerView: 2,
