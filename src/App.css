@@ -16,13 +16,7 @@
 }
 
 body {
-    background: linear-gradient(
-        to bottom,
-        var(--body-background),
-        var(--white),
-        var(--light-sec-color),
-        var(--body-background)
-    );
+    background-color: var(--body-background) !important;
     color: var(--main-color) !important;
     font-family: robotoSlab, changa !important;
     margin: 0;

@@ -1,7 +1,6 @@
 .ProductCard {
-    background: linear-gradient(to bottom, var(--secondary-color), transparent);
+    background-color: var(--secondary-color);
     border-radius: 0.625rem;
-    overflow: hidden;
     transition: all 0.3s ease-in-out;
 
     .imgContainer {
@@ -10,18 +9,15 @@
         justify-content: center;
         align-items: center;
         border-radius: 0.625rem;
-        overflow: hidden;
+        overflow: hidden !important;
 
         .discountBadge {
             position: absolute;
             top: 0;
             right: 0;
             border-radius: 0 0 0 0.625rem;
-            background: linear-gradient(
-                to right,
-                var(--secondary-color),
-                var(--light-sec-color)
-            );
+
+            background-color: var(--secondary-color);
             color: var(--white);
             padding: 0.125rem;
             text-decoration: line-through;
@@ -32,28 +28,23 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 1.875rem;
-            height: 1.875rem;
             padding: 0.313rem;
             background-color: var(--secondary-color);
             border-radius: 0 0 0.625rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             z-index: 1;
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
 
-            svg {
-                color: var(--white);
+            .btn {
+                background-color: var(--body-background);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.625rem;
+                padding: 0.25rem;
             }
 
-            &:hover {
-                background-color: var(--white);
-
-                svg {
-                    color: var(--secondary-color);
-                }
+            svg {
+                color: var(--secondary-color);
             }
         }
 
@@ -63,6 +54,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 0.625rem;
+            overflow: hidden !important;
 
             img {
                 width: 100%;
@@ -71,16 +63,11 @@
                 transition: all 0.3s ease-in-out;
             }
         }
-
-        &:hover {
-            img {
-                transform: scale(1.05);
-            }
-        }
     }
 
     .info {
-        padding-top: 0.625rem;
+        position: relative;
+        color: var(--white);
 
         .price {
             display: flex;
@@ -91,7 +78,12 @@
     }
 
     &:hover {
-        transform: translateY(-0.125rem);
-        box-shadow: 0 0.25rem 0.625rem var(--main-color);
+        .imgContainer {
+            a {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
     }
 }

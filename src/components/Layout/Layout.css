@@ -154,7 +154,7 @@
 
 .langBtn {
     background: var(--glass-color);
-    color: var(--white);
+    color: var(--secondary-color);
     border: none;
     border-radius: 0.625rem;
     backdrop-filter: blur(1.875rem);
@@ -172,7 +172,7 @@
     position: relative;
     background: linear-gradient(
         to top,
-        var(--secondary-color),
+        var(--light-sec-color),
         var(--white)
     ) !important;
 

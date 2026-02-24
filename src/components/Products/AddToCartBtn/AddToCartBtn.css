@@ -1,24 +1,25 @@
 .addToCartBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     text-transform: capitalize;
     border: none;
-    border-radius: 0.625rem;
-    width: 100%;
-    padding: 0.625rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    display: inline-flex;
+    border-radius: 0.625rem 0 0 0;
+    padding: 0.5rem;
+    background-color: var(--body-background);
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    gap: 0.313rem;
-    position: relative;
+    z-index: 2;
 
-    a {
+    span {
+        background-color: var(--secondary-color);
         color: var(--white);
+        padding: 0.25rem;
+        border-radius: 0.625rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
     }
 }
 
