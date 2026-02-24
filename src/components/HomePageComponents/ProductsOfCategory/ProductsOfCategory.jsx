@@ -64,7 +64,7 @@ function ProductsOfCategory({ categoryId }) {
   return (
     <>
       <section
-        className="homeProductsCategorySection text-center"
+        className="homeProductsCategorySection"
         style={{ width: isMobile ? "90%" : "75%", margin: "auto" }}
       >
         <Motion.div
@@ -77,12 +77,15 @@ function ProductsOfCategory({ categoryId }) {
           <img src={targetBanner} alt={targetCategoryName} loading="lazy" />
         </Motion.div>
         <div className="productsSection my-3">
-          <button
-            className="my-2 viewAllBtn"
-            onClick={() => navigate(`/shop/category_id/${categoryId}`)}
-          >
-            {t("view all")}
-          </button>
+          <div className="headerBtn text-center p-0">
+            <button
+              className="my-2 viewAllBtn"
+              onClick={() => navigate(`/shop/category_id/${categoryId}`)}
+            >
+              {t("view all")}
+            </button>
+          </div>
+
           <Swiper
             spaceBetween={50}
             loop={true}

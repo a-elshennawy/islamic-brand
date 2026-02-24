@@ -63,15 +63,14 @@ section {
     font-weight: bold;
     background: linear-gradient(
         to right,
-        var(--light-sec-color),
+        var(--body-background),
         var(--secondary-color),
-        var(--light-sec-color)
+        var(--body-background)
     );
     color: var(--white);
     width: fit-content;
     margin: 0 auto;
     padding: 0.625rem;
-    border-radius: 0rem 0rem 1.25rem 1.25rem;
 }
 
 .needCenterSiwper {

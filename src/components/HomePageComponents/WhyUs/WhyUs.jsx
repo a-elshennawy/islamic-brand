@@ -18,7 +18,7 @@ function WhyUs() {
         className="whyUs text-center pt-0 pb-2"
         style={{ width: isMobile ? "90%" : "70%" }}
       >
-        <h2 className="mb-3 mx-auto">{t("why_choose_us")}</h2>
+        <h2 className="HomeSectionTitle mb-3">{t("why_choose_us")}</h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={10}

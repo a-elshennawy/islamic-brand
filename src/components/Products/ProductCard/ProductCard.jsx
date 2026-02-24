@@ -14,8 +14,6 @@ function ProductCard({ product, className }) {
   const [t] = useTranslation();
   const { isMobile } = useMobile();
 
-  console.log(product);
-
   return (
     <>
       <AnimatePresence mode="wait">
@@ -63,7 +61,7 @@ function ProductCard({ product, className }) {
             </Link>
           </Motion.div>
           <div
-            className="info col-12 px-2"
+            className="info col-12 px-2 pb-2"
             style={{ fontSize: isMobile ? "1rem" : "" }}
           >
             <h5 style={{ fontSize: isMobile ? "1rem" : "" }}>

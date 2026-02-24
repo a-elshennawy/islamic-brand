@@ -6,6 +6,7 @@ import "swiper/css";
 import ProductCard from "../Products/ProductCard/ProductCard";
 import useMobile from "../../hooks/useMobile";
 import SectionLoader from "../Loaders/SectionLoader";
+import Line from "../HomePageComponents/Line/Line";
 
 function RelatedProducts({ slug }) {
   const [t] = useTranslation();
@@ -30,12 +31,12 @@ function RelatedProducts({ slug }) {
 
   return (
     <>
-      <div className="line"></div>
+      <Line />
       <div
-        className="relatedProducts text-center"
+        className="relatedProducts"
         style={{ maxWidth: isMobile ? "100%" : "75%" }}
       >
-        <h3>{t("related products")}</h3>
+        <h3 className="HomeSectionTitle mb-3">{t("related products")}</h3>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}
@@ -54,7 +55,7 @@ function RelatedProducts({ slug }) {
               spaceBetween: 40,
             },
           }}
-          className="py-3"
+          className={`py-3 ${relatedProducts?.length < 4 ? "needCenterSiwper" : ""}`}
         >
           {relatedProducts?.map((product) => (
             <SwiperSlide key={product.id}>

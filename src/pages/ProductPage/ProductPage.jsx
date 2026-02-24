@@ -38,9 +38,9 @@ function ProductPage() {
         >
           <span className="productCategory">{product.category.name}</span>
           <h3 className="productName my-2">{product.name}</h3>
-          {product.discount_price ? (
-            <>
-              <div className="productPriceSection py-2">
+          <div className="productPriceSection p-0">
+            {product.discount_price ? (
+              <>
                 <h5>
                   {product.original_price} {t("L.E")}
                 </h5>
@@ -49,19 +49,18 @@ function ProductPage() {
                     {product.discount_price} {t("L.E")}
                   </strong>
                 </h3>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="productPriceSection py-2">
+              </>
+            ) : (
+              <>
                 <h3>
                   <strong>
                     {product.price} {t("L.E")}
                   </strong>
                 </h3>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
+
           <div
             className="productDescription"
             dangerouslySetInnerHTML={{ __html: product.description }}

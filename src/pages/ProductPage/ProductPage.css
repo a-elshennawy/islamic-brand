@@ -1,21 +1,50 @@
 .productPage {
     padding: 2rem 1rem;
     padding-top: 5.938rem;
+
     .imgSide {
+        position: relative;
+
         .mainImg {
+            position: relative;
+
+            .wishlistBtn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0.313rem;
+                background-color: var(--body-background);
+                border-radius: 0 0 0 0.625rem;
+                z-index: 1;
+                cursor: pointer;
+
+                .btn {
+                    background-color: var(--secondary-color);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0.625rem;
+                    padding: 0.25rem;
+                }
+
+                svg {
+                    color: var(--white);
+                }
+            }
             img {
                 width: 100%;
-                border-radius: 0.625rem;
+                border-radius: 0.313rem;
             }
         }
 
         .thumbnails {
-            background: linear-gradient(
-                to right,
-                var(--secondary-color),
-                var(--light-sec-color)
-            );
+            position: absolute;
+            bottom: 5%;
+            background-color: var(--glass-color);
+            backdrop-filter: blur(0.125rem);
             border-radius: 0.625rem;
+            width: 90%;
+
             .thumbnailsSwiper {
                 .thumbnailImg {
                     img {
@@ -112,24 +141,6 @@
                     }
                 }
             }
-        }
-    }
-
-    .relatedProducts {
-        h3 {
-            text-transform: capitalize;
-            color: var(--white);
-            background: linear-gradient(
-                to right,
-                var(--light-sec-color),
-                var(--secondary-color),
-                var(--light-sec-color)
-            );
-            width: fit-content;
-            margin: 0 auto;
-            font-weight: bold;
-            padding: 0.313rem;
-            border-radius: 0.625rem;
         }
     }
 }
