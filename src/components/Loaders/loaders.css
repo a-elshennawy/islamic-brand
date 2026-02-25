@@ -26,6 +26,10 @@
     width: 100%;
 }
 
+.btnSpinner {
+    width: 100% !important;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);

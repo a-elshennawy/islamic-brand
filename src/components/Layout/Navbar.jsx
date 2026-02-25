@@ -4,10 +4,14 @@ import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
 import SideCart from "../SideCart/SideCart";
 import Search from "../Search/Search";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const isAr = useIsAr();
   const { isMobile } = useMobile();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuthContext();
 
   return (
     <>
@@ -19,9 +23,19 @@ function Navbar() {
           <SideMenu />
 
           <div className="actions" dir={isAr ? "rtl" : "ltr"}>
-            <Search />
-            <SideCart />
-            <button className="actionBtn">
+            {!isMobile && (
+              <>
+                <Search />
+                <SideCart />
+              </>
+            )}
+
+            <button
+              className="actionBtn"
+              onClick={() =>
+                navigate(`${isAuthenticated ? "/profile" : "/auth"}`)
+              }
+            >
               <FaUser size={18} />
             </button>
           </div>

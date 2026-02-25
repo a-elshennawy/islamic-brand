@@ -8,6 +8,8 @@
     --secondary-color: #ca9735;
     --light-sec-color: #d1b887;
     --white: #fff;
+    --error: #fd0000;
+    --success: #0aff00;
     --glass-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -137,6 +139,14 @@ section {
     border-radius: 0.625rem;
     margin: 1rem;
     padding: 0.313rem 0.625rem;
+}
+
+.toast-success {
+    background-color: var(--success);
+}
+
+.toast-error {
+    background-color: var(--error);
 }
 
 &::-webkit-scrollbar {

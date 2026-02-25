@@ -20,8 +20,10 @@ import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
 import LangSwitcher from "./LangSwitcher";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function SideMenu() {
+  const { isAuthenticated } = useAuthContext();
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { isMobile } = useMobile();
@@ -145,16 +147,18 @@ function SideMenu() {
                   {t("reviews")} <MdReviews size={20} />
                 </Link>
               </li>
-              <li className="sideMenuListItem my-2">
-                <Link
-                  className="sideMenuLink"
-                  to="/"
-                  onClick={toggleDrawer(false)}
-                >
-                  {t("register_login")}
-                  {isAr ? <TbLogin size={20} /> : <TbLogin2 size={20} />}
-                </Link>
-              </li>
+              {!isAuthenticated && (
+                <li className="sideMenuListItem my-2">
+                  <Link
+                    className="sideMenuLink"
+                    to="/auth"
+                    onClick={toggleDrawer(false)}
+                  >
+                    {t("register_login")}
+                    {isAr ? <TbLogin size={20} /> : <TbLogin2 size={20} />}
+                  </Link>
+                </li>
+              )}
             </ul>
             <LangSwitcher />
           </div>
