@@ -142,11 +142,13 @@ section {
 }
 
 .toast-success {
-    background-color: var(--success);
+    background-color: var(--success) !important;
+    position: fixed !important;
 }
 
 .toast-error {
-    background-color: var(--error);
+    background-color: var(--error) !important;
+    position: fixed !important;
 }
 
 &::-webkit-scrollbar {
