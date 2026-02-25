@@ -21,40 +21,42 @@ function MobileBottomBar() {
 
   return (
     <>
-      <div
-        className="mobileBottomNav"
-        style={{ direction: isAr ? "rtl" : "ltr" }}
-      >
+      <div className="mobContainer py-2">
         <div
-          className="mobileNavItem"
-          onClick={() => navigate("/shop/category_id/21")}
+          className="mobileBottomNav"
+          style={{ direction: isAr ? "rtl" : "ltr" }}
         >
-          <MdOutlineShoppingBag size={28} />
-        </div>
+          <div
+            className="mobileNavItem"
+            onClick={() => navigate("/shop/category_id/21")}
+          >
+            <MdOutlineShoppingBag size={28} />
+          </div>
 
-        <div className="searchBox">
-          <form onSubmit={handleSearch} className="p-0 text-center">
-            <div className="searchContainer">
-              <input
-                type="search"
-                required
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder={t("search products")}
-              />
-              <span
-                type="submit"
-                className="searchBtn m-0"
-                style={isAr ? { left: "10%" } : { right: "-5%" }}
-              >
-                <HiSearch size={20} />
-              </span>
-            </div>
-          </form>
-        </div>
+          <div className="searchBox">
+            <form onSubmit={handleSearch} className="p-0 text-center">
+              <div className="searchContainer">
+                <input
+                  type="search"
+                  required
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder={t("search products")}
+                />
+                <span
+                  type="submit"
+                  className="searchBtn m-0"
+                  style={isAr ? { left: "10%" } : { right: "-5%" }}
+                >
+                  <HiSearch size={20} />
+                </span>
+              </div>
+            </form>
+          </div>
 
-        <div className="mobileNavItem" onClick={() => navigate("/")}>
-          <IoHomeOutline size={28} />
+          <div className="mobileNavItem" onClick={() => navigate("/")}>
+            <IoHomeOutline size={28} />
+          </div>
         </div>
       </div>
     </>

@@ -344,63 +344,70 @@ footer {
     }
 }
 
-.mobileBottomNav {
-    background-color: var(--secondary-color);
-    position: sticky;
-    bottom: 1.25rem;
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 1.563rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 0.313rem;
-    padding: 0.313rem;
+.mobContainer {
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
     z-index: 1111;
+    width: 100%;
 
-    .mobileNavItem {
+    .mobileBottomNav {
+        background-color: var(--secondary-color);
+        pointer-events: auto;
+        width: 90%;
+        margin: 0 auto !important;
+        border-radius: 1.563rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        color: var(--secondary-color);
-        background-color: var(--white);
-        padding: 0.313rem;
-        width: 2.188rem;
-        height: 2.188rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        justify-content: space-evenly;
+        gap: 0.313rem;
+        padding: 0.5rem 0.313rem;
 
-    .searchBox {
-        .searchContainer {
-            position: relative;
+        .mobileNavItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            background-color: var(--white);
+            padding: 0.313rem;
+            width: 2.188rem;
+            height: 2.188rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            input {
-                width: 100%;
-                border: none;
-                padding: 0.625rem;
-                border-radius: 1.25rem;
+        .searchBox {
+            .searchContainer {
+                position: relative;
 
-                &:focus {
-                    outline: none;
+                input {
+                    width: 100%;
+                    border: none;
+                    padding: 0.625rem;
+                    border-radius: 1.25rem;
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
-            }
 
-            .searchBtn {
-                position: absolute;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                background-color: var(--secondary-color);
-                color: var(--white);
-                padding: 0.313rem;
-                width: 2.188rem;
-                height: 2.188rem;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                .searchBtn {
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: var(--secondary-color);
+                    color: var(--white);
+                    padding: 0.313rem;
+                    width: 2.188rem;
+                    height: 2.188rem;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
         }
     }

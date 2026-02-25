@@ -17,7 +17,7 @@ function Footer({ settings }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`row justify-content-center align-items-start m-0 py-2 ${isMobile ? "gap-3" : "gap-1"}`}
+        className={`row justify-content-center align-items-start m-0 py-2 pb-5 ${isMobile ? "gap-3" : "gap-1"}`}
         dir={isAr ? "rtl" : "ltr"}
       >
         <div
