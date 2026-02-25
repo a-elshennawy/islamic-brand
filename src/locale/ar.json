@@ -67,5 +67,10 @@
   "register": "تسجيل",
   "Already have an account?": "لديك حساب بالفعل ؟",
   "Don't have an account?": "ليس لديك حساب ؟",
-  "sign in with": "تسجيل بواسطة"
+  "sign in with": "تسجيل بواسطة",
+  "name": "الاسم",
+  "your cart": "سلة التسوق",
+  "view cart": "عرض سلة التسوق",
+  "checkout": "اتمام الطلب",
+  "total": "الاجمالي"
 }

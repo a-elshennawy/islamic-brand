@@ -286,7 +286,7 @@ function Auth() {
               transition={{ delay: 0.25 }}
             >
               {isPending ? (
-                <BtnSpinner />
+                <BtnSpinner color="var(--white)" size={18} />
               ) : isSignUp ? (
                 t("register")
               ) : (
@@ -310,7 +310,7 @@ function Auth() {
           </Motion.form>
         </AnimatePresence>
 
-        <div className="socialLogIn text-center">
+        {/* <div className="socialLogIn text-center">
           <h4>{t("sign in with")}</h4>
           <div className="socialBtns py-2">
             <button>
@@ -320,7 +320,7 @@ function Auth() {
               <FaApple size={45} />
             </button>
           </div>
-        </div>
+        </div>*/}
       </section>
     </>
   );

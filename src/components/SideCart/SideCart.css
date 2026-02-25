@@ -1,3 +1,22 @@
+.sideCartBtn {
+    position: relative;
+
+    span {
+        width: 0.938rem;
+        height: 0.938rem;
+        border-radius: 50%;
+        background-color: var(--main-color);
+        position: absolute;
+        top: -0.125rem;
+        right: -0.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.625rem;
+        color: var(--white);
+    }
+}
+
 .sideCart {
     position: relative;
     background: linear-gradient(
@@ -7,12 +26,106 @@
     ) !important;
 
     .sideCartheader {
+        position: relative;
+
+        h2 {
+            color: var(--white);
+            text-transform: capitalize;
+        }
+
         .closeBtn {
             position: absolute;
-            top: 0.625rem;
+            top: 0;
             border: none;
             background-color: transparent;
             color: var(--white);
+        }
+    }
+
+    .sideCartContent {
+        max-height: calc(100vh - 21.875rem);
+        overflow-y: auto;
+        border-radius: 0.313rem;
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+        .sideCartItem {
+            position: relative;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+            border-radius: 0.313rem;
+            transition: all 0.3s ease-in-out;
+
+            .imgContainer {
+                cursor: pointer;
+                img {
+                    width: 3.75rem;
+                    height: 3.75rem;
+                    object-fit: cover;
+                    border-radius: 0.625rem;
+                }
+            }
+
+            .info {
+                h6 {
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+            }
+
+            .closeBtn {
+                position: absolute;
+                top: 0;
+                background-color: transparent;
+                border: none;
+                color: var(--error);
+            }
+
+            &:hover {
+                transform: translateY(-0.125rem);
+            }
+        }
+    }
+
+    .sideCartFooter {
+        justify-self: center !important;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.313rem;
+        width: 100% !important;
+        margin: 0 auto !important;
+
+        h4 {
+            text-transform: capitalize;
+            color: var(--white);
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            gap: 0.313rem;
+
+            button {
+                width: 100%;
+                border: none;
+                border-radius: 0.625rem;
+                padding: 0.625rem;
+                text-transform: capitalize;
+            }
+
+            .toCartBtn {
+                background-color: var(--secondary-color);
+                color: var(--white);
+            }
+
+            .toCheckoutBtn {
+                background-color: var(--white);
+                color: var(--secondary-color);
+            }
         }
     }
 }

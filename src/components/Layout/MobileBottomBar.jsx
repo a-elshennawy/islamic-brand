@@ -5,12 +5,15 @@ import { useIsAr } from "../../hooks/useIsAr";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { LuUserRound } from "react-icons/lu";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function MobileBottomBar() {
   const isAr = useIsAr();
   const [t] = useTranslation();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const { isAuthenticated } = useAuthContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -28,9 +31,11 @@ function MobileBottomBar() {
         >
           <div
             className="mobileNavItem"
-            onClick={() => navigate("/shop/category_id/21")}
+            onClick={() =>
+              navigate(`${isAuthenticated ? "/profile" : "/auth"}`)
+            }
           >
-            <MdOutlineShoppingBag size={28} />
+            <LuUserRound size={28} />
           </div>
 
           <div className="searchBox">

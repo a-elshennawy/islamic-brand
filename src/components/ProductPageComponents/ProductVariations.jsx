@@ -96,7 +96,7 @@ function ProductVariations({ product }) {
             >
               <div className="img p-0 col-xl-4 col-lg-4 col-md-10 col-sm-10 col-12">
                 <img
-                  src={getSelectedColorImage()} // ← Use this instead
+                  src={getSelectedColorImage()}
                   alt={`${selectedColor.name} - ${selectedSize.name}`}
                   loading="eager"
                 />
@@ -120,7 +120,10 @@ function ProductVariations({ product }) {
                     ? t("out_of_stock")
                     : t("in_stock")}
                 </h5>
-                <VariationAddToCartBtn product={selectedCombination} />
+                <VariationAddToCartBtn
+                  product={selectedCombination}
+                  productId={product.id}
+                />
               </div>
             </Motion.div>
           )}

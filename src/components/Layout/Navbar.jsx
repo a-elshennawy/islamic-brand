@@ -1,4 +1,4 @@
-import { FaSearch, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import SideMenu from "./SideMenu";
 import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
@@ -26,18 +26,17 @@ function Navbar() {
             {!isMobile && (
               <>
                 <Search />
-                <SideCart />
+                <button
+                  className="actionBtn"
+                  onClick={() =>
+                    navigate(`${isAuthenticated ? "/profile" : "/auth"}`)
+                  }
+                >
+                  <FaUser size={18} />
+                </button>
               </>
             )}
-
-            <button
-              className="actionBtn"
-              onClick={() =>
-                navigate(`${isAuthenticated ? "/profile" : "/auth"}`)
-              }
-            >
-              <FaUser size={18} />
-            </button>
+            <SideCart />
           </div>
         </nav>
       </div>

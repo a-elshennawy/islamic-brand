@@ -10,7 +10,7 @@ function AddToCartBtn({ product }) {
 
   const handleClick = (product) => {
     if (hasVariations) {
-      navigate(`product-details/${product.slug}`);
+      navigate(`/product-details/${product.slug}`);
     } else {
       console.log("add to cart");
     }

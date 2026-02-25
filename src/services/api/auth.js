@@ -106,6 +106,26 @@ export const logout = async () => {
   }
 };
 
+export const getGoogleAuthUrl = async () => {
+  try {
+    const result = await apiClient.get("/auth/google");
+    return result.redirect_url;
+  } catch (error) {
+    console.error("Error getting Google auth URL:", error);
+    throw error;
+  }
+};
+
+export const getAppleAuthUrl = async () => {
+  try {
+    const result = await apiClient.get("/auth/apple");
+    return result.redirect_url;
+  } catch (error) {
+    console.error("Error getting Apple auth URL:", error);
+    throw error;
+  }
+};
+
 // helpers
 export const getCurrentUser = () => {
   const userString = localStorage.getItem("user");

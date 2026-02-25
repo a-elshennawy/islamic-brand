@@ -67,5 +67,10 @@
   "register": "register",
   "Already have an account?": "Already have an account?",
   "Don't have an account?": "Don't have an account?",
-  "sign in with": "sign in with"
+  "sign in with": "sign in with",
+  "name": "name",
+  "your cart": "your cart",
+  "view cart": "view cart",
+  "checkout": "checkout",
+  "total": "total"
 }

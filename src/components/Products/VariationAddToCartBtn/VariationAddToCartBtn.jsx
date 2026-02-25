@@ -3,10 +3,22 @@ import { IoMdCart } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { AnimatePresence, motion as Motion } from "motion/react";
+import { useAddToCart } from "../../../hooks/useCart";
 
-function VariationAddToCartBtn({ product }) {
+function VariationAddToCartBtn({ product, productId }) {
   const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
+
+  const addToCart = useAddToCart();
+
+  const handleAddToCart = () => {
+    if (!product || !product.id) return;
+
+    addToCart.mutate({
+      productId: productId,
+      combinationId: product.id, //<- combination id
+    });
+  };
 
   return (
     <>
@@ -14,6 +26,8 @@ function VariationAddToCartBtn({ product }) {
         className="variationAddToCartBtn mt-3"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={handleAddToCart}
+        disabled={addToCart.isPending}
       >
         <Motion.div
           className="button-content"

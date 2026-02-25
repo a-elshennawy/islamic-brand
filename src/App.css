@@ -141,14 +141,12 @@ section {
     padding: 0.313rem 0.625rem;
 }
 
-.toast-success {
-    background-color: var(--success) !important;
-    position: fixed !important;
+.toastify.toast-success {
+    background: var(--success) !important;
 }
 
-.toast-error {
-    background-color: var(--error) !important;
-    position: fixed !important;
+.toastify.toast-error {
+    background: var(--error) !important;
 }
 
 &::-webkit-scrollbar {
