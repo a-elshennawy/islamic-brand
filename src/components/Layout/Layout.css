@@ -382,6 +382,10 @@ footer {
                 border: none;
                 padding: 0.625rem;
                 border-radius: 1.25rem;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             .searchBtn {
