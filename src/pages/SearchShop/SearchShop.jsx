@@ -12,9 +12,9 @@ import ProductCard from "../../components/Products/ProductCard/ProductCard";
 import { Box, Drawer } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
-import noResultsIcon from "../../assets/images/no-results.svg";
 import { FaFilter } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
+import EmptySearch from "./EmptySearch";
 
 const MAX = 2000;
 const MIN = 0;
@@ -189,17 +189,7 @@ function SearchShop() {
               />
             ))
           ) : (
-            <div className="row justify-content-center align-items-center m-0 text-center py-2">
-              <div className="iconContainer p-0 mb-3">
-                <img
-                  src={noResultsIcon}
-                  alt="no results available"
-                  loading="lazy"
-                  style={{ width: isMobile ? "80%" : "15%" }}
-                />
-              </div>
-              <h4>{t("nothing to view")}</h4>
-            </div>
+            <EmptySearch />
           )}
         </div>
       </section>

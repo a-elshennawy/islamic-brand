@@ -101,15 +101,12 @@ export const removeCartItem = async (id) => {
       headers["X-Temp-User-Id"] = tempUserId;
     }
 
-    const response = await apiClient.delete(
-      "/cart/remove",
-      {
+    const response = await apiClient.delete("/cart/remove", {
+      headers,
+      data: {
         cart_item_id: id,
       },
-      {
-        headers,
-      },
-    );
+    });
     Toastify({
       text: response?.message || "Success!",
       className: "toast-success",

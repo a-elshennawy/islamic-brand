@@ -1,0 +1,13 @@
+.cartPage {
+    min-height: 80dvh;
+
+    .cartItems {
+        .cartItem {
+            .imgContainer {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

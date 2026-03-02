@@ -19,6 +19,7 @@
     "bootstrap": "^5.3.8",
     "i18next": "^25.7.4",
     "i18next-browser-languagedetector": "^8.2.0",
+    "lottie-react": "^2.4.1",
     "motion": "^12.27.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

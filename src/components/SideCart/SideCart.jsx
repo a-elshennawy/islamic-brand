@@ -12,6 +12,7 @@ import {
   useRemoveCartItem,
 } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
+import EmptyCart from "./EmptyCart";
 
 function SideCart() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function SideCart() {
   const removeCartItem = useRemoveCartItem();
 
   const handleRemoveCartItem = (id) => {
-    removeCartItem.mutate({ cart_item_id: id });
+    removeCartItem.mutate(id);
   };
 
   const loading = cartLoading || cartSummaryLoading;
@@ -50,9 +51,6 @@ function SideCart() {
   const cartItems = cart?.items;
   const cartCount = cart?.items_count;
   const subtotal = cartSummary?.subtotal;
-  // const total = cartSummary?.total;
-
-  console.log("cartItems", cartItems);
 
   return (
     <>
@@ -84,7 +82,9 @@ function SideCart() {
           </div>
           <div className="sideCartContent">
             {cartItems?.length === 0 ? (
-              <></>
+              <>
+                <EmptyCart />
+              </>
             ) : (
               <>
                 {cartItems?.map((item) => (
@@ -129,7 +129,7 @@ function SideCart() {
 
                     <button
                       className="closeBtn"
-                      onClick={() => handleRemoveCartItem(item?.product_id)}
+                      onClick={() => handleRemoveCartItem(item?.id)}
                       style={isAr ? { left: "0" } : { right: "0" }}
                     >
                       <MdCancel size={24} />
@@ -139,15 +139,24 @@ function SideCart() {
               </>
             )}
           </div>
-          <div className="sideCartFooter p-1s text-center">
-            <h4 className="mb-1">
-              {t("total")} : {subtotal} {t("L.E")}
-            </h4>
-            <div className="btns p-2">
-              <button className="toCartBtn">{t("view cart")}</button>
-              <button className="toCheckoutBtn">{t("checkout")}</button>
+          {cartItems?.length > 0 && (
+            <div className="sideCartFooter p-1s text-center">
+              <h4 className="mb-1">
+                {t("total")} : {subtotal} {t("L.E")}
+              </h4>
+              <div className="btns p-2">
+                <button className="toCartBtn" onClick={() => navigate("/cart")}>
+                  {t("view cart")}
+                </button>
+                <button
+                  className="toCheckoutBtn"
+                  onClick={() => navigate("/checkout")}
+                >
+                  {t("checkout")}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </Box>
       </Drawer>
     </>

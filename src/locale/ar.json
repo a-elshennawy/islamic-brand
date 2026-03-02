@@ -6,6 +6,7 @@
   "shop_page_title": "اسلاميك براند | المتجر",
   "privacy_page_title": "اسلاميك براند | سياسة الخصوصية",
   "exchange_return_page_title": "اسلاميك براند | سياسة الاستبدال والاسترجاع",
+  "cart_page_title": "اسلاميك براند | السلة",
   "home": "الرئيسيه",
   "back": "رجوع",
   "categories": "التصنيفات",
@@ -72,5 +73,8 @@
   "your cart": "سلة التسوق",
   "view cart": "عرض سلة التسوق",
   "checkout": "اتمام الطلب",
-  "total": "الاجمالي"
+  "total": "الاجمالي",
+  "your cart is empty": "سلة تسوقك فارغة",
+  "shop now": "تسوقي الان",
+  "cart items": "منتجات السله"
 }

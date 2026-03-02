@@ -6,6 +6,7 @@
   "shop_page_title": "Islamic Brand | Shop",
   "privacy_page_title": "Islamic Brand | Privacy Policy",
   "exchange_return_page_title": "Islamic Brand | Exchange & Return Policy",
+  "cart_page_title": "Islamic Brand | Cart",
   "home": "home",
   "back": "back",
   "categories": "categories",
@@ -72,5 +73,8 @@
   "your cart": "your cart",
   "view cart": "view cart",
   "checkout": "checkout",
-  "total": "total"
+  "total": "total",
+  "your cart is empty": "your cart is empty",
+  "shop now": "shop now",
+  "cart items": "cart items"
 }
