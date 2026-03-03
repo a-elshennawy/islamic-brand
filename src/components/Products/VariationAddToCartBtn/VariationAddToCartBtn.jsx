@@ -16,7 +16,7 @@ function VariationAddToCartBtn({ product, productId }) {
 
     addToCart.mutate({
       productId: productId,
-      combinationId: product.id, //<- combination id
+      combinationId: product.id, //<- combination id as this 100% variation product
     });
   };
 

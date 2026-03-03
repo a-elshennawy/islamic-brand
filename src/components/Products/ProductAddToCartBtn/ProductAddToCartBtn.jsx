@@ -4,8 +4,10 @@ import "./ProductAddToCartBtn.css";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { AnimatePresence, motion as Motion } from "motion/react";
+import { useAddToCart } from "../../../hooks/useCart";
 
 function ProductAddToCartBtn({ product }) {
+  const addToCart = useAddToCart();
   const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
 
@@ -65,6 +67,7 @@ function ProductAddToCartBtn({ product }) {
             className="productAddToCartBtn my-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={() => addToCart.mutate({ productId: product.id })}
           >
             <Motion.div
               className="button-content"

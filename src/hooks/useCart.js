@@ -10,8 +10,13 @@ export const useAddToCart = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ productId, combinationId }) =>
-      addToCart({ productId, combinationId }),
+    mutationFn: ({ productId, combinationId }) => {
+      const payload = combinationId
+        ? { product_id: productId, product_combination_id: combinationId }
+        : { product_id: productId };
+
+      return addToCart(payload);
+    },
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cart"] });

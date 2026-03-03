@@ -2,8 +2,10 @@ import "./AddToCartBtn.css";
 import { TbShoppingBagPlus } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import useMobile from "../../../hooks/useMobile";
+import { useAddToCart } from "../../../hooks/useCart";
 
 function AddToCartBtn({ product }) {
+  const addToCart = useAddToCart();
   const navigate = useNavigate();
   const { isMobile } = useMobile();
   const hasVariations = product?.has_variations;
@@ -12,7 +14,9 @@ function AddToCartBtn({ product }) {
     if (hasVariations) {
       navigate(`/product-details/${product.slug}`);
     } else {
-      console.log("add to cart");
+      addToCart.mutate({
+        productId: product.id,
+      });
     }
   };
 

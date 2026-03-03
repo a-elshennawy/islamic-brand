@@ -2,7 +2,7 @@ import { getUserId } from "../../utils/helpers";
 import apiClient from "../client";
 import Toastify from "toastify-js";
 
-export const addToCart = async ({ productId, combinationId }) => {
+export const addToCart = async (payload) => {
   try {
     const userToken = localStorage.getItem("userToken");
     const headers = {};
@@ -13,16 +13,11 @@ export const addToCart = async ({ productId, combinationId }) => {
       const tempUserId = getUserId();
       headers["X-Temp-User-Id"] = tempUserId;
     }
-    const { data } = await apiClient.post(
-      "/cart/add",
-      {
-        product_id: productId,
-        product_combination_id: combinationId,
-      },
-      {
-        headers,
-      },
-    );
+
+    const { data } = await apiClient.post("/cart/add", payload, {
+      headers,
+    });
+
     Toastify({
       text: data?.message || "Success!",
       className: "toast-success",
