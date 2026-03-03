@@ -1,28 +1,44 @@
 import { useTranslation } from "react-i18next";
-import useMobile from "../../hooks/useMobile";
 import { useIsAr } from "../../hooks/useIsAr";
+import { useNavigate } from "react-router-dom";
+import { MdCancel } from "react-icons/md";
+import { useRemoveCartItem } from "../../hooks/useCart";
 
 function CartItems({ cart }) {
   const [t] = useTranslation();
-  const { isMobile } = useMobile();
   const isAr = useIsAr();
+  const navigate = useNavigate();
+  const removeCartItem = useRemoveCartItem();
 
   const cartItems = cart?.items;
 
-  console.log(cartItems);
+  const handleRemoveCartItem = (id) => {
+    removeCartItem.mutate(id);
+  };
 
   return (
     <>
-      <div className="cartItems col-xl-5 col-lg-5 col-md-10 col-sm-10 col-11 text-center">
+      <div className="cartItems col-xl-5 col-lg-5 col-md-10 col-sm-10 col-11 text-center p-2">
         <h4>{t("cart items")}</h4>
         {cartItems?.length > 0 &&
           cartItems.map((product) => (
             <div
               key={product?.id}
-              className="cartItem row justify-content-center align-items-start gap-1 m-0"
-              style={{ direction: isAr ? "rtl" : "ltr" }}
+              className={`cartItem p-2 row align-items-start justify-content-start gap-1 m-0 my-1`}
             >
-              <div className="imgContainer col-2 p-0">
+              <span
+                className="deleteBtn"
+                style={isAr ? { left: "0" } : { right: "0" }}
+                onClick={() => handleRemoveCartItem(product?.id)}
+              >
+                <MdCancel size={25} />
+              </span>
+              <div
+                className="imgContainer col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 p-0"
+                onClick={() =>
+                  navigate(`/product-details/${product?.product_slug}`)
+                }
+              >
                 <img
                   src={product?.main_image}
                   alt={product?.product_name}
@@ -30,7 +46,14 @@ function CartItems({ cart }) {
                 />
               </div>
               <div className={`info col-6 ${isAr ? "text-end" : "text-start"}`}>
-                <h4>{product?.product_name}</h4>
+                <h4
+                  onClick={() =>
+                    navigate(`/product-details/${product?.product_slug}`)
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  {product?.product_name}
+                </h4>
                 <h4>
                   {product?.product_price} {t("L.E")}
                 </h4>

@@ -2,6 +2,7 @@ import CartItems from "../../components/CartPageComponents/CartItems";
 import CartSummary from "../../components/CartPageComponents/CartSummary";
 import "./Cart.css";
 import { useTranslation } from "react-i18next";
+import { useIsAr } from "../../hooks/useIsAr";
 import { useGetCart, useGetCartSummary } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import SectionLoader from "../../components/Loaders/SectionLoader";
@@ -9,6 +10,7 @@ import SectionLoader from "../../components/Loaders/SectionLoader";
 function Cart() {
   const navigate = useNavigate();
   const [t] = useTranslation();
+  const isAr = useIsAr();
   const {
     data: cart,
     isLoading: cartLoading,
@@ -33,7 +35,10 @@ function Cart() {
   return (
     <>
       <title>{t("cart_page_title")}</title>
-      <section className="cartPage row justify-content-center align-items-center gap-1 m-0">
+      <section
+        className="cartPage row justify-content-center align-items-start gap-1 m-0"
+        style={{ direction: isAr ? "rtl" : "ltr" }}
+      >
         <div className="col-12 text-center">
           <h2>{t("your cart")}</h2>
         </div>

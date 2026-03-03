@@ -76,5 +76,9 @@
   "total": "total",
   "your cart is empty": "your cart is empty",
   "shop now": "shop now",
-  "cart items": "cart items"
+  "cart items": "cart items",
+  "cart summary": "cart summary",
+  "subtotal": "subtotal",
+  "shipping fees": "shipping fees",
+  "calculated in checkout": "calculated in checkout"
 }

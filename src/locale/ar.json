@@ -76,5 +76,9 @@
   "total": "الاجمالي",
   "your cart is empty": "سلة تسوقك فارغة",
   "shop now": "تسوقي الان",
-  "cart items": "منتجات السله"
+  "cart items": "منتجات السله",
+  "cart summary": "ملخص السله",
+  "subtotal": "المجموع الفرعي",
+  "shipping fees": "مصاريف الشحن",
+  "calculated in checkout": "تحسب عند اتمام الطلب"
 }
