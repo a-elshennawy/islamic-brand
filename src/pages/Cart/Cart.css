@@ -1,6 +1,6 @@
 .cartPage {
     padding: 5.938rem 0rem 1.25rem 0rem;
-    min-height: 80vh;
+    min-height: 60vh;
 
     .cartItems {
         background-color: var(--secondary-color);
@@ -56,4 +56,13 @@
             width: 100%;
         }
     }
+}
+
+.emptyCartBtn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    border-radius: 0.625rem;
+    padding: 0.313rem 0.625rem;
 }

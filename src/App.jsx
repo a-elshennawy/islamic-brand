@@ -16,6 +16,7 @@ const ExchangeReturn = lazy(
 const Privacy = lazy(() => import("./pages/Privacy/Privacy"));
 const Auth = lazy(() => import("./pages/Auth/Auth"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
 
 function App() {
   const [t] = useTranslation();
@@ -32,13 +33,13 @@ function App() {
                 path="shop/category_id/:category_id"
                 element={<CategoryPage />}
               />
-
               <Route path="search-shop" element={<SearchShop />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="exchange-return" element={<ExchangeReturn />} />
               <Route path="privacy-policy" element={<Privacy />} />
               <Route path="auth" element={<Auth />} />
               <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
             </Route>
           </Routes>
         </Suspense>

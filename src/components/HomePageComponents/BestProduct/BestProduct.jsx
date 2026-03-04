@@ -78,7 +78,7 @@ function BestProduct() {
             className="description"
             dangerouslySetInnerHTML={{ __html: BestProduct.description }}
           />
-          <ProductAddToCartBtn />
+          <ProductAddToCartBtn product={BestProduct} />
         </Motion.div>
       </section>
     </>

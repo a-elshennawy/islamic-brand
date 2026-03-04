@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import emptyCartLottie from "../../assets/lotties/emptyCart.json";
 import { useTranslation } from "react-i18next";
 
-function EmptyCart() {
+function EmptyCart({ textColor = "#fff" }) {
   const [t] = useTranslation();
   return (
     <>
@@ -11,7 +11,7 @@ function EmptyCart() {
           <Lottie animationData={emptyCartLottie} loop={true} />
         </div>
         <div className="col-12 text-center">
-          <h4>{t("your cart is empty")}</h4>
+          <h4 style={{ color: textColor }}>{t("your cart is empty")}</h4>
         </div>
       </div>
     </>

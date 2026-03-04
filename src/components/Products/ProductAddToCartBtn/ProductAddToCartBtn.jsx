@@ -3,6 +3,7 @@ import { CgOptions } from "react-icons/cg";
 import "./ProductAddToCartBtn.css";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useAddToCart } from "../../../hooks/useCart";
 

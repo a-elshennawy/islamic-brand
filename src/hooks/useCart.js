@@ -4,6 +4,7 @@ import {
   getCart,
   getCartSummary,
   removeCartItem,
+  updateItemQuantity,
 } from "../services/api/cart";
 
 export const useAddToCart = () => {
@@ -58,6 +59,24 @@ export const useRemoveCartItem = () => {
 
     onError: (error) => {
       console.error("Remove cart item error:", error);
+    },
+  });
+};
+
+export const useUpdateItemQuantity = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, quantity }) => updateItemQuantity(id, quantity),
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["cart"] });
+      queryClient.invalidateQueries({ queryKey: ["cartCount"] });
+      queryClient.invalidateQueries({ queryKey: ["cartSummary"] });
+    },
+
+    onError: (error) => {
+      console.error("Update item quantity error:", error);
     },
   });
 };

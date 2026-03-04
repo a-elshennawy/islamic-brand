@@ -3,6 +3,7 @@ import { useIsAr } from "../../hooks/useIsAr";
 import { useNavigate } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
 import { useRemoveCartItem } from "../../hooks/useCart";
+import QuantityChange from "../Products/QuantityChange/QuantityChange";
 
 function CartItems({ cart }) {
   const [t] = useTranslation();
@@ -54,8 +55,9 @@ function CartItems({ cart }) {
                 >
                   {product?.product_name}
                 </h4>
+                <QuantityChange id={product?.id} quantity={product?.quantity} />
                 <h4>
-                  {product?.product_price} {t("L.E")}
+                  {product?.final_price} {t("L.E")}
                 </h4>
               </div>
             </div>

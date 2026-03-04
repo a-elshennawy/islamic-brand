@@ -123,3 +123,45 @@ export const removeCartItem = async (id) => {
     throw error;
   }
 };
+
+export const updateItemQuantity = async (id, quantity) => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    } else {
+      const tempUserId = getUserId();
+      headers["X-Temp-User-Id"] = tempUserId;
+    }
+
+    const response = await apiClient.put(
+      "/cart/update-quantity",
+      {
+        cart_item_id: id,
+        quantity: quantity,
+      },
+      { headers },
+    );
+    Toastify({
+      text: response?.message || "Success!",
+      className: "toast-success",
+      duration: 3000,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
+    }).showToast();
+    return response;
+  } catch (error) {
+    Toastify({
+      text: error,
+      className: "toast-error",
+      duration: 3000,
+      gravity: "top",
+      position: "center",
+      stopOnFocus: true,
+    }).showToast();
+    throw error;
+  }
+};

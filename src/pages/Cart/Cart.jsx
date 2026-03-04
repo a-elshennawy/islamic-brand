@@ -6,6 +6,7 @@ import { useIsAr } from "../../hooks/useIsAr";
 import { useGetCart, useGetCartSummary } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import SectionLoader from "../../components/Loaders/SectionLoader";
+import EmptyCart from "../../components/SideCart/EmptyCart";
 
 function Cart() {
   const navigate = useNavigate();
@@ -42,9 +43,24 @@ function Cart() {
         <div className="col-12 text-center">
           <h2>{t("your cart")}</h2>
         </div>
-        <CartItems cart={cart} />
-
-        <CartSummary cartSummary={cartSummary} />
+        {cart?.items.length > 0 ? (
+          <>
+            <CartItems cart={cart} />
+            <CartSummary cartSummary={cartSummary} />
+          </>
+        ) : (
+          <>
+            <div className="col-xl-4 col-lg-5 col-md-6 col-sm-10 col-10 text-center">
+              <EmptyCart textColor="#000" />
+              <button
+                className="emptyCartBtn mt-2"
+                onClick={() => navigate("/shop/category_id/21")}
+              >
+                {t("shop now")}
+              </button>
+            </div>
+          </>
+        )}
       </section>
     </>
   );

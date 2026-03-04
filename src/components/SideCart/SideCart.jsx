@@ -1,5 +1,5 @@
 import "./SideCart.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Box, Drawer } from "@mui/material";
 import { MdCancel } from "react-icons/md";
 import { useIsAr } from "../../hooks/useIsAr";
@@ -13,6 +13,7 @@ import {
 } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import EmptyCart from "./EmptyCart";
+import QuantityChange from "../Products/QuantityChange/QuantityChange";
 
 function SideCart() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function SideCart() {
   const isAr = useIsAr();
   const { isMobile } = useMobile();
   const [open, setOpen] = useState(false);
+
   const {
     data: cart,
     isLoading: cartLoading,
@@ -48,9 +50,21 @@ function SideCart() {
     toggleDrawer(false);
   }
 
+  const prevCountRef = useRef(cart?.items_count);
   const cartItems = cart?.items;
   const cartCount = cart?.items_count;
   const subtotal = cartSummary?.subtotal;
+
+  useEffect(() => {
+    if (cart?.items_count > prevCountRef.current) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+      }, 0);
+
+      return () => clearTimeout(timer);
+    }
+    prevCountRef.current = cart?.items_count;
+  }, [cart?.items_count]);
 
   return (
     <>
@@ -95,9 +109,10 @@ function SideCart() {
                   >
                     <div
                       className="imgContainer p-0"
-                      onClick={() =>
-                        navigate(`/product-details/${item?.product_slug}`)
-                      }
+                      onClick={() => {
+                        navigate(`/product-details/${item?.product_slug}`);
+                        setOpen(false);
+                      }}
                     >
                       <img
                         src={item?.main_image}
@@ -108,9 +123,10 @@ function SideCart() {
                     <div className="info">
                       <h6
                         className="m-0"
-                        onClick={() =>
-                          navigate(`/product-details/${item?.product_slug}`)
-                        }
+                        onClick={() => {
+                          navigate(`/product-details/${item?.product_slug}`);
+                          setOpen(false);
+                        }}
                       >
                         {item?.product_name}
                       </h6>
@@ -120,6 +136,7 @@ function SideCart() {
                         </small>
                       </span>
                       <br />
+                      <QuantityChange id={item?.id} quantity={item?.quantity} />
                       <span>
                         <strong>
                           {item?.final_price} {t("L.E")}
@@ -145,12 +162,21 @@ function SideCart() {
                 {t("total")} : {subtotal} {t("L.E")}
               </h4>
               <div className="btns p-2">
-                <button className="toCartBtn" onClick={() => navigate("/cart")}>
+                <button
+                  className="toCartBtn"
+                  onClick={() => {
+                    navigate("/cart");
+                    setOpen(false);
+                  }}
+                >
                   {t("view cart")}
                 </button>
                 <button
                   className="toCheckoutBtn"
-                  onClick={() => navigate("/checkout")}
+                  onClick={() => {
+                    navigate("/checkout");
+                    setOpen(false);
+                  }}
                 >
                   {t("checkout")}
                 </button>
