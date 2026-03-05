@@ -3,10 +3,10 @@
 /*colors*/
 :root {
     font-size: 16px;
-    --body-background: #fff6df;
+    --body-background: #f5f4f1;
     --main-color: #000;
-    --secondary-color: #ca9735;
-    --light-sec-color: #d1b887;
+    --secondary-color: #8b5e3c;
+    --light-sec-color: #d8c2af;
     --white: #fff;
     --error: #fd0000;
     --success: #0aff00;
