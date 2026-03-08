@@ -142,7 +142,12 @@ section {
 }
 
 .toastify.toast-success {
-    background: var(--success) !important;
+    background: linear-gradient(
+        30deg,
+        var(--secondary-color),
+        var(--light-sec-color)
+    ) !important;
+    color: var(--white) !important;
 }
 
 .toastify.toast-error {

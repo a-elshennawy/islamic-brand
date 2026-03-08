@@ -1,4 +1,92 @@
 .checkputPage {
     padding: 5.938rem 0rem 1.25rem 0rem;
     min-height: 60vh;
+
+    .checkoutSummary {
+        background-color: var(--light-sec-color);
+        color: var(--secondary-color);
+        border-radius: 0.625rem;
+
+        .checkoutItems {
+            .trigger {
+                background-color: var(--secondary-color);
+                border-radius: 0.313rem;
+                color: var(--white);
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+
+                .arrowIcon {
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .rotateArrowAr {
+                    transition: all 0.3s ease-in-out;
+                    transform: rotate(-90deg);
+                }
+
+                .rotateArrowEn {
+                    transition: all 0.3s ease-in-out;
+                    transform: rotate(90deg);
+                }
+            }
+            cursor: pointer;
+            .checkoutItem {
+                background-color: var(--white);
+                display: flex;
+                align-items: start;
+                gap: 0.625rem;
+                border-radius: 0.313rem;
+
+                .imgContainer {
+                    img {
+                        width: 6.25rem;
+                        height: 6.25rem;
+                        border-radius: 0.313rem;
+                    }
+                }
+            }
+        }
+
+        .summItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.313rem;
+            button {
+                padding: 0.5rem;
+                border-radius: 0.313rem;
+                border: none;
+                font-weight: bolder;
+            }
+
+            .toCartBtn {
+                width: calc(50% - 0.156rem);
+                background-color: var(--white);
+                color: var(--secondary-color);
+            }
+            .toShopBtn {
+                width: calc(50% - 0.156rem);
+                background-color: var(--secondary-color);
+                color: var(--white);
+            }
+            .placeOrderBtn {
+                width: 100%;
+
+                background-color: var(--main-color);
+                color: var(--white);
+            }
+        }
+    }
+
+    .checkoutForm {
+        h3 {
+            color: var(--secondary-color);
+        }
+    }
 }

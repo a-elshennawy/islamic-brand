@@ -17,6 +17,7 @@ const Privacy = lazy(() => import("./pages/Privacy/Privacy"));
 const Auth = lazy(() => import("./pages/Auth/Auth"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
+const Profile = lazy(() => import("./pages/Profile/Profile"));
 
 function App() {
   const [t] = useTranslation();
@@ -40,6 +41,7 @@ function App() {
               <Route path="auth" element={<Auth />} />
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
+              <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
         </Suspense>

@@ -7,6 +7,7 @@
   "privacy_page_title": "اسلاميك براند | سياسة الخصوصية",
   "exchange_return_page_title": "اسلاميك براند | سياسة الاستبدال والاسترجاع",
   "cart_page_title": "اسلاميك براند | السلة",
+  "checkout_page_title": "اسلاميك براند | اتمام الطلب",
   "home": "الرئيسيه",
   "back": "رجوع",
   "categories": "التصنيفات",
@@ -80,5 +81,11 @@
   "cart summary": "ملخص السله",
   "subtotal": "المجموع الفرعي",
   "shipping fees": "مصاريف الشحن",
-  "calculated in checkout": "تحسب عند اتمام الطلب"
+  "calculated in checkout": "تحسب عند اتمام الطلب",
+  "order summary": "ملخص الطلب",
+  "order items": "المنتجات المطلوبه",
+  "adjust cart": "تعديل السله",
+  "place order": "اتمام الطلب",
+  "select payment method": "اختر وسيلة الدفع",
+  "fill your details to place order": "اكمل بياناتك لاتمام الطلب"
 }

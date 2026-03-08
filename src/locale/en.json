@@ -7,6 +7,7 @@
   "privacy_page_title": "Islamic Brand | Privacy Policy",
   "exchange_return_page_title": "Islamic Brand | Exchange & Return Policy",
   "cart_page_title": "Islamic Brand | Cart",
+  "checkout_page_title": "Islamic Brand | Checkout",
   "home": "home",
   "back": "back",
   "categories": "categories",
@@ -80,5 +81,11 @@
   "cart summary": "cart summary",
   "subtotal": "subtotal",
   "shipping fees": "shipping fees",
-  "calculated in checkout": "calculated in checkout"
+  "calculated in checkout": "calculated in checkout",
+  "order summary": "Order Summary",
+  "order items": "Order Items",
+  "adjust cart": "Adjust Cart",
+  "place order": "Place Order",
+  "select payment method": "Select Payment Method",
+  "fill your details to place order": "Fill Your Details to Place Order"
 }

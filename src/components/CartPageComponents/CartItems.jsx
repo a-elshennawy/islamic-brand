@@ -19,7 +19,7 @@ function CartItems({ cart }) {
 
   return (
     <>
-      <div className="cartItems col-xl-5 col-lg-5 col-md-10 col-sm-10 col-11 text-center p-2">
+      <div className="cartItems col-xl-4 col-lg-4 col-md-10 col-sm-10 col-11 text-center p-2">
         <h4>{t("cart items")}</h4>
         {cartItems?.length > 0 &&
           cartItems.map((product) => (
