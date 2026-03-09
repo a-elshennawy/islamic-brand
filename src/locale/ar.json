@@ -87,5 +87,7 @@
   "adjust cart": "تعديل السله",
   "place order": "اتمام الطلب",
   "select payment method": "اختر وسيلة الدفع",
-  "fill your details to place order": "اكمل بياناتك لاتمام الطلب"
+  "fill your details to place order": "اكمل بياناتك لاتمام الطلب",
+  "wallet": "المحفظه الالكترونيه",
+  "credit card": "بطاقة الائتمان"
 }

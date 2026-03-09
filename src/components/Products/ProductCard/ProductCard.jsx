@@ -32,11 +32,6 @@ function ProductCard({ product, className }) {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="imgContainer p-2 col-12"
           >
-            <span className="wishlistBtn">
-              <span className="btn">
-                <FaRegHeart size={isMobile ? 20 : 25} />
-              </span>
-            </span>
             {product.discount_price && (
               <>
                 <span

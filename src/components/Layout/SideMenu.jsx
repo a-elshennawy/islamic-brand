@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Drawer } from "@mui/material";
 import { ImMenu } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
-import logo from "/Newlogo.png";
+import logo from "/icon.png";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useCategories } from "../../hooks/useGeneral";

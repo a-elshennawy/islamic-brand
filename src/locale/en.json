@@ -87,5 +87,7 @@
   "adjust cart": "Adjust Cart",
   "place order": "Place Order",
   "select payment method": "Select Payment Method",
-  "fill your details to place order": "Fill Your Details to Place Order"
+  "fill your details to place order": "Fill Your Details to Place Order",
+  "wallet": "Wallet",
+  "credit card": "Credit Card"
 }

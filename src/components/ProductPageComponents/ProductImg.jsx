@@ -4,13 +4,25 @@ import "swiper/css";
 import { useState } from "react";
 import useMobile from "../../hooks/useMobile";
 import { motion as Motion } from "motion/react";
+import { useToggleWishlist } from "../../hooks/useWishlist";
 import { FaRegHeart } from "react-icons/fa";
+
 function ProductImg({ product }) {
   const [selectedImg, setSelectedImg] = useState(product?.main_image);
   const { isMobile } = useMobile();
   const productImages = product?.grouped_variations?.map(
     (variation) => variation.main_image,
   );
+  const { mutate, isPending } = useToggleWishlist();
+  const firstCombinationId =
+    product?.grouped_variations[0]?.sizes[0]?.combination?.id;
+
+  const handleToggleWishlist = () => {
+    mutate({
+      productId: product.id,
+      combinationId: firstCombinationId,
+    });
+  };
 
   return (
     <>
@@ -22,7 +34,7 @@ function ProductImg({ product }) {
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
         >
-          <span className="wishlistBtn">
+          <span className="wishlistBtn" onClick={handleToggleWishlist}>
             <span className="btn">
               <FaRegHeart size={isMobile ? 20 : 25} />
             </span>

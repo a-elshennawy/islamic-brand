@@ -82,6 +82,45 @@
                 color: var(--white);
             }
         }
+
+        .paymentMethods {
+            .selectors {
+                display: flex;
+                align-items: center;
+                gap: 0.313rem;
+
+                button {
+                    padding: 0.625rem;
+                    border: none;
+                    border-radius: 0.313rem;
+                    width: calc(50% - 0.156rem);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.313rem;
+                    background-color: var(--white);
+                    color: var(--secondary-color);
+                    font-weight: bold;
+                    transition: all 0.3s ease-in-out;
+
+                    span {
+                        img {
+                            width: 1.563rem;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: var(--secondary-color);
+                        color: var(--white);
+                    }
+                }
+
+                .selectedPayment {
+                    background-color: var(--secondary-color);
+                    color: var(--white);
+                }
+            }
+        }
     }
 
     .checkoutForm {
