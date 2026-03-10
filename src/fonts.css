@@ -1,11 +1,11 @@
 /*arabic font*/
 @font-face {
-    font-family: changa;
-    src: url("./assets/fonts//Changa-Regular.ttf");
+    font-family: ubuntu;
+    src: url("./assets/fonts/Ubuntu-Regular.ttf");
 }
 
 /*english font*/
 @font-face {
-    font-family: robotoSlab;
-    src: url("./assets/fonts/RobotoSlab-Regular.ttf");
+    font-family: zain;
+    src: url("./assets/fonts/Zain-Regular.ttf");
 }

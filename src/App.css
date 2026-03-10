@@ -6,7 +6,8 @@
     --body-background: #f5f4f1;
     --main-color: #000;
     --secondary-color: #8b5e3c;
-    --light-sec-color: #d8c2af;
+    --dark-sec-color: #66452c;
+    --light-sec-color: #d7cfc8;
     --white: #fff;
     --error: #fd0000;
     --success: #0aff00;
@@ -20,7 +21,7 @@
 body {
     background-color: var(--body-background) !important;
     color: var(--main-color) !important;
-    font-family: robotoSlab, changa !important;
+    font-family: ubuntu, zain !important;
     margin: 0;
 }
 

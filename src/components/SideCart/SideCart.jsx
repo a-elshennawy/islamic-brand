@@ -14,6 +14,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import EmptyCart from "./EmptyCart";
 import QuantityChange from "../Products/QuantityChange/QuantityChange";
+import { IoColorPaletteOutline, IoResizeSharp, IoTrash } from "react-icons/io5";
+import { AnimatePresence, motion as Motion } from "motion/react";
 
 function SideCart() {
   const navigate = useNavigate();
@@ -84,10 +86,10 @@ function SideCart() {
         }}
       >
         <Box sx={{ width: isMobile ? 250 : 350 }} role="presentation">
-          <div className="sideCartheader text-center">
+          <div className="sideCartheader text-center mb-3">
             <h2>{t("your cart")}</h2>
             <button
-              className="closeBtn"
+              className="closeBtn p-0"
               onClick={toggleDrawer(false)}
               style={isAr ? { right: "0" } : { left: "0" }}
             >
@@ -103,6 +105,7 @@ function SideCart() {
               <>
                 {cartItems?.map((item) => (
                   <div
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                     key={item?.id}
                     className={`sideCartItem my-1 p-1 ${isAr ? "justify-content-start" : "justify-content-start"}`}
                     style={{ direction: isAr ? "rtl" : "ltr" }}
@@ -130,59 +133,68 @@ function SideCart() {
                       >
                         {item?.product_name}
                       </h6>
-                      <span className="text-muted">
+                      <span className="variation">
                         <small>
-                          {item?.color_name} - {item?.size_value}
+                          {item?.color_name} <IoColorPaletteOutline /> -
+                          {item?.size_value} <IoResizeSharp />
                         </small>
                       </span>
                       <br />
-                      <QuantityChange id={item?.id} quantity={item?.quantity} />
-                      <span>
+                      <span className="price">
                         <strong>
                           {item?.final_price} {t("L.E")}
                         </strong>
                       </span>
+                      <QuantityChange id={item?.id} quantity={item?.quantity} />
                     </div>
 
                     <button
-                      className="closeBtn"
+                      className="deleteBtn p-0"
                       onClick={() => handleRemoveCartItem(item?.id)}
                       style={isAr ? { left: "0" } : { right: "0" }}
                     >
-                      <MdCancel size={24} />
+                      <IoTrash size={20} />
                     </button>
                   </div>
                 ))}
               </>
             )}
           </div>
-          {cartItems?.length > 0 && (
-            <div className="sideCartFooter p-1s text-center">
-              <h4 className="mb-1">
-                {t("total")} : {subtotal} {t("L.E")}
-              </h4>
-              <div className="btns p-2">
-                <button
-                  className="toCartBtn"
-                  onClick={() => {
-                    navigate("/cart");
-                    setOpen(false);
-                  }}
-                >
-                  {t("view cart")}
-                </button>
-                <button
-                  className="toCheckoutBtn"
-                  onClick={() => {
-                    navigate("/checkout");
-                    setOpen(false);
-                  }}
-                >
-                  {t("checkout")}
-                </button>
-              </div>
-            </div>
-          )}
+          <AnimatePresence mode="wait">
+            {cartItems?.length > 0 && (
+              <Motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="sideCartFooter p-1 pt-0 text-center"
+              >
+                <h4 className="mb-1">
+                  {t("total")} : {subtotal} {t("L.E")}
+                </h4>
+                <div className="btns p-2">
+                  <button
+                    className="toCartBtn"
+                    onClick={() => {
+                      navigate("/cart");
+                      setOpen(false);
+                    }}
+                  >
+                    {t("view cart")}
+                  </button>
+                  <button
+                    className="toCheckoutBtn"
+                    onClick={() => {
+                      navigate("/checkout");
+                      setOpen(false);
+                    }}
+                  >
+                    {t("checkout")}
+                  </button>
+                </div>
+              </Motion.div>
+            )}
+          </AnimatePresence>
         </Box>
       </Drawer>
     </>

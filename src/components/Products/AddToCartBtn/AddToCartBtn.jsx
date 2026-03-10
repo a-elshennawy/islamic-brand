@@ -2,12 +2,15 @@ import "./AddToCartBtn.css";
 import { TbShoppingBagPlus } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import useMobile from "../../../hooks/useMobile";
+import { useIsAr } from "../../../hooks/useIsAr";
 import { useAddToCart } from "../../../hooks/useCart";
 
 function AddToCartBtn({ product }) {
   const addToCart = useAddToCart();
   const navigate = useNavigate();
   const { isMobile } = useMobile();
+  const isAr = useIsAr();
+
   const hasVariations = product?.has_variations;
 
   const handleClick = (product) => {
@@ -22,10 +25,12 @@ function AddToCartBtn({ product }) {
 
   return (
     <>
-      <button className="addToCartBtn" onClick={() => handleClick(product)}>
-        <span>
-          <TbShoppingBagPlus size={isMobile ? 20 : 25} />
-        </span>
+      <button
+        className={`addToCartBtn`}
+        onClick={() => handleClick(product)}
+        style={isAr ? { left: "0.313rem" } : { right: "0.313rem" }}
+      >
+        <TbShoppingBagPlus size={isMobile ? 20 : 25} />
       </button>
     </>
   );

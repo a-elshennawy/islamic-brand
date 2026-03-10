@@ -2,8 +2,10 @@ import { useTranslation } from "react-i18next";
 import { useGetCartSummary, useGetCart } from "../../hooks/useCart";
 import CheckoutItems from "./CheckoutItems";
 import PaymentMethods from "./PaymentMethods";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutSummary() {
+  const navigate = useNavigate();
   const [t] = useTranslation();
   const {
     data: cart,
@@ -56,8 +58,15 @@ function CheckoutSummary() {
           <PaymentMethods />
           <hr />
           <div className="actions py-2">
-            <button className="toCartBtn">{t("adjust cart")}</button>
-            <button className="toShopBtn">{t("shop")}</button>
+            <button className="toCartBtn" onClick={() => navigate("/cart")}>
+              {t("adjust cart")}
+            </button>
+            <button
+              className="toShopBtn"
+              onClick={() => navigate("/shop/category_id/21")}
+            >
+              {t("shop")}
+            </button>
             <button className="placeOrderBtn">{t("place order")}</button>
           </div>
         </div>

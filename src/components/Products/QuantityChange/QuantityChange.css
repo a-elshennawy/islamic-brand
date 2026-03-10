@@ -1,9 +1,9 @@
 .qnttyCounter {
-    background-color: var(--secondary-color);
+    background-color: var(--light-sec-color);
     width: fit-content;
-    border-radius: 0.625rem;
+    border-radius: 1.25rem;
     display: inline-flex;
-    margin-inline-end: 0.313rem !important;
+    margin: 0.313rem !important;
     align-items: center;
     gap: 0.313rem;
 
@@ -13,10 +13,18 @@
         color: var(--white);
         font-size: 1.25rem;
         font-weight: bold;
-        padding: 0;
+        padding: 0 0.313rem;
     }
 
     span {
+        background-color: var(--secondary-color);
         color: var(--white);
+        font-weight: bold;
+        width: 1.875rem;
+        height: 1.875rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -9,7 +9,6 @@ import {
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
 } from "react-icons/md";
-import BackBtn from "../../components/Btns/BackBtn";
 
 function Reviews() {
   const { data: reviewsArray, isLoading } = useReviews();

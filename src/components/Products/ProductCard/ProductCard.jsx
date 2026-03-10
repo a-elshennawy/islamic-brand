@@ -1,11 +1,11 @@
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { FaRegHeart } from "react-icons/fa";
 import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
 import { truncateName } from "../../../utils/helpers";
 import { useTranslation } from "react-i18next";
 import useMobile from "../../../hooks/useMobile";
+import { useIsAr } from "../../../hooks/useIsAr";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import Rating from "@mui/material/Rating";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
@@ -13,6 +13,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 function ProductCard({ product, className }) {
   const [t] = useTranslation();
   const { isMobile } = useMobile();
+  const isAr = useIsAr();
 
   return (
     <>
@@ -23,7 +24,7 @@ function ProductCard({ product, className }) {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className={`ProductCard row justify-content-center align-items-center m-0 p-0 ${className}`}
-          dir="ltr"
+          dir={isAr ? "rtl" : "ltr"}
         >
           <Motion.div
             initial={{ opacity: 0 }}
@@ -62,32 +63,28 @@ function ProductCard({ product, className }) {
             <h5 style={{ fontSize: isMobile ? "1rem" : "" }}>
               {truncateName(product.name, isMobile ? 15 : 20)}
             </h5>
-            {product?.reviews_count > 0 && (
-              <div className="rating p-0">
-                <Rating
-                  name="text-feedback"
-                  value={product?.average_rating}
-                  readOnly
-                  precision={1}
-                  size="small"
-                  emptyIcon={
-                    <StarBorderIcon
-                      style={{ opacity: 0.4 }}
-                      fontSize="inherit"
-                    />
-                  }
-                  sx={{
-                    fontSize: "1rem",
-                    "& .MuiRating-iconFilled": {
-                      fontSize: "inherit",
-                    },
-                    "& .MuiRating-iconEmpty": {
-                      fontSize: "inherit",
-                    },
-                  }}
-                />
-              </div>
-            )}
+
+            <div className="rating p-0">
+              <Rating
+                name="text-feedback"
+                value={product?.average_rating}
+                readOnly
+                precision={1}
+                size="small"
+                emptyIcon={
+                  <StarBorderIcon style={{ opacity: 0.4 }} fontSize="inherit" />
+                }
+                sx={{
+                  fontSize: "1rem",
+                  "& .MuiRating-iconFilled": {
+                    fontSize: "inherit",
+                  },
+                  "& .MuiRating-iconEmpty": {
+                    fontSize: "inherit",
+                  },
+                }}
+              />
+            </div>
 
             {product.discount_price ? (
               <>

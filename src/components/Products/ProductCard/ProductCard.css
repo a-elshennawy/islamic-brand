@@ -19,33 +19,9 @@
 
             background-color: var(--secondary-color);
             color: var(--white);
-            padding: 0.125rem;
+            padding: 0.313rem;
             text-decoration: line-through;
             z-index: 2;
-        }
-
-        .wishlistBtn {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0.313rem;
-            background-color: var(--secondary-color);
-            border-radius: 0 0 0.625rem 0;
-            z-index: 1;
-            cursor: pointer;
-
-            .btn {
-                background-color: var(--body-background);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 0.625rem;
-                padding: 0.25rem;
-            }
-
-            svg {
-                color: var(--secondary-color);
-            }
         }
 
         a {
