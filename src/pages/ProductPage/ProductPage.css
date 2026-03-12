@@ -58,17 +58,7 @@
     }
 
     .detailsSide {
-        .productCategory {
-            padding: 0.313rem;
-            border-radius: 0.625rem;
-            background: linear-gradient(
-                to right,
-                var(--secondary-color),
-                var(--light-sec-color)
-            );
-            color: var(--white);
-        }
-
+        color: var(--dark-sec-color);
         .productPriceSection {
             display: flex;
             align-items: center;

@@ -14,12 +14,12 @@ export const addToCart = async (payload) => {
       headers["X-Temp-User-Id"] = tempUserId;
     }
 
-    const { data } = await apiClient.post("/cart/add", payload, {
+    const { data, message } = await apiClient.post("/cart/add", payload, {
       headers,
     });
 
     Toastify({
-      text: data?.message || "Success!",
+      text: message,
       className: "toast-success",
       duration: 3000,
       gravity: "top",

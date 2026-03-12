@@ -36,7 +36,6 @@ function ProductPage() {
           className="detailsSide col-xl-6 col-lg-6 col-md-10 col-sm-10 col-12"
           dir={isAr ? "rtl" : "ltr"}
         >
-          <span className="productCategory">{product.category.name}</span>
           <h3 className="productName my-2">{product.name}</h3>
           <div className="productPriceSection p-0">
             {product.discount_price ? (

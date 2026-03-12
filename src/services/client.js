@@ -32,7 +32,12 @@ apiClient.interceptors.response.use(
       if (data.code >= 400) {
         return Promise.reject(new Error(data.message || "An error occurred"));
       }
-      return data.data; // Return just the nested data
+
+      if (Array.isArray(data.data)) {
+        return data.data; // arrays stay untouched
+      }
+
+      return { ...data.data, message: data.message }; // Return just the nested data
     }
 
     return data;

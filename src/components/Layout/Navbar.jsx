@@ -6,6 +6,7 @@ import SideCart from "../SideCart/SideCart";
 import Search from "../Search/Search";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import whiteLogo from "/white_logo.png";
 
 function Navbar() {
   const isAr = useIsAr();
@@ -21,7 +22,11 @@ function Navbar() {
           style={{ width: isMobile ? "90%" : "70%" }}
         >
           <SideMenu />
-
+          {!isMobile && (
+            <div className="logo" onClick={() => navigate("/")}>
+              <img src={whiteLogo} alt="white logo" />
+            </div>
+          )}
           <div className="actions" dir={isAr ? "rtl" : "ltr"}>
             {!isMobile && (
               <>
