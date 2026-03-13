@@ -33,6 +33,13 @@ section {
     overflow-x: hidden !important;
 }
 
+.homeSection {
+    padding: 0rem 0.625rem 1.25rem 0.625rem;
+    box-shadow: 0 0 0.625rem var(--secondary-color);
+    border-radius: 0.625rem;
+    margin: 1.25rem auto !important;
+}
+
 .homeProductsCategorySection {
     padding: 1.25rem 0rem;
 
@@ -129,17 +136,6 @@ section {
 
 .nextBtn {
     right: 1rem;
-}
-
-.toHomeBtn,
-.backBtn {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    font-weight: bold;
-    border: none;
-    border-radius: 0.625rem;
-    margin: 1rem;
-    padding: 0.313rem 0.625rem;
 }
 
 .toastify.toast-success {

@@ -6,7 +6,6 @@ import "swiper/css";
 import ProductCard from "../Products/ProductCard/ProductCard";
 import useMobile from "../../hooks/useMobile";
 import SectionLoader from "../Loaders/SectionLoader";
-import Line from "../HomePageComponents/Line/Line";
 
 function RelatedProducts({ slug }) {
   const [t] = useTranslation();
@@ -31,7 +30,6 @@ function RelatedProducts({ slug }) {
 
   return (
     <>
-      <Line />
       <div
         className="relatedProducts"
         style={{ maxWidth: isMobile ? "100%" : "75%" }}

@@ -1,6 +1,7 @@
 .cartPage {
     padding: 5.938rem 0rem 1.25rem 0rem;
     min-height: 60vh;
+    color: var(--secondary-color);
 
     .cartItems {
         background-color: var(--secondary-color);
@@ -9,7 +10,12 @@
 
         .cartItem {
             position: relative;
-            background-color: var(--light-sec-color);
+            background: linear-gradient(
+                30deg,
+                var(--dark-sec-color),
+                var(--light-sec-color),
+                var(--secondary-color)
+            );
             border-radius: 0.625rem;
 
             .deleteBtn {
@@ -17,7 +23,13 @@
                 width: fit-content;
                 position: absolute;
                 top: 0.313rem;
-                color: var(--error);
+                color: var(--white);
+            }
+
+            .info {
+                .price {
+                    display: inline;
+                }
             }
 
             .imgContainer {
@@ -26,6 +38,7 @@
                 img {
                     border-radius: 0.625rem;
                     width: 100%;
+                    height: 100%;
                 }
             }
         }

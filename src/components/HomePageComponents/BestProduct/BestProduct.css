@@ -1,6 +1,30 @@
 .bestProduct {
-    width: 90%;
+    position: relative;
+    background: linear-gradient(
+        30deg,
+        var(--dark-sec-color),
+        var(--light-sec-color),
+        var(--secondary-color)
+    );
     margin: 1.25rem auto !important;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+
+    .title {
+        position: absolute;
+        top: 0;
+        padding: 0.313rem;
+        background-color: var(--dark-sec-color);
+        color: var(--white);
+        border-radius: 0 0 0.625rem 0;
+    }
+
+    .enTiltle {
+        border-radius: 0 0 0 0.625rem;
+    }
+
     .imgSide {
         display: flex;
         justify-content: center;
@@ -8,27 +32,12 @@
 
         img {
             height: auto;
-            margin: 0 auto;
             border-radius: 0.625rem;
         }
     }
 
     .detailsSide {
-        .title {
-            width: fit-content;
-            padding: 0.188rem;
-            border-radius: 0.625rem;
-            background: linear-gradient(
-                to bottom,
-                var(--secondary-color),
-                var(--light-sec-color)
-            );
-            color: var(--white);
-
-            h5 {
-                padding: 0.313rem;
-            }
-        }
+        color: var(--white);
         .price {
             display: flex;
             align-items: center;
@@ -39,11 +48,22 @@
                 opacity: 0.7;
             }
         }
-        .description {
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+        .badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.625rem;
+
+            .badgeItem {
+                width: calc(50% - 0.313rem);
+                background-color: var(--light-sec-color);
+                color: var(--dark-sec-color);
+                border-radius: 0.625rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
             }
         }
     }

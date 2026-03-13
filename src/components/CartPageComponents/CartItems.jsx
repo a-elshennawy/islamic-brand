@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
 import { useNavigate } from "react-router-dom";
-import { MdCancel } from "react-icons/md";
 import { useRemoveCartItem } from "../../hooks/useCart";
 import QuantityChange from "../Products/QuantityChange/QuantityChange";
+import { IoTrash } from "react-icons/io5";
 
 function CartItems({ cart }) {
   const [t] = useTranslation();
@@ -32,10 +32,10 @@ function CartItems({ cart }) {
                 style={isAr ? { left: "0" } : { right: "0" }}
                 onClick={() => handleRemoveCartItem(product?.id)}
               >
-                <MdCancel size={25} />
+                <IoTrash size={25} />
               </span>
               <div
-                className="imgContainer col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 p-0"
+                className="imgContainer col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3 p-0"
                 onClick={() =>
                   navigate(`/product-details/${product?.product_slug}`)
                 }
@@ -56,7 +56,7 @@ function CartItems({ cart }) {
                   {product?.product_name}
                 </h4>
                 <QuantityChange id={product?.id} quantity={product?.quantity} />
-                <h4>
+                <h4 className="price">
                   {product?.final_price} {t("L.E")}
                 </h4>
               </div>

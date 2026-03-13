@@ -89,5 +89,9 @@
   "select payment method": "Select Payment Method",
   "fill your details to place order": "Fill Your Details to Place Order",
   "wallet": "Wallet",
-  "credit card": "Credit Card"
+  "credit card": "Credit Card",
+  "choose your country": "Choose Your Country",
+  "choose your state": "Choose Your State",
+  "choose your city": "Select Your City",
+  "select your carrier": "Select Your Carrier"
 }

@@ -5,7 +5,6 @@ import useMobile from "../../../hooks/useMobile";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { motion as Motion } from "motion/react";
 
 function WhyUs() {
   const { data: chooseUsArray, isLoading } = useChooseUs();

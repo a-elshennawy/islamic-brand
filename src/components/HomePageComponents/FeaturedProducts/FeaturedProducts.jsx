@@ -24,7 +24,7 @@ function FeaturedProducts() {
   return (
     <>
       <section
-        className="featuredProducts"
+        className="featuredProducts homeSection"
         dir={isAr ? "rtl" : "ltr"}
         style={{ width: isMobile ? "100%" : "75%" }}
       >

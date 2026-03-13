@@ -25,7 +25,7 @@ function RecentProducts() {
 
   return (
     <section
-      className="recentProducts"
+      className="recentProducts homeSection"
       dir={isAr ? "rtl" : "ltr"}
       style={{ width: isMobile ? "100%" : "75%" }}
     >

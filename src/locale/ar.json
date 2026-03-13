@@ -89,5 +89,9 @@
   "select payment method": "اختر وسيلة الدفع",
   "fill your details to place order": "اكمل بياناتك لاتمام الطلب",
   "wallet": "المحفظه الالكترونيه",
-  "credit card": "بطاقة الائتمان"
+  "credit card": "بطاقة الائتمان",
+  "choose your country": "اختر دولتك",
+  "choose your state": "اختر محافظتك",
+  "choose your city": "اختر مدينتك",
+  "select your carrier": "اختر شركة التوصيل"
 }
