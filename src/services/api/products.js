@@ -14,12 +14,13 @@ export const productsApi = {
   getRelatedProducts: (slug) => apiClient.get(`/products/${slug}/related`),
 };
 
+// wishlist
 export const toggleWishlist = async (id, combinationId) => {
   const token = localStorage.getItem("userToken");
 
   if (!token) {
     Toastify({
-      text: t("User is unauthenticated"),
+      text: t("user is unauthenticated"),
       className: "toast-error",
       duration: 3000,
       gravity: "top",
@@ -80,6 +81,7 @@ export const getWishlist = async () => {
   }
 };
 
+// review
 export const getReviews = async (id) => {
   try {
     const response = await apiClient.get(`/products/${id}/reviews`);

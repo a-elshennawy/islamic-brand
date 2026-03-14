@@ -127,7 +127,7 @@ function SideMenu() {
               <li className="sideMenuListItem my-2">
                 <Link
                   className="sideMenuLink"
-                  to="/"
+                  to="/discounts"
                   onClick={toggleDrawer(false)}
                 >
                   {t("discounts")} <RiDiscountPercentFill size={20} />

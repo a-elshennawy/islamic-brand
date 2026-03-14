@@ -4,10 +4,13 @@ import { useIsAr } from "../../hooks/useIsAr";
 import { TbLogin, TbLogin2 } from "react-icons/tb";
 import { GiShoppingBag } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
+import { useLogout } from "../../hooks/useAuth";
 
 function SideBar({ user, onChange, currentTab }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
+  const { mutate: handleLogout, isPending } = useLogout();
+
   return (
     <>
       <div
@@ -37,7 +40,7 @@ function SideBar({ user, onChange, currentTab }) {
           >
             {t("previous order")} <GiShoppingBag size={20} />
           </button>
-          <button className="">
+          <button onClick={() => handleLogout()} disabled={isPending}>
             {t("logout")}
             {isAr ? <TbLogin size={20} /> : <TbLogin2 size={20} />}
           </button>

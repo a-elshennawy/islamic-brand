@@ -11,7 +11,6 @@ const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
 const CategoryPage = lazy(() => import("./pages/CategoryPage/CategoryPage"));
 const SearchShop = lazy(() => import("./pages/SearchShop/SearchShop"));
 const Discounts = lazy(() => import("./pages/Discounts/Discounts"));
-const Shop = lazy(() => import("./pages/Shop/Shop"));
 const ExchangeReturn = lazy(
   () => import("./pages/ExchangeReturn/ExchangeReturn"),
 );
@@ -38,7 +37,6 @@ function App() {
               />
               <Route path="search-shop" element={<SearchShop />} />
               <Route path="discounts" element={<Discounts />} />
-              <Route path="shop" element={<Shop />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="exchange-return" element={<ExchangeReturn />} />
               <Route path="privacy-policy" element={<Privacy />} />

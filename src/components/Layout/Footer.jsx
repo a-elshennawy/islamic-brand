@@ -52,7 +52,10 @@ function Footer({ settings }) {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="importantLinks"
               >
-                <li className="linkItem" onClick={() => navigate("/shop")}>
+                <li
+                  className="linkItem"
+                  onClick={() => navigate("/shop/category_id/21")}
+                >
                   {t("shop")}
                 </li>
                 <li className="linkItem" onClick={() => navigate("/discounts")}>

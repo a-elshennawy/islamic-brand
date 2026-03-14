@@ -112,5 +112,12 @@
   "previous order": "الطلبات السابقه",
   "logout": "تسجيل الخروج",
   "remove from wishlist": "حذف من المفضلات",
-  "your wishlist is empty": "المفضلات فارغه"
+  "your wishlist is empty": "المفضلات فارغه",
+  "login successful": "تم تسجيل الدخول بنجاح",
+  "login failed": "فشل تسجيل الدخول",
+  "logout successful": "تم تسجيل الخروج بنجاح",
+  "logout failed": "فشل تسجيل الخروج",
+  "account created successfully": "تم انشاء حسابك بنجاح",
+  "registration failed": "فشل انشاء حسابك",
+  "user is unauthenticated": "يرجي تسجيل الدخول أولا"
 }

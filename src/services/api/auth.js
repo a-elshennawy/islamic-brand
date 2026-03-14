@@ -19,25 +19,12 @@ export const register = async (userData) => {
         },
       },
     );
-    Toastify({
-      text: data?.message || "Success!",
-      className: "toast-success",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-    }).showToast();
+
     return data;
   } catch (error) {
-    Toastify({
-      text:
-        error.response?.data?.message || error.message || "An error occurred",
-      className: "toast-error",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-    }).showToast();
+    throw new Error(
+      error.response?.data?.message || error.message || "An error occurred",
+    );
   }
 };
 
@@ -47,25 +34,11 @@ export const login = async (creds) => {
       phone: creds.phone,
       password: creds.password,
     });
-
-    Toastify({
-      text: "Login Successful",
-      className: "toast-success",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-    }).showToast();
-
     return result;
   } catch (error) {
-    Toastify({
-      text: error.message || "Login failed",
-      className: "toast-error",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-    }).showToast();
-    throw error;
+    throw new Error(
+      error.response?.data?.message || error.message || "An error occurred",
+    );
   }
 };
 
@@ -73,24 +46,19 @@ export const logout = async () => {
   const token = localStorage.getItem("userToken");
 
   try {
-    const { data } = await apiClient.get("/auth/logout", {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const { data } = await apiClient.post(
+      "/auth/logout",
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
 
     localStorage.removeItem("userId");
     localStorage.removeItem("userToken");
     localStorage.removeItem("user");
-
-    Toastify({
-      text: data?.message || "Success!",
-      className: "toast-success",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-    }).showToast();
 
     return data;
   } catch (error) {

@@ -15,7 +15,10 @@ function EmptyWishlist({ textColor = "#66452c" }) {
         </div>
         <div className="col-12 text-center">
           <h4 style={{ color: textColor }}>{t("your wishlist is empty")}</h4>
-          <button className="toShopBtn mt-1" onClick={() => navigate("/shop")}>
+          <button
+            className="toShopBtn mt-1"
+            onClick={() => navigate("/shop/category_id/21")}
+          >
             {t("shop now")}
           </button>
         </div>

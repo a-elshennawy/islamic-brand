@@ -110,5 +110,12 @@
   "previous order": "Previous Order",
   "logout": "Logout",
   "remove from wishlist": "Remove from Wishlist",
-  "your wishlist is empty": "Your Wishlist is Empty"
+  "your wishlist is empty": "Your Wishlist is Empty",
+  "login successful": "Login Successful",
+  "register successful": "Register Successful",
+  "logout successful": "Logout Successful",
+  "logout failed": "Logout Failed",
+  "account created successfully": "Account Created Successfully",
+  "registration failed": "Registration Failed",
+  "user is unauthenticated": "User is unauthenticated"
 }
