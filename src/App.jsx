@@ -19,6 +19,7 @@ const Auth = lazy(() => import("./pages/Auth/Auth"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
 const Profile = lazy(() => import("./pages/Profile/Profile"));
+const AuthCallback = lazy(() => import("./pages/AuthCallback/AuthCallback"));
 
 function App() {
   const [t] = useTranslation();
@@ -45,6 +46,7 @@ function App() {
               <Route path="checkout" element={<Checkout />} />
               <Route path="profile" element={<Profile />} />
             </Route>
+            <Route path="/auth/callback" element={<AuthCallback />} />
           </Routes>
         </Suspense>
       </Router>

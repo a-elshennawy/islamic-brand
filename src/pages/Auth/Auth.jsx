@@ -4,12 +4,12 @@ import { useLogin, useRegister } from "../../hooks/useAuth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion as Motion } from "motion/react";
-import { FaEyeSlash, FaEye, FaApple } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
 import { useTranslation } from "react-i18next";
-import { FcGoogle } from "react-icons/fc";
 import BtnSpinner from "../../components/Loaders/BtnSpinner";
+import SocialLogin from "../../components/AuthPageComponents/SocialLogin";
 
 function Auth() {
   const [t] = useTranslation();
@@ -310,17 +310,7 @@ function Auth() {
           </Motion.form>
         </AnimatePresence>
 
-        {/* <div className="socialLogIn text-center">
-          <h4>{t("sign in with")}</h4>
-          <div className="socialBtns py-2">
-            <button>
-              <FcGoogle size={45} />
-            </button>
-            <button>
-              <FaApple size={45} />
-            </button>
-          </div>
-        </div>*/}
+        <SocialLogin />
       </section>
     </>
   );
