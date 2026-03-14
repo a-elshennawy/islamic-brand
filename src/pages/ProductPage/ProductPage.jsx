@@ -8,6 +8,7 @@ import ProductImg from "../../components/ProductPageComponents/ProductImg";
 import ProductVariations from "../../components/ProductPageComponents/ProductVariations";
 import ProductAddToCartBtn from "../../components/Products/ProductAddToCartBtn/ProductAddToCartBtn";
 import RelatedProducts from "../../components/ProductPageComponents/RelatedProducts";
+import ProductReviews from "../../components/ProductPageComponents/Reviews/ProductReviews";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -71,6 +72,7 @@ function ProductPage() {
           )}
         </div>
 
+        <ProductReviews product={product} />
         <RelatedProducts slug={product.slug} />
       </section>
     </>

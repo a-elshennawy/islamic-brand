@@ -46,9 +46,11 @@ function ProductImg({ product }) {
             <FaRegHeart size={isMobile ? 20 : 25} />
           </span>
 
-          <span className="discountBadge">
-            {t("discount")} {discountPercentage}%
-          </span>
+          {product?.has_discount && (
+            <span className="discountBadge">
+              {t("discount")} {discountPercentage}%
+            </span>
+          )}
           <img
             src={selectedImg}
             alt={product.name}

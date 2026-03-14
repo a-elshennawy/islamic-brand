@@ -94,5 +94,16 @@
   "choose your state": "اختر محافظتك",
   "choose your city": "اختر مدينتك",
   "select your carrier": "اختر شركة التوصيل",
-  "important links": "روابط مهمه"
+  "important links": "روابط مهمه",
+  "review is deleted": "تم حذف تقييمك",
+  "failed deleting review": "فشل حذف تقييمك",
+  "product reviews": "تقييمات المنتج",
+  "add a review": "أضف تقييمك",
+  "submit review": "ارسال التقييم",
+  "write your review": "أكتبي تعليقك",
+  "no reviews yet": "لا توجد تقييمات بعد",
+  "save": "تعديل",
+  "cancel": "إلغاء",
+  "failed updating review": "فشل تعديل تقييمك",
+  "review updated": "تم تحديث تقييمك بنجاح"
 }

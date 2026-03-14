@@ -139,4 +139,77 @@
             }
         }
     }
+
+    .reviewItem {
+        position: relative;
+        background: linear-gradient(
+            30deg,
+            var(--dark-sec-color),
+            var(--light-sec-color)
+        );
+        color: var(--white);
+        border-radius: 0.625rem;
+
+        .deleteBtn {
+            position: absolute;
+            top: 0.313rem;
+            left: 0.313rem;
+            background-color: transparent;
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        .editBtn {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            color: var(--white);
+            top: 0.313rem;
+            right: 0.313rem;
+        }
+    }
+
+    .reviewsForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.313rem;
+        flex-direction: column;
+        background: linear-gradient(
+            30deg,
+            var(--dark-sec-color),
+            var(--light-sec-color)
+        );
+        padding: 0.625rem 0.313rem;
+        border-radius: 0.625rem;
+        color: var(--white);
+
+        .inputContainer {
+            width: 100%;
+        }
+
+        textarea {
+            border-radius: 0.625rem;
+            padding: 0.313rem;
+            width: 100% !important;
+            border: none;
+            color: var(--dark-sec-color);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            padding: 0.313rem;
+            background-color: var(--light-sec-color);
+            color: var(--dark-sec-color);
+            border: none;
+            border-radius: 0.625rem;
+            width: 100%;
+        }
+    }
 }

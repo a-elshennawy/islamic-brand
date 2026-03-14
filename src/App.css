@@ -78,8 +78,7 @@ section {
         var(--body-background)
     );
     color: var(--white);
-    width: fit-content;
-    margin: 0 auto;
+    text-align: center;
     padding: 0.625rem;
 }
 

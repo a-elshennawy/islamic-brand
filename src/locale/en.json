@@ -94,5 +94,16 @@
   "choose your state": "Choose Your State",
   "choose your city": "Select Your City",
   "select your carrier": "Select Your Carrier",
-  "important links": "Important Links"
+  "important links": "Important Links",
+  "review is deleted": "Review is deleted",
+  "failed deleting review": "Failed deleting review",
+  "product reviews": "Product Reviews",
+  "add a review": "Add A Review",
+  "submit review": "Submit review",
+  "write your review": "Write Your Review",
+  "no reviews yet": "No Reviews Yet",
+  "save": "Save",
+  "cancel": "Cancel",
+  "failed updating review": "Failed Updating Review",
+  "review updated": "Review Updated Successfully"
 }

@@ -50,3 +50,88 @@ export const toggleWishlist = async (id, combinationId) => {
     );
   }
 };
+
+export const getReviews = async (id) => {
+  try {
+    const response = await apiClient.get(`/products/${id}/reviews`);
+    return response;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message ||
+        "An error occurred while fetching product reviews.",
+    );
+  }
+};
+
+export const addReview = async (id, rating, review) => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    }
+
+    const response = await apiClient.post(
+      "/products/reviews",
+      {
+        product_id: id,
+        rating: rating,
+        review: review,
+      },
+      {
+        headers,
+      },
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const updateReview = async (id, rating, review) => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    }
+
+    const response = await apiClient.put(
+      `/products/reviews/${id}`,
+      {
+        rating: rating,
+        review: review,
+      },
+      {
+        headers,
+      },
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const deleteReview = async (id) => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    }
+
+    const response = await apiClient.delete(`/products/reviews/${id}`, {
+      headers,
+    });
+
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
