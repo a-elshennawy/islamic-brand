@@ -105,5 +105,10 @@
   "save": "Save",
   "cancel": "Cancel",
   "failed updating review": "Failed Updating Review",
-  "review updated": "Review Updated Successfully"
+  "review updated": "Review Updated Successfully",
+  "wishlist": "Wishlist",
+  "previous order": "Previous Order",
+  "logout": "Logout",
+  "remove from wishlist": "Remove from Wishlist",
+  "your wishlist is empty": "Your Wishlist is Empty"
 }

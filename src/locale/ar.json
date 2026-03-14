@@ -105,5 +105,12 @@
   "save": "تعديل",
   "cancel": "إلغاء",
   "failed updating review": "فشل تعديل تقييمك",
-  "review updated": "تم تحديث تقييمك بنجاح"
+  "review updated": "تم تحديث تقييمك بنجاح",
+  "referrer code": "كود المعرف",
+  "loyalty points": "نقاط الولاء",
+  "wishlist": "المفضلات",
+  "previous order": "الطلبات السابقه",
+  "logout": "تسجيل الخروج",
+  "remove from wishlist": "حذف من المفضلات",
+  "your wishlist is empty": "المفضلات فارغه"
 }

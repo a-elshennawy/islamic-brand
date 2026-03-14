@@ -27,7 +27,7 @@ function ReviewCard({ review }) {
           <EditReview review={review} onCancel={() => setIsEditing(false)} />
         ) : (
           <>
-            <h4>{review?.user.name}</h4>
+            <h4>{review?.user?.name}</h4>
             <Rating
               name="text-feedback"
               value={review?.rating}

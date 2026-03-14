@@ -1,4 +1,117 @@
 .profilePage {
     padding: 5.938rem 0rem 1.25rem 0rem;
-    min-height: 100dvh;
+    min-height: 80dvh;
+
+    .profileBar {
+        background-color: var(--light-sec-color);
+        color: var(--dark-sec-color);
+        border-radius: 0.625rem;
+
+        .tabActions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0.313rem;
+
+            button {
+                width: 100%;
+                padding: 0.313rem;
+                border: none;
+                border-radius: 0.313rem;
+                background-color: var(--body-background);
+                color: var(--dark-sec-color);
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                gap: 0.313rem;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .activeTab {
+                background-color: var(--dark-sec-color);
+                color: var(--white);
+                padding: 0.625rem 0.313rem;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .tabTitle {
+        color: var(--dark-sec-color);
+    }
+
+    .wishedItem {
+        background-color: var(--dark-sec-color);
+        border-radius: 0.625rem;
+        overflow: hidden;
+
+        .imgContainer {
+            cursor: pointer;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .info {
+            h4,
+            h3 {
+                color: var(--white);
+            }
+            .spec {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.313rem;
+                background-color: var(--light-sec-color);
+                border-radius: 0.313rem;
+                width: fit-content;
+                margin: 0 auto;
+
+                .color {
+                    width: 1.875rem;
+                    height: 1.25rem;
+                    border-radius: 0.313rem;
+                    border: 0.063rem solid var(--dark-sec-color);
+                }
+            }
+
+            .actions {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.313rem;
+                width: 100%;
+                flex-direction: column;
+
+                button {
+                    width: 100%;
+                    padding: 0.313rem;
+                    border-radius: 0.313rem;
+                    border: none;
+                    background-color: var(--light-sec-color);
+                    color: var(--dark-sec-color);
+                }
+            }
+        }
+
+        &:hover {
+            .imgContainer {
+                img {
+                    transform: scale(1.06);
+                }
+            }
+        }
+    }
+
+    .toShopBtn {
+        padding: 0.313rem;
+        border: none;
+        border-radius: 0.625rem;
+        background-color: var(--dark-sec-color);
+        color: var(--white);
+    }
 }

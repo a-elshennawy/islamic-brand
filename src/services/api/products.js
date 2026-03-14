@@ -31,7 +31,7 @@ export const toggleWishlist = async (id, combinationId) => {
   }
 
   try {
-    await apiClient.post(
+    const { data, message } = await apiClient.post(
       "/wishlist/toggle",
       {
         product_id: id,
@@ -43,10 +43,39 @@ export const toggleWishlist = async (id, combinationId) => {
         },
       },
     );
+    Toastify({
+      text: message,
+      className: "toast-success",
+      duration: 2000,
+      gravity: "top",
+      position: "center",
+    }).showToast();
+    return data;
   } catch (error) {
     throw new Error(
       error.response?.data?.message ||
         "An error occurred while adding product to wishlist.",
+    );
+  }
+};
+
+export const getWishlist = async () => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    }
+
+    const response = await apiClient.get("/wishlist", {
+      headers,
+    });
+    return response;
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message ||
+        "An error occurred while fetching wishlist.",
     );
   }
 };

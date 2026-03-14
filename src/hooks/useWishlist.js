@@ -10,14 +10,6 @@ export const useToggleWishlist = () => {
       toggleWishlist(productId, combinationId),
 
     onSuccess: () => {
-      Toastify({
-        text: "Wishlist updated!",
-        className: "toast-success",
-        duration: 2000,
-        gravity: "top",
-        position: "center",
-      }).showToast();
-
       queryClient.invalidateQueries({ queryKey: ["wishlist"] });
     },
 
