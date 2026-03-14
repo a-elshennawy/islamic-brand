@@ -125,11 +125,6 @@ function SideMenu() {
                 )}
               </AnimatePresence>
               <li className="sideMenuListItem my-2">
-                <Link className="sideMenuLink" to="/" onClick={onClickContacts}>
-                  {t("contacts")} <BiSupport size={20} />
-                </Link>
-              </li>
-              <li className="sideMenuListItem my-2">
                 <Link
                   className="sideMenuLink"
                   to="/"

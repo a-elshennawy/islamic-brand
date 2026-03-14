@@ -6,10 +6,12 @@ import useMobile from "../../hooks/useMobile";
 import { motion as Motion } from "motion/react";
 import { useToggleWishlist } from "../../hooks/useWishlist";
 import { FaRegHeart } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function ProductImg({ product }) {
   const [selectedImg, setSelectedImg] = useState(product?.main_image);
   const { isMobile } = useMobile();
+  const [t] = useTranslation();
   const productImages = product?.grouped_variations?.map(
     (variation) => variation.main_image,
   );
@@ -24,6 +26,12 @@ function ProductImg({ product }) {
     });
   };
 
+  const discountPercentage = Math.round(
+    ((product.original_price - product.discount_price) /
+      product.original_price) *
+      100,
+  );
+
   return (
     <>
       <div className="imgSide p-2 col-xl-5 col-lg-5 col-md-10 col-sm-12 col-12 row gap-2 m-0 justify-content-center">
@@ -35,9 +43,11 @@ function ProductImg({ product }) {
           transition={{ duration: 0.5 }}
         >
           <span className="wishlistBtn" onClick={handleToggleWishlist}>
-            <span className="btn">
-              <FaRegHeart size={isMobile ? 20 : 25} />
-            </span>
+            <FaRegHeart size={isMobile ? 20 : 25} />
+          </span>
+
+          <span className="discountBadge">
+            {t("discount")} {discountPercentage}%
           </span>
           <img
             src={selectedImg}

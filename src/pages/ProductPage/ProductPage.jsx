@@ -40,22 +40,22 @@ function ProductPage() {
           <div className="productPriceSection p-0">
             {product.discount_price ? (
               <>
-                <h5>
+                <h4 className="m-0">
                   {product.original_price} {t("L.E")}
-                </h5>
-                <h3>
+                </h4>
+                <h2>
                   <strong>
                     {product.discount_price} {t("L.E")}
                   </strong>
-                </h3>
+                </h2>
               </>
             ) : (
               <>
-                <h3>
+                <h2>
                   <strong>
                     {product.price} {t("L.E")}
                   </strong>
-                </h3>
+                </h2>
               </>
             )}
           </div>

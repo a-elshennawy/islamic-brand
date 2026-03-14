@@ -61,7 +61,7 @@ function ProductCard({ product, className }) {
             style={{ fontSize: isMobile ? "1rem" : "" }}
           >
             <h5 style={{ fontSize: isMobile ? "1rem" : "" }}>
-              {truncateName(product.name, isMobile ? 15 : 20)}
+              {truncateName(product.name, 15)}
             </h5>
 
             <div className="rating p-0">

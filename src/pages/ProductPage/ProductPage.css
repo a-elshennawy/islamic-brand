@@ -5,32 +5,38 @@
     .imgSide {
         position: relative;
 
+        .discountBadge {
+            position: absolute;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 0.625rem;
+            z-index: 111;
+            top: 0.313rem;
+            left: 0.313rem;
+            padding: 0.313rem;
+        }
+
         .mainImg {
             position: relative;
 
             .wishlistBtn {
+                cursor: pointer;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 0.313rem;
+                right: 0.313rem;
+                border-radius: 0.625rem;
                 padding: 0.313rem;
                 background-color: var(--body-background);
-                border-radius: 0 0 0 0.625rem;
-                z-index: 1;
-                cursor: pointer;
-
-                .btn {
-                    background-color: var(--secondary-color);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 0.625rem;
-                    padding: 0.25rem;
-                }
+                z-index: 111;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 svg {
-                    color: var(--white);
+                    color: var(--secondary-color);
                 }
             }
+
             img {
                 width: 100%;
                 border-radius: 0.313rem;
@@ -64,7 +70,7 @@
             align-items: center;
             gap: 0.313rem;
 
-            h5 {
+            h4 {
                 text-decoration: line-through;
                 opacity: 0.7;
             }

@@ -273,6 +273,13 @@ footer {
     .footerCol {
         text-transform: capitalize !important;
 
+        .logoContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.313rem;
+        }
+
         .socialMedia {
             .links {
                 display: flex;
@@ -292,7 +299,7 @@ footer {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: var(--main-color);
+                        color: var(--dark-sec-color);
                         transition: all 0.3s ease-in-out;
                     }
 
@@ -315,7 +322,7 @@ footer {
                     width: 100%;
                     padding: 0.625rem;
                     border: none;
-                    border-radius: 0.313rem;
+                    border-radius: 1.25rem;
                     text-align: end;
 
                     &:focus {
@@ -332,7 +339,7 @@ footer {
                     top: 50%;
                     transform: translateY(-50%);
                     border: none;
-                    border-radius: 0.313rem;
+                    border-radius: 1.25rem;
                     color: var(--white);
                     background-color: var(--secondary-color);
                     padding: 0.313rem;
@@ -350,6 +357,37 @@ footer {
 
             a {
                 color: var(--main-color);
+            }
+        }
+
+        .impLinksTrigger {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            .arrowIcon {
+                transition: all 0.3s ease-in-out;
+            }
+
+            .rotateArrowAr {
+                transition: all 0.3s ease-in-out;
+                transform: rotate(-90deg);
+            }
+
+            .rotateArrowEn {
+                transition: all 0.3s ease-in-out;
+                transform: rotate(90deg);
+            }
+        }
+
+        .importantLinks {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .linkItem {
+                cursor: pointer;
+                padding: 0.313rem 0rem;
             }
         }
     }

@@ -1,14 +1,19 @@
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../hooks/useIsAr";
 import useMobile from "../../hooks/useMobile";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
-import { motion as Motion } from "motion/react";
+import { AnimatePresence, motion as Motion } from "motion/react";
+import logo from "/icon_cut.png";
+import { useState } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 function Footer({ settings }) {
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { isMobile } = useMobile();
+  const navigate = useNavigate();
+  const [showLinks, setShowLinks] = useState(true);
 
   return (
     <>
@@ -21,18 +26,59 @@ function Footer({ settings }) {
         dir={isAr ? "rtl" : "ltr"}
       >
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 ${isMobile ? "text-center order-2" : ""}`}
         >
-          <h4>{t("contact_info")}</h4>
-          <p className="m-0">
-            {t("contact_info_text")} <br /> {settings?.email}
-          </p>
-          <p>{settings?.phone}</p>
-          <div className="socialMedia">
-            <p className="mb-0">{t("social_media")} :</p>
-            <div
-              className={`links py-2 ${isMobile ? "justify-content-center" : ""}`}
+          <h4
+            className={`impLinksTrigger ${isMobile ? "justify-content-center" : ""}`}
+            onClick={() => setShowLinks(!showLinks)}
+          >
+            <span>{t("important links")}</span>
+            <span
+              className={`arrowIcon ${showLinks ? (isAr ? "rotateArrowAr" : "rotateArrowEn") : ""}`}
             >
+              {isAr ? (
+                <MdKeyboardArrowLeft size={30} />
+              ) : (
+                <MdKeyboardArrowRight size={30} />
+              )}
+            </span>
+          </h4>
+          <AnimatePresence mode="wait">
+            {showLinks && (
+              <Motion.ul
+                initial={{ opacity: 0, height: 0, overflow: "hidden" }}
+                whileInView={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="importantLinks"
+              >
+                <li className="linkItem" onClick={() => navigate("/shop")}>
+                  {t("shop")}
+                </li>
+                <li className="linkItem" onClick={() => navigate("/discounts")}>
+                  {t("discounts")}
+                </li>
+                <li className="linkItem" onClick={() => navigate("/reviews")}>
+                  {t("reviews")}
+                </li>
+              </Motion.ul>
+            )}
+          </AnimatePresence>
+        </div>
+
+        <div
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-1" : ""}`}
+        >
+          <div className="logoContainer">
+            <img
+              src={logo}
+              alt="islamic brand logo"
+              loading="lazy"
+              style={{ width: isMobile ? "6.25rem" : "9.375rem" }}
+            />
+          </div>
+          <div className="socialMedia">
+            <div className={`links py-2 justify-content-center`}>
               <span>
                 <Link to={settings?.facebook} target="_blank">
                   <FaFacebookF size={20} />
@@ -59,22 +105,9 @@ function Footer({ settings }) {
             </div>
           </div>
         </div>
+
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
-        >
-          <h4>{t("address")}</h4>
-          <p className="m-0">
-            {settings?.address} - {settings?.street}
-          </p>
-          <p className="m-0">
-            {settings?.day_from} - {settings?.day_to}
-          </p>
-          <p className="m-0">
-            {settings?.available_from} - {settings?.available_to}
-          </p>
-        </div>
-        <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-3" : ""}`}
         >
           <h4>{t("subscribe_to_newsteller")}</h4>
           <p>{t("susbcribe_text")}</p>
@@ -91,8 +124,10 @@ function Footer({ settings }) {
             </div>
           </form>
         </div>
-        <hr />
-        <div className="footerCol col-12 text-center py-2">
+
+        <div className="footerCol col-12 text-center py-2 order-4">
+          <hr />
+
           <div className="pageLinks pb-4">
             <Link to="/privacy-policy">{t("privacy_policy")}</Link>|
             <Link to="/exchange-return">{t("return_policy")}</Link>

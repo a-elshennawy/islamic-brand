@@ -102,7 +102,7 @@ function ProductVariations({ product }) {
                 />
               </div>
               <div className="details p-0 col-xl-7 col-lg-7 col-md-10 col-sm-10 col-12">
-                <h4>{t("selected_var")}</h4>
+                <h3>{t("selected_var")}</h3>
                 <h5>
                   <strong>{t("color")} : </strong> {selectedColor.name}
                 </h5>
@@ -115,7 +115,7 @@ function ProductVariations({ product }) {
                   {t("L.E")}
                 </h5>
                 <h5>
-                  <strong>{t("stock")} :</strong>
+                  <strong>{t("stock")} : </strong>
                   {selectedCombination.stock === "0"
                     ? t("out_of_stock")
                     : t("in_stock")}
