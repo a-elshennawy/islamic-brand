@@ -21,6 +21,9 @@ const Cart = lazy(() => import("./pages/Cart/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
 const Profile = lazy(() => import("./pages/Profile/Profile"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback/AuthCallback"));
+const OrderConfirmed = lazy(
+  () => import("./pages/OrderConfirmed/OrderConfirmed"),
+);
 
 function App() {
   loadMetaPixel();
@@ -65,6 +68,7 @@ function App() {
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="payment/return" element={<OrderConfirmed />} />
             </Route>
             <Route path="/auth/callback" element={<AuthCallback />} />
           </Routes>

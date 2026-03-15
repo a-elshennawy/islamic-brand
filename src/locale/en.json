@@ -127,5 +127,7 @@
   "address one": "Address One",
   "address two": "Address Two",
   "district": "District",
-  "please complete your address": "Please complete your address"
+  "please complete your address": "Please complete your address",
+  "your order has been confirmed": "Your order has been confirmed",
+  "order id": "Order ID"
 }

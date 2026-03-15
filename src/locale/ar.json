@@ -129,5 +129,7 @@
   "address one": "العنوان الأول",
   "address two": "العنوان الثاني",
   "district": "الحي",
-  "please complete your address": "يرجي إكمال العنوان"
+  "please complete your address": "يرجي إكمال العنوان",
+  "your order has been confirmed": "تم تأكيد طلبك",
+  "order id": "رقم الطلب"
 }

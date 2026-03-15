@@ -1,0 +1,26 @@
+.orderConfirmedPage {
+    padding: 5.938rem 0rem 1.25rem 0rem;
+    min-height: 50dvh;
+
+    .headerText {
+        color: var(--dark-sec-color);
+    }
+
+    .detailsTable {
+        background-color: var(--light-sec-color);
+        border-radius: 0.625rem;
+        overflow: hidden;
+        .tableHead {
+            background-color: var(--dark-sec-color);
+            color: var(--white);
+        }
+        .tableContent {
+            .tableItem {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}

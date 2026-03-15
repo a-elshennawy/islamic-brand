@@ -38,3 +38,23 @@ export const placeOrder = async (payload) => {
     throw error;
   }
 };
+
+export const getOrderDetails = async (id) => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    } else {
+      const tempUserId = getUserId();
+      headers["X-Temp-User-Id"] = tempUserId;
+    }
+
+    const response = await apiClient.get(`/orders/${id}`, { headers });
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
