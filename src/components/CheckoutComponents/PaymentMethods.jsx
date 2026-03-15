@@ -2,20 +2,28 @@ import { useTranslation } from "react-i18next";
 import walletIcon from "../../assets/icons/wallet.svg";
 import creditCardIcon from "../../assets/icons/contactless.svg";
 
-function PaymentMethods() {
+function PaymentMethods({ selectedPaymentMethod, onPaymentMethodChange }) {
   const [t] = useTranslation();
   return (
     <>
       <div className="paymentMethods">
         <h4>{t("select payment method")}</h4>
         <div className="selectors pt-2">
-          <button>
+          <button
+            type="button"
+            className={`${selectedPaymentMethod === "card" ? "selectedPayment" : ""}`}
+            onClick={() => onPaymentMethodChange("card")}
+          >
             {t("credit card")}
             <span>
               <img src={creditCardIcon} alt="credit card" />
             </span>
           </button>
-          <button>
+          <button
+            type="button"
+            className={`${selectedPaymentMethod === "wallet" ? "selectedPayment" : ""}`}
+            onClick={() => onPaymentMethodChange("wallet")}
+          >
             {t("wallet")}
             <span>
               <img src={walletIcon} alt="wallet" />

@@ -117,5 +117,15 @@
   "logout failed": "Logout Failed",
   "account created successfully": "Account Created Successfully",
   "registration failed": "Registration Failed",
-  "user is unauthenticated": "User is unauthenticated"
+  "user is unauthenticated": "User is unauthenticated",
+  "please select a carrier": "Please select a carrier",
+  "please select a payment method": "Please select a payment method",
+  "please enter your name": "Please enter your name",
+  "please enter your phone": "Please enter your phone",
+  "please select your city": "Please select your city",
+  "select state & shipping method": "Select state & shipping method",
+  "address one": "Address One",
+  "address two": "Address Two",
+  "district": "District",
+  "please complete your address": "Please complete your address"
 }

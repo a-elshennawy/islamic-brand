@@ -119,5 +119,15 @@
   "logout failed": "فشل تسجيل الخروج",
   "account created successfully": "تم انشاء حسابك بنجاح",
   "registration failed": "فشل انشاء حسابك",
-  "user is unauthenticated": "يرجي تسجيل الدخول أولا"
+  "user is unauthenticated": "يرجي تسجيل الدخول أولا",
+  "please select a carrier": "أختر طريقة التوصيل",
+  "please select a payment method": "أختر طريقة الدفع",
+  "please enter your name": "أدخل اسمك أولا",
+  "please enter your phone": "أدخل رقم الهاتف",
+  "please select your city": "أختر مدينتك",
+  "select state & shipping method": "أختر محافظتك وطريقة الشحن",
+  "address one": "العنوان الأول",
+  "address two": "العنوان الثاني",
+  "district": "الحي",
+  "please complete your address": "يرجي إكمال العنوان"
 }

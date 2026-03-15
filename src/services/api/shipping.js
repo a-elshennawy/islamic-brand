@@ -70,3 +70,25 @@ export const getShippingRates = async ({ carrierId, stateId, cityId }) => {
     throw error;
   }
 };
+
+export const getAddressId = async (payload) => {
+  const userToken = localStorage.getItem("userToken");
+  const headers = {};
+
+  if (userToken) {
+    headers.Authorization = `Bearer ${userToken}`;
+  } else {
+    const tempUserId = getUserId();
+    headers["X-Temp-User-Id"] = tempUserId;
+  }
+
+  try {
+    const response = await apiClient.post("/addresses", payload, {
+      headers,
+    });
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
