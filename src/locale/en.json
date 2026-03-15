@@ -129,5 +129,13 @@
   "district": "District",
   "please complete your address": "Please complete your address",
   "your order has been confirmed": "Your order has been confirmed",
-  "order id": "Order ID"
+  "order id": "Order ID",
+  "piece": "Piece",
+  "order details": "Order Details",
+  "order status": "Order Status",
+  "payment status": "Payment Status",
+  "shipping details": "Shipping Details",
+  "user address": "User Address",
+  "address details": "Address Details",
+  "shipping method": "Shipping Method"
 }
