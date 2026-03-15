@@ -12,12 +12,15 @@ import MobileBottomBar from "./MobileBottomBar";
 import Loader from "../Loaders/Loader";
 import useMobile from "../../hooks/useMobile";
 import ClarityScript from "../../utils/Clarity/ClarityScript";
+import usePageViewTracker from "../../hooks/metaTracking/usePageViewTracker";
 
 function Layout() {
   const { data, isLoading } = UseSettings();
   const location = useLocation();
   const prevPathname = useRef(location.pathname);
   const { isMobile } = useMobile();
+
+  usePageViewTracker();
 
   useEffect(() => {
     window.scrollTo({

@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Layout from "./components/Layout/Layout";
 import Loader from "./components/Loaders/Loader";
 import { UseSettings } from "./hooks/useGeneral";
+import { loadMetaPixel } from "./utils/MetaPixel/metaPixel";
 
 // pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -22,6 +23,7 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback/AuthCallback"));
 
 function App() {
+  loadMetaPixel();
   const { data, isLoading } = UseSettings();
 
   // to get pure text instead of html tags that are in the response
@@ -37,6 +39,7 @@ function App() {
       </>
     );
   }
+
   return (
     <>
       <title>{data?.app_name}</title>

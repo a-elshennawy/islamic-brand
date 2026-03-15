@@ -9,6 +9,8 @@ import ProductVariations from "../../components/ProductPageComponents/ProductVar
 import ProductAddToCartBtn from "../../components/Products/ProductAddToCartBtn/ProductAddToCartBtn";
 import RelatedProducts from "../../components/ProductPageComponents/RelatedProducts";
 import ProductReviews from "../../components/ProductPageComponents/Reviews/ProductReviews";
+import useViewContentTracker from "../../hooks/metaTracking/useViewContentTracker";
+import { useState } from "react";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -16,6 +18,9 @@ function ProductPage() {
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { data: product, isLoading } = useProduct(slug || "");
+  const [quantity, setQuantity] = useState(1);
+
+  useViewContentTracker(product, quantity);
 
   if (isLoading) {
     return <SectionLoader />;

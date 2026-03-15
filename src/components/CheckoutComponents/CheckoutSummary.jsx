@@ -10,6 +10,7 @@ import Toastify from "toastify-js";
 import { getCarriers, getShippingRates } from "../../services/api/shipping";
 import { getAddressId } from "../../services/api/shipping";
 import { useQuery } from "@tanstack/react-query";
+import useInitiateCheckout from "../../hooks/metaTracking/useInitiateCheckout";
 
 function CheckoutSummary({
   formData,
@@ -52,6 +53,7 @@ function CheckoutSummary({
   });
 
   const cartItems = cart?.items;
+  useInitiateCheckout(cartItems);
 
   const handlePlaceOrder = async () => {
     if (!selectedCarrier) return showError(t("please select a carrier"));
