@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./components/Layout/Layout";
 import Loader from "./components/Loaders/Loader";
+import { useSettings } from "./hooks/useGeneral";
 
 // pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -22,10 +22,27 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback/AuthCallback"));
 
 function App() {
-  const [t] = useTranslation();
+  const { data, isLoading } = useSettings();
+
+  // to get pure text instead of html tags that are in the response
+  const stripHtml = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent?.trim() || "";
+  };
+
+  if (isLoading) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
   return (
     <>
-      <title>{t("brand_name")}</title>
+      <title>{data?.app_name}</title>
+      <meta name="description" content={stripHtml(data?.meta_description)} />
+      <meta name="keywords" content={stripHtml(data?.meta_keywords)} />
+
       <Router>
         <Suspense fallback={<Loader />}>
           <Routes>

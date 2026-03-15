@@ -5,7 +5,6 @@ function CartSummary({ cartSummary }) {
   const [t] = useTranslation();
   const navigate = useNavigate();
 
-  console.log(cartSummary);
   return (
     <>
       <div className="cartSummary col-xl-3 col-lg-3 col-md-10 col-sm-10 col-11 text-center p-2">

@@ -26,7 +26,7 @@ function FeaturedProducts() {
       <section
         className="featuredProducts homeSection"
         dir={isAr ? "rtl" : "ltr"}
-        style={{ width: isMobile ? "100%" : "75%" }}
+        style={{ width: isMobile ? "95%" : "75%" }}
       >
         <Motion.h2
           initial={{ opacity: 0 }}

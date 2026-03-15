@@ -22,7 +22,6 @@ function BestProduct() {
   if (isLoading) return <SectionLoader />;
 
   if (!BestProduct) return null;
-  console.log(BestProduct);
 
   return (
     <>

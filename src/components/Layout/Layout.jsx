@@ -11,6 +11,7 @@ import TopBar from "./TopBar";
 import MobileBottomBar from "./MobileBottomBar";
 import Loader from "../Loaders/Loader";
 import useMobile from "../../hooks/useMobile";
+import ClarityScript from "../../utils/Clarity/ClarityScript";
 
 function Layout() {
   const { data, isLoading } = useSettings();
@@ -37,6 +38,7 @@ function Layout() {
 
   return (
     <>
+      <ClarityScript data={data} />
       <TopBar />
       <Navbar />
       <ScrollBar />

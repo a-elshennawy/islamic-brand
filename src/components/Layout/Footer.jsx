@@ -26,10 +26,10 @@ function Footer({ settings }) {
         dir={isAr ? "rtl" : "ltr"}
       >
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 ${isMobile ? "text-center order-2" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 text-center ${isMobile ? "order-2" : ""}`}
         >
           <h4
-            className={`impLinksTrigger ${isMobile ? "justify-content-center" : ""}`}
+            className={`impLinksTrigger text-center justify-content-center`}
             onClick={() => setShowLinks(!showLinks)}
           >
             <span>{t("important links")}</span>
@@ -47,7 +47,7 @@ function Footer({ settings }) {
             {showLinks && (
               <Motion.ul
                 initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                whileInView={{ opacity: 1, height: "auto" }}
+                animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0, overflow: "hidden" }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="importantLinks"
