@@ -6,7 +6,7 @@ import ScrollBar from "../ScrollBar/ScrollBar";
 import UpBtn from "../UpBtn/UpBtn";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { useSettings } from "../../hooks/useGeneral";
+import { UseSettings } from "../../hooks/useGeneral";
 import TopBar from "./TopBar";
 import MobileBottomBar from "./MobileBottomBar";
 import Loader from "../Loaders/Loader";
@@ -14,7 +14,7 @@ import useMobile from "../../hooks/useMobile";
 import ClarityScript from "../../utils/Clarity/ClarityScript";
 
 function Layout() {
-  const { data, isLoading } = useSettings();
+  const { data, isLoading } = UseSettings();
   const location = useLocation();
   const prevPathname = useRef(location.pathname);
   const { isMobile } = useMobile();

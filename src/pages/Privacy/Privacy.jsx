@@ -1,12 +1,12 @@
 import SectionLoader from "../../components/Loaders/SectionLoader";
-import { useSettings } from "../../hooks/useGeneral";
+import { UseSettings } from "../../hooks/useGeneral";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 function Privacy() {
   const [t] = useTranslation();
   const navigate = useNavigate();
-  const { data, isLoading, isError } = useSettings();
+  const { data, isLoading, isError } = UseSettings();
 
   if (isLoading) {
     return <SectionLoader />;

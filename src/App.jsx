@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./components/Layout/Layout";
 import Loader from "./components/Loaders/Loader";
-import { useSettings } from "./hooks/useGeneral";
+import { UseSettings } from "./hooks/useGeneral";
 
 // pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -22,7 +22,7 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback/AuthCallback"));
 
 function App() {
-  const { data, isLoading } = useSettings();
+  const { data, isLoading } = UseSettings();
 
   // to get pure text instead of html tags that are in the response
   const stripHtml = (html) => {

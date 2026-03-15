@@ -87,7 +87,8 @@ function Footer({ settings }) {
                   <FaFacebookF size={20} />
                 </Link>
               </span>
-              <span>
+
+              {/* <span>
                 <Link to={settings?.instagram} target="_blank">
                   <FaInstagram size={20} />
                 </Link>
@@ -96,7 +97,8 @@ function Footer({ settings }) {
                 <Link to={settings?.tiktok} target="_blank">
                   <FaTiktok size={20} />
                 </Link>
-              </span>
+              </span>*/}
+
               <span>
                 <Link
                   to={`https://wa.me/${settings?.whatsapp}`}

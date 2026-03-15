@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { generalApi } from "../services/api/general";
 
-export const useSettings = () => {
+export const UseSettings = () => {
   return useQuery({
     queryKey: ["settings"],
     queryFn: () => generalApi.getSettings(),
