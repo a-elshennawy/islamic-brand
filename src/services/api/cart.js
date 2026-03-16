@@ -136,7 +136,7 @@ export const updateItemQuantity = async (id, quantity) => {
       headers["X-Temp-User-Id"] = tempUserId;
     }
 
-    const response = await apiClient.put(
+    const { data, message } = await apiClient.put(
       "/cart/update-quantity",
       {
         cart_item_id: id,
@@ -145,17 +145,17 @@ export const updateItemQuantity = async (id, quantity) => {
       { headers },
     );
     Toastify({
-      text: response?.message || "Success!",
+      text: message || "Success!",
       className: "toast-success",
       duration: 3000,
       gravity: "top",
       position: "center",
       stopOnFocus: true,
     }).showToast();
-    return response;
+    return data;
   } catch (error) {
     Toastify({
-      text: error,
+      text: error.message,
       className: "toast-error",
       duration: 3000,
       gravity: "top",
