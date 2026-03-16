@@ -121,6 +121,7 @@ function ProductVariations({ product }) {
                     : t("in_stock")}
                 </h5>
                 <VariationAddToCartBtn
+                  mainProduct={product}
                   product={selectedCombination}
                   productId={product.id}
                 />

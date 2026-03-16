@@ -33,8 +33,6 @@ function Cart() {
     navigate("/");
   }
 
-  console.log(cartSummary);
-
   return (
     <>
       <title>{t("cart_page_title")}</title>

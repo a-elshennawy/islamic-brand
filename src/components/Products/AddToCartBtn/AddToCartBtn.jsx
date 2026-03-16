@@ -19,9 +19,13 @@ function AddToCartBtn({ product }) {
     } else {
       addToCart.mutate({
         productId: product.id,
+        quantity: 1,
+        product: product,
       });
     }
   };
+
+  // console.log("product added:", product);
 
   return (
     <>

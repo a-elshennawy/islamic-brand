@@ -6,6 +6,7 @@ import {
   removeCartItem,
   updateItemQuantity,
 } from "../services/api/cart";
+import { trackMetaPixelEvent } from "../utils/MetaPixel/metaPixel";
 
 export const useAddToCart = () => {
   const queryClient = useQueryClient();
@@ -19,7 +20,24 @@ export const useAddToCart = () => {
       return addToCart(payload);
     },
 
-    onSuccess: () => {
+    onSuccess: (data, variables) => {
+      const { product, quantity = 1 } = variables;
+
+      if (product) {
+        const priceValue = product?.final_price || product?.price;
+
+        const metaEventData = {
+          event_name: "AddToCart",
+          content_type: "product",
+          content_name: product?.name,
+          content_ids: [product?.id.toString()],
+          value: priceValue * quantity,
+          currency: "EGP",
+        };
+        trackMetaPixelEvent("AddToCart", metaEventData);
+        console.log("add to cart tracked", metaEventData);
+      }
+
       queryClient.invalidateQueries({ queryKey: ["cart"] });
       queryClient.invalidateQueries({ queryKey: ["cartCount"] });
       queryClient.invalidateQueries({ queryKey: ["cartSummary"] });

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useAddToCart } from "../../../hooks/useCart";
 
-function VariationAddToCartBtn({ product, productId }) {
+function VariationAddToCartBtn({ mainProduct, product, productId }) {
   const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
 
@@ -17,6 +17,8 @@ function VariationAddToCartBtn({ product, productId }) {
     addToCart.mutate({
       productId: productId,
       combinationId: product.id, //<- combination id as this 100% variation product
+      quantity: 1,
+      product: mainProduct,
     });
   };
 

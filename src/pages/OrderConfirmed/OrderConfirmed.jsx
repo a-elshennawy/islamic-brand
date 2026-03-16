@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
 import successLottie from "../../assets/lotties/success.json";
 import { useIsAr } from "../../hooks/useIsAr";
+import usePurchase from "../../hooks/metaTracking/usePurchase";
 
 function OrderConfirmed() {
   const [t] = useTranslation();
@@ -27,6 +28,8 @@ function OrderConfirmed() {
   useEffect(() => {
     if (!orderId) navigate("/");
   }, [orderId, navigate]);
+
+  usePurchase(order);
 
   if (isLoading) return <Loader />;
 

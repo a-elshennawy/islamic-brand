@@ -68,7 +68,13 @@ function ProductAddToCartBtn({ product }) {
             className="productAddToCartBtn my-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            onClick={() => addToCart.mutate({ productId: product.id })}
+            onClick={() =>
+              addToCart.mutate({
+                productId: product.id,
+                quantity: 1,
+                product: product,
+              })
+            }
           >
             <Motion.div
               className="button-content"
