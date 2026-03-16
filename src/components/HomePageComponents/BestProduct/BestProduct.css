@@ -53,6 +53,11 @@
             border-radius: 6.25rem 6.25rem 0 0;
         }
         .inMobileBadge {
+            background: linear-gradient(
+                to bottom,
+                var(--body-background),
+                var(--dark-sec-color)
+            );
             border-radius: 0.625rem;
         }
     }
