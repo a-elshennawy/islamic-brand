@@ -60,7 +60,7 @@ function FeaturedProductCard({ product }) {
               onClick={() => navigate(`/product-details/${product?.slug}`)}
               className="prodName"
             >
-              {truncateName(product?.name, 15)}
+              {truncateName(product?.name, isMobile ? 10 : 15)}
             </h5>
 
             <div className="rating p-0">
