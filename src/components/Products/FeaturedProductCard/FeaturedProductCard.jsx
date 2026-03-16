@@ -25,10 +25,12 @@ function FeaturedProductCard({ product }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="featuredProdCard"
-          style={{ direction: isAr ? "rtl" : "ltr" }}
+          className="featuredProdCard row justify-content-center align-items-center m-0 p-0"
+          style={{
+            direction: isAr ? "rtl" : "ltr",
+          }}
         >
-          <div className="imgContainer p-0">
+          <div className="imgContainer col-12 p-0">
             {product.discount_price && (
               <>
                 <span
