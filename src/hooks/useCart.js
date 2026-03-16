@@ -7,6 +7,7 @@ import {
   updateItemQuantity,
 } from "../services/api/cart";
 import { trackMetaPixelEvent } from "../utils/MetaPixel/metaPixel";
+import { trackTikTokPixelEvent } from "../utils/TiktokPixel/tiktokPixel";
 
 export const useAddToCart = () => {
   const queryClient = useQueryClient();
@@ -35,7 +36,25 @@ export const useAddToCart = () => {
           currency: "EGP",
         };
         trackMetaPixelEvent("AddToCart", metaEventData);
-        console.log("add to cart tracked", metaEventData);
+        console.log("meta add to cart tracked", metaEventData);
+
+        const tikTokEventData = {
+          content_id: product.id.toString(),
+          content_name: product.name,
+          content_type: "product_group",
+          contents: [
+            {
+              content_id: product.id.toString(),
+              content_type: "product",
+              price: priceValue,
+              quantity: quantity,
+            },
+          ],
+          currency: "EGP",
+          value: priceValue * quantity,
+        };
+        trackTikTokPixelEvent("AddToCart", tikTokEventData);
+        console.log("tiktok add to cart tracked", tikTokEventData);
       }
 
       queryClient.invalidateQueries({ queryKey: ["cart"] });

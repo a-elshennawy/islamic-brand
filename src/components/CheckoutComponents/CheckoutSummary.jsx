@@ -11,6 +11,7 @@ import { getShippingRates } from "../../services/api/shipping";
 import { getAddressId } from "../../services/api/shipping";
 import { useQuery } from "@tanstack/react-query";
 import useInitiateCheckout from "../../hooks/metaTracking/useInitiateCheckout";
+import tiktokInitiateCheckout from "../../hooks/tiktokTracking/useInitiateCheckout";
 import useMobile from "../../hooks/useMobile";
 
 function CheckoutSummary({
@@ -51,6 +52,7 @@ function CheckoutSummary({
 
   const cartItems = cart?.items;
   useInitiateCheckout(cartItems);
+  tiktokInitiateCheckout(cartItems);
 
   const handlePlaceOrder = async () => {
     if (!selectedCarrier) return showError(t("please select a carrier"));

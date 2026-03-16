@@ -13,6 +13,7 @@ import Loader from "../Loaders/Loader";
 import useMobile from "../../hooks/useMobile";
 import ClarityScript from "../../utils/Clarity/ClarityScript";
 import usePageViewTracker from "../../hooks/metaTracking/usePageViewTracker";
+import tiktokusePageViewTracker from "../../hooks/tiktokTracking/usePageViewTracker";
 
 function Layout() {
   const { data, isLoading } = UseSettings();
@@ -21,6 +22,7 @@ function Layout() {
   const { isMobile } = useMobile();
 
   usePageViewTracker();
+  tiktokusePageViewTracker();
 
   useEffect(() => {
     window.scrollTo({

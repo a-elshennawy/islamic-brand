@@ -4,6 +4,7 @@ import Layout from "./components/Layout/Layout";
 import Loader from "./components/Loaders/Loader";
 import { UseSettings } from "./hooks/useGeneral";
 import { loadMetaPixel } from "./utils/MetaPixel/metaPixel";
+import { loadTikTokPixel } from "./utils/TiktokPixel/tiktokPixel";
 
 // pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -27,6 +28,8 @@ const OrderConfirmed = lazy(
 
 function App() {
   loadMetaPixel();
+  loadTikTokPixel();
+
   const { data, isLoading } = UseSettings();
 
   // to get pure text instead of html tags that are in the response

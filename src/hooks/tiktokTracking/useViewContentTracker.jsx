@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { trackMetaPixelEvent } from "../../utils/MetaPixel/metaPixel";
-import { getTrafficSource } from "../../utils/MetaPixel/getTrafficSource";
+import { trackTikTokPixelEvent } from "../../utils/TiktokPixel/tiktokPixel";
+import { getTrafficSource } from "../../utils/TiktokPixel/getTrafficSource";
 
 const useViewContentTracker = (product, quantity) => {
   const location = useLocation();
@@ -43,19 +43,17 @@ const useViewContentTracker = (product, quantity) => {
           category_name: product?.category?.name || "Unknown",
         };
 
-        await trackMetaPixelEvent("ViewContent", ViewContentData);
-        console.log("View Content Tracked:", ViewContentData);
+        await trackTikTokPixelEvent("tiktok ViewContent", ViewContentData);
+        console.log("tiktok View Content Tracked:", ViewContentData);
       } catch (error) {
-        console.error("Error tracking content view:", error);
+        console.error("Error tracking tiktok content view:", error);
       }
     };
 
-    // small delay to assure page is loaded before start tracking
     const timer = setTimeout(() => {
       trackViewContent();
     }, 1500);
 
-    // clean up
     return () => clearTimeout(timer);
   }, [location.pathname, product, quantity]);
 };

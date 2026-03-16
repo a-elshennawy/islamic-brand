@@ -10,6 +10,7 @@ import ProductAddToCartBtn from "../../components/Products/ProductAddToCartBtn/P
 import RelatedProducts from "../../components/ProductPageComponents/RelatedProducts";
 import ProductReviews from "../../components/ProductPageComponents/Reviews/ProductReviews";
 import useViewContentTracker from "../../hooks/metaTracking/useViewContentTracker";
+import useTikTokViewContentTracker from "../../hooks/tiktokTracking/useViewContentTracker";
 import { useState } from "react";
 
 function ProductPage() {
@@ -21,6 +22,7 @@ function ProductPage() {
   const [quantity, setQuantity] = useState(1);
 
   useViewContentTracker(product, quantity);
+  useTikTokViewContentTracker(product, quantity);
 
   if (isLoading) {
     return <SectionLoader />;

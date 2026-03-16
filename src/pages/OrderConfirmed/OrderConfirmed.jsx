@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import successLottie from "../../assets/lotties/success.json";
 import { useIsAr } from "../../hooks/useIsAr";
 import usePurchase from "../../hooks/metaTracking/usePurchase";
+import tiktokusePurchase from "../../hooks/tiktokTracking/usePurchase";
 
 function OrderConfirmed() {
   const [t] = useTranslation();
@@ -30,6 +31,7 @@ function OrderConfirmed() {
   }, [orderId, navigate]);
 
   usePurchase(order);
+  tiktokusePurchase(order);
 
   if (isLoading) return <Loader />;
 
