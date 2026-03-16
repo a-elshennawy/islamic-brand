@@ -109,7 +109,7 @@
   "referrer code": "كود المعرف",
   "loyalty points": "نقاط الولاء",
   "wishlist": "المفضلات",
-  "previous order": "الطلبات السابقه",
+  "previous orders": "الطلبات السابقه",
   "logout": "تسجيل الخروج",
   "remove from wishlist": "حذف من المفضلات",
   "your wishlist is empty": "المفضلات فارغه",
@@ -139,5 +139,7 @@
   "shipping details": "تفاصيل الشحن",
   "user address": "عنوان العميل",
   "address details": "تفاصيل العنوان",
-  "shipping method": "وسيلة الشحن"
+  "shipping method": "وسيلة الشحن",
+  "no orders yet": "لا يوجد طلبات حتى الآن",
+  "shipping address": "عنوان الشحن"
 }

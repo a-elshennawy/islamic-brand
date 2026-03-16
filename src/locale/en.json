@@ -107,7 +107,7 @@
   "failed updating review": "Failed Updating Review",
   "review updated": "Review Updated Successfully",
   "wishlist": "Wishlist",
-  "previous order": "Previous Order",
+  "previous orders": "Previous Orders",
   "logout": "Logout",
   "remove from wishlist": "Remove from Wishlist",
   "your wishlist is empty": "Your Wishlist is Empty",
@@ -137,5 +137,7 @@
   "shipping details": "Shipping Details",
   "user address": "User Address",
   "address details": "Address Details",
-  "shipping method": "Shipping Method"
+  "shipping method": "Shipping Method",
+  "no orders yet": "No Orders Yet",
+  "shipping address": "Shipping Address"
 }

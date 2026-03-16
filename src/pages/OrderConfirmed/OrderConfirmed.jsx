@@ -16,7 +16,7 @@ function OrderConfirmed() {
   const isAr = useIsAr();
 
   const orderId = searchParams.get("order_id");
-  const paymentStatus = searchParams.get("paymentStatus");
+  // const paymentStatus = searchParams.get("paymentStatus"); //<-- comented but might need it later
 
   const { data: order, isLoading } = useQuery({
     queryKey: ["order", orderId],

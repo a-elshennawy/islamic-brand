@@ -21,7 +21,10 @@ function Navbar() {
           dir={isAr ? "rtl" : "ltr"}
           style={{ width: isMobile ? "90%" : "70%" }}
         >
-          <SideMenu />
+          <div className="actions" dir={isAr ? "rtl" : "ltr"}>
+            <SideMenu />
+            {!isMobile && <Search />}
+          </div>
           {!isMobile && (
             <div className="logo" onClick={() => navigate("/")}>
               <img src={whiteLogo} alt="white logo" />
@@ -30,7 +33,6 @@ function Navbar() {
           <div className="actions" dir={isAr ? "rtl" : "ltr"}>
             {!isMobile && (
               <>
-                <Search />
                 <button
                   className="actionBtn"
                   onClick={() =>

@@ -58,3 +58,23 @@ export const getOrderDetails = async (id) => {
     throw error;
   }
 };
+
+export const getPreviousOrders = async () => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const headers = {};
+
+    if (userToken) {
+      headers.Authorization = `Bearer ${userToken}`;
+    } else {
+      const tempUserId = getUserId();
+      headers["X-Temp-User-Id"] = tempUserId;
+    }
+
+    const response = await apiClient.get("/orders", { headers });
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

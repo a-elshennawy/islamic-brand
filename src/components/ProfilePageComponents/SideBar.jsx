@@ -38,7 +38,7 @@ function SideBar({ user, onChange, currentTab }) {
             className={`${currentTab === "previousOrder" ? "activeTab" : ""}`}
             onClick={() => onChange("previousOrder")}
           >
-            {t("previous order")} <GiShoppingBag size={20} />
+            {t("previous orders")} <GiShoppingBag size={20} />
           </button>
           <button onClick={() => handleLogout()} disabled={isPending}>
             {t("logout")}

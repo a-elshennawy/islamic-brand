@@ -1,6 +1,7 @@
 .profilePage {
     padding: 5.938rem 0rem 1.25rem 0rem;
     min-height: 80dvh;
+    position: relative;
 
     .profileBar {
         background-color: var(--light-sec-color);
@@ -107,11 +108,69 @@
         }
     }
 
+    .orderCard {
+        background-color: var(--dark-sec-color);
+        border-radius: 0.625rem;
+        color: var(--white);
+
+        button {
+            background-color: var(--light-sec-color);
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.313rem;
+            width: 100%;
+        }
+    }
+
+    .noOrders {
+        color: var(--dark-sec-color);
+    }
+
     .toShopBtn {
         padding: 0.313rem;
         border: none;
         border-radius: 0.625rem;
         background-color: var(--dark-sec-color);
         color: var(--white);
+    }
+
+    .modalOverLay {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(0.313rem);
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .orderDetails {
+            background-color: var(--light-sec-color);
+            border-radius: 0.625rem;
+            position: relative;
+            color: var(--dark-sec-color);
+
+            .closeBtn {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                color: var(--dark-sec-color);
+            }
+
+            .orderedProducts {
+                .orderedItem {
+                    background: linear-gradient(
+                        30deg,
+                        var(--dark-sec-color),
+                        var(--secondary-color)
+                    );
+                    color: var(--white);
+                    font-weight: bold !important;
+                    border-radius: 0.313rem;
+                }
+            }
+        }
     }
 }
