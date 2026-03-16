@@ -50,10 +50,10 @@
                 var(--dark-sec-color)
             );
             color: var(--body-background);
-            border-radius: 3.125rem 3.125rem 0 0;
+            border-radius: 6.25rem 6.25rem 0 0;
         }
         .inMobileBadge {
-            border-radius: 3.125rem;
+            border-radius: 0.625rem;
         }
     }
 }
