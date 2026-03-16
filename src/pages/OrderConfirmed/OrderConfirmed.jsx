@@ -37,6 +37,7 @@ function OrderConfirmed() {
 
   return (
     <>
+      <title>{t("order_confirmed_page_title")}</title>
       <section className="orderConfirmedPage row justify-content-center align-items-start m-0 gap-2">
         <div className="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 p-0">
           <Lottie animationData={successLottie} loop={true} />
