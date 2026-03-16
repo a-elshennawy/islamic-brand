@@ -42,7 +42,9 @@ function BestProduct() {
           width: isMobile ? "85%" : "70%",
         }}
       >
-        <div className="inner p-2 pb-0 row justify-content-between align-items-start gap-1 m-0">
+        <div
+          className={`inner p-2  row justify-content-between align-items-start gap-1 m-0 ${isMobile ? "" : "pb-0"}`}
+        >
           <div
             className={`infoSide py-3 px-0 col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 text-center ${isMobile ? "order-2" : ""}`}
           >

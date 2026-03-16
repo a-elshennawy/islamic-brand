@@ -46,7 +46,7 @@
             text-align: center;
             background: linear-gradient(
                 to bottom,
-                var(--body-background),
+                var(--glass-color),
                 var(--dark-sec-color)
             );
             color: var(--body-background);
