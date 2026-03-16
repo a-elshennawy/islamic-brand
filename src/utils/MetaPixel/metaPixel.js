@@ -5,7 +5,7 @@ export const loadMetaPixel = () => {
   const { data } = UseSettings();
   // Meta Pixel ID
   const META_PIXEL_ID = data?.pixel;
-  const META_PIXEL_STATUS = 1; //<-- hardcoded as active as backend doesn't return it
+  const META_PIXEL_STATUS = "1"; //<-- hardcoded as active as backend doesn't return it
 
   return new Promise((resolve) => {
     // check if META_PIXEL_ID is not empty

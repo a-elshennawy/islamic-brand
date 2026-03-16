@@ -5,7 +5,7 @@ export const loadTikTokPixel = () => {
   const { data } = UseSettings();
   // TikTok Pixel ID
   const TIKTOK_PIXEL_ID = data?.tiktok_pixel;
-  const TIKTOK_PIXEL_STATUS = 1; //<-- hardcoded as active as backend doesn't return it
+  const TIKTOK_PIXEL_STATUS = "1"; //<-- hardcoded as active as backend doesn't return it
   return new Promise((resolve) => {
     // check if TIKTOK_PIXEL_ID is not empty
     if (!TIKTOK_PIXEL_ID || TIKTOK_PIXEL_STATUS !== "1") return;

@@ -43,7 +43,7 @@ const useViewContentTracker = (product, quantity) => {
           category_name: product?.category?.name || "Unknown",
         };
 
-        await trackTikTokPixelEvent("tiktok ViewContent", ViewContentData);
+        await trackTikTokPixelEvent("ViewContent", ViewContentData);
         console.log("tiktok View Content Tracked:", ViewContentData);
       } catch (error) {
         console.error("Error tracking tiktok content view:", error);
