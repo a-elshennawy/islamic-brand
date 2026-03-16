@@ -121,28 +121,30 @@ function CheckoutForm({ onFormChange, selectedCarrier, onCarrierSelect }) {
             ))}
           </select>
         </div>
-        <div className="inputContainer">
-          <label>{t("address one")}</label>
-          <input
-            type="text"
-            onChange={(e) => onFormChange({ address_one: e.target.value })}
-            required
-          />
-        </div>
-        <div className="inputContainer">
-          <label>{t("address two")}</label>
-          <input
-            type="text"
-            onChange={(e) => onFormChange({ address_two: e.target.value })}
-          />
-        </div>
-        <div className="inputContainer">
-          <label>{t("district")}</label>
-          <input
-            type="text"
-            onChange={(e) => onFormChange({ district_name: e.target.value })}
-            required
-          />
+        <div className="addressDetails">
+          <div className="inputContainer">
+            <label>{t("address one")}</label>
+            <input
+              type="text"
+              onChange={(e) => onFormChange({ address_one: e.target.value })}
+              required
+            />
+          </div>
+          <div className="inputContainer">
+            <label>{t("address two")}</label>
+            <input
+              type="text"
+              onChange={(e) => onFormChange({ address_two: e.target.value })}
+            />
+          </div>
+          <div className="inputContainer">
+            <label>{t("district")}</label>
+            <input
+              type="text"
+              onChange={(e) => onFormChange({ district_name: e.target.value })}
+              required
+            />
+          </div>
         </div>
         <div className="carrierSelection py-2">
           <h4>{t("select your carrier")}</h4>

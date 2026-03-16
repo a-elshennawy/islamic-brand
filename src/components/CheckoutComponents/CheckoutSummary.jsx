@@ -7,10 +7,11 @@ import { placeOrder } from "../../services/api/order";
 import { useState } from "react";
 import BtnSpinner from "../Loaders/BtnSpinner";
 import Toastify from "toastify-js";
-import { getCarriers, getShippingRates } from "../../services/api/shipping";
+import { getShippingRates } from "../../services/api/shipping";
 import { getAddressId } from "../../services/api/shipping";
 import { useQuery } from "@tanstack/react-query";
 import useInitiateCheckout from "../../hooks/metaTracking/useInitiateCheckout";
+import useMobile from "../../hooks/useMobile";
 
 function CheckoutSummary({
   formData,
@@ -20,6 +21,7 @@ function CheckoutSummary({
 }) {
   const navigate = useNavigate();
   const [t] = useTranslation();
+  const { isMobile } = useMobile();
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
 
   const showError = (msg) => {
@@ -33,13 +35,8 @@ function CheckoutSummary({
     }).showToast();
   };
 
-  const { data: cart, isLoading: cartLoading } = useGetCart();
-  const { data: cartSummary, isLoading: cartSummaryLoading } =
-    useGetCartSummary();
-  const { data: carriers } = useQuery({
-    queryKey: ["carriers"],
-    queryFn: getCarriers,
-  });
+  const { data: cart } = useGetCart();
+  const { data: cartSummary } = useGetCartSummary();
 
   const { data: shippingRates, isLoading: shippingRatesLoading } = useQuery({
     queryKey: ["shippingRates", selectedCarrier, formData.state, formData.city],
@@ -116,18 +113,31 @@ function CheckoutSummary({
             </h5>
           </span>
           <hr />
-          <span className="summItem">
-            <h5>{t("discounts")}</h5>
-            <h5>
-              {cartSummary?.discount_amount} {t("L.E")}
-            </h5>
-          </span>
-          <hr />
+          {!cartSummary?.discount_amount == 0 && (
+            <>
+              <span className="summItem">
+                <h5>{t("discounts")}</h5>
+                <h5>
+                  {cartSummary?.discount_amount} {t("L.E")}
+                </h5>
+              </span>
+              <hr />
+            </>
+          )}
           <span className="summItem">
             <h5>{t("shipping fees")}</h5>
             <h5>
-              {shippingRates?.cost ?? t("select state & shipping method")}
-              {shippingRates && t("L.E")}
+              {shippingRatesLoading ? (
+                <BtnSpinner color="var(--dark-sec-color)" />
+              ) : shippingRates?.cost ? (
+                <>
+                  {shippingRates.cost} {t("L.E")}
+                </>
+              ) : (
+                <small style={{ fontSize: "0.875rem" }}>
+                  {t("select state & shipping method")}
+                </small>
+              )}
             </h5>
           </span>
           <hr />
@@ -167,6 +177,17 @@ function CheckoutSummary({
           </div>
         </div>
       </div>
+      <button
+        className={`stickyPlaceOrder ${isMobile ? "inMobileOrderBtn" : ""}`}
+        onClick={handlePlaceOrder}
+        disabled={isPlacingOrder}
+      >
+        {isPlacingOrder ? (
+          <BtnSpinner color="var(--white)" />
+        ) : (
+          t("place order")
+        )}
+      </button>
     </>
   );
 }
