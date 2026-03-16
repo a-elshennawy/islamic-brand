@@ -5,6 +5,17 @@
     .inner {
         box-shadow: 0 0 0.625rem var(--secondary-color);
         border-radius: 1.25rem;
+        background-image: url("/background_2.webp");
+
+        h1 {
+            color: var(--dark-sec-color);
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--glass-color),
+                transparent
+            );
+        }
     }
 
     .firstProduct {

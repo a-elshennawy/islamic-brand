@@ -212,4 +212,19 @@
             width: 100%;
         }
     }
+
+    .relatedProducts,
+    .reviews {
+        h3 {
+            padding: 0.5rem !important;
+            background: linear-gradient(
+                to right,
+                var(--body-background),
+                var(--dark-sec-color),
+                var(--body-background)
+            );
+            text-align: center;
+            color: var(--white);
+        }
+    }
 }

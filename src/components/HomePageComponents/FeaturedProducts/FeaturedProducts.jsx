@@ -32,18 +32,18 @@ function FeaturedProducts() {
           direction: isAr ? "rtl" : "ltr",
         }}
       >
-        <div className="inner row justify-content-center align-items-end gap-1 m-0 p-2 pb-5">
-          <Motion.h2
+        <div className="inner text-center row justify-content-center align-items-end m-0 px-2 pt-0 pb-5">
+          <Motion.h1
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="HomeSectionTitle mb-3"
+            className="py-2"
           >
             {t("featured_products")}
-          </Motion.h2>
+          </Motion.h1>
           <div
-            className={`col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ${isMobile ? "order-2" : ""}`}
+            className={`col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 ${isMobile ? "order-2" : ""}`}
           >
             <Swiper
               modules={[Autoplay]}

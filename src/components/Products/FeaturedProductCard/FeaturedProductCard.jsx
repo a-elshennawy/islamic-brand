@@ -20,7 +20,7 @@ function FeaturedProductCard({ product }) {
   return (
     <>
       <AnimatePresence mode="wait">
-        <div
+        <Motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -116,7 +116,7 @@ function FeaturedProductCard({ product }) {
               )}
             </div>
           </div>
-        </div>
+        </Motion.div>
       </AnimatePresence>
     </>
   );

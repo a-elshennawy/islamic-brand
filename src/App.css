@@ -81,9 +81,9 @@ section {
         position: absolute;
         top: 50%;
         right: 0.625rem;
-        height: 0.063rem;
+        height: 0.125rem;
         border-radius: 1.25rem;
-        width: 40%;
+        width: 30%;
         background: linear-gradient(
             to right,
             var(--secondary-color),
@@ -96,9 +96,9 @@ section {
         position: absolute;
         top: 50%;
         left: 0.625rem;
-        height: 0.063rem;
+        height: 0.125rem;
         border-radius: 1.25rem;
-        width: 40%;
+        width: 30%;
         background: linear-gradient(
             to left,
             var(--secondary-color),

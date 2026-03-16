@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useIsAr } from "../../../hooks/useIsAr";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addReview } from "../../../services/api/products";
 import { Rating, Box } from "@mui/material";
@@ -8,7 +7,6 @@ import BtnSpinner from "../../Loaders/BtnSpinner";
 
 function SubmitReview({ id }) {
   const [t] = useTranslation();
-  const isAr = useIsAr();
   const [rating, setRating] = useState(3);
   const queryClient = useQueryClient();
 

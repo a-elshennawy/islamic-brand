@@ -16,8 +16,8 @@ function ProductReviews({ product }) {
   });
   return (
     <>
-      <section className="col-12 text-center row justify-content-center align-items-start gap-2 m-0">
-        <h3 className="HomeSectionTitle mb-3 col-12">{t("product reviews")}</h3>
+      <section className="reviews col-12 text-center row justify-content-center align-items-start gap-2 m-0">
+        <h3 className="mb-3 col-12">{t("product reviews")}</h3>
         <SubmitReview id={product?.id} />
         {reviews?.length > 0 ? (
           <Swiper

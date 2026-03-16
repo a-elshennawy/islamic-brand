@@ -1,70 +1,59 @@
 .bestProduct {
-    position: relative;
-    background: linear-gradient(
-        30deg,
-        var(--dark-sec-color),
-        var(--light-sec-color),
-        var(--secondary-color)
-    );
-    margin: 1.25rem auto !important;
+    box-shadow: 0 0 0.625rem var(--secondary-color);
     border-radius: 0.625rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
+    .inner {
+        box-shadow: 0 0 0.625rem var(--secondary-color);
+        border-radius: 0.625rem;
+        background-image: url("/background.webp");
 
-    .title {
-        position: absolute;
-        top: 0;
-        padding: 0.313rem;
-        background-color: var(--dark-sec-color);
-        color: var(--white);
-        border-radius: 0 0 0.625rem 0;
-    }
-
-    .enTiltle {
-        border-radius: 0 0 0 0.625rem;
-    }
-
-    .imgSide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            height: auto;
-            border-radius: 0.625rem;
-        }
-    }
-
-    .detailsSide {
-        color: var(--white);
-        .price {
-            display: flex;
-            align-items: center;
-            gap: 0.313rem;
-
-            h6 {
-                text-decoration: line-through;
-                opacity: 0.7;
+        .imgContainer {
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 0.625rem;
             }
         }
-        .badges {
+
+        .infoSide {
+            color: var(--dark-sec-color);
+
+            .bestProdBtn {
+                width: fit-content;
+                padding: 0.625rem;
+            }
+
+            .colors {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.313rem;
+
+                .colorItem {
+                    width: 2.188rem;
+                    height: 2.188rem;
+                    border-radius: 50%;
+                    border: 0.063rem solid var(--secondary-color);
+                }
+            }
+        }
+
+        .trustBadge {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 0.625rem;
-
-            .badgeItem {
-                width: calc(50% - 0.313rem);
-                background-color: var(--light-sec-color);
-                color: var(--dark-sec-color);
-                border-radius: 0.625rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
+            gap: 0.313rem;
+            text-align: center;
+            background: linear-gradient(
+                to bottom,
+                var(--body-background),
+                var(--dark-sec-color)
+            );
+            color: var(--body-background);
+            border-radius: 3.125rem 3.125rem 0 0;
+        }
+        .inMobileBadge {
+            border-radius: 3.125rem;
         }
     }
 }

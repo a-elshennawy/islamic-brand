@@ -34,7 +34,7 @@ function RelatedProducts({ slug }) {
         className="relatedProducts"
         style={{ maxWidth: isMobile ? "100%" : "75%" }}
       >
-        <h3 className="HomeSectionTitle mb-3">{t("related products")}</h3>
+        <h3 className="mb-3">{t("related products")}</h3>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}
