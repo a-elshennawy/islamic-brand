@@ -1,4 +1,9 @@
 .recentProducts {
     margin: 0 auto;
     text-transform: capitalize;
+
+    .inner {
+        box-shadow: 0 0 0.625rem var(--secondary-color);
+        border-radius: 1.25rem;
+    }
 }

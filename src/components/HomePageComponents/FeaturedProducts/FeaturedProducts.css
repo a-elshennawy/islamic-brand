@@ -1,4 +1,56 @@
 .featuredProducts {
     margin: 0 auto;
     text-transform: capitalize;
+
+    .inner {
+        box-shadow: 0 0 0.625rem var(--secondary-color);
+        border-radius: 1.25rem;
+    }
+
+    .firstProduct {
+        position: relative;
+        filter: drop-shadow(0 0.25rem 0.625rem var(--secondary-color));
+
+        .imgContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.625rem;
+            overflow: hidden !important;
+
+            .discountBadge {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 0 0 0.625rem 0;
+                background-color: var(--secondary-color);
+                color: var(--white);
+                padding: 0.313rem;
+                display: flex;
+                align-items: center;
+                gap: 0.313rem;
+                z-index: 2;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .info {
+            position: absolute;
+            background-color: var(--body-background);
+            border-radius: 0.625rem;
+            color: var(--dark-sec-color);
+            box-shadow: 0 0.25rem 0.625rem var(--secondary-color);
+
+            .price {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.313rem;
+            }
+        }
+    }
 }

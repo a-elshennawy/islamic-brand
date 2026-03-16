@@ -2,13 +2,14 @@ import "./FeaturedProducts.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useHomeProducts } from "../../../hooks/useProducts";
-import ProductCard from "../../Products/ProductCard/ProductCard";
 import "swiper/css";
 import SectionLoader from "../../Loaders/SectionLoader";
 import { useTranslation } from "react-i18next";
 import { useIsAr } from "../../../hooks/useIsAr";
 import useMobile from "../../../hooks/useMobile";
 import { motion as Motion } from "motion/react";
+import FirstProduct from "./FirstProduct";
+import FeaturedProductCard from "../../Products/FeaturedProductCard/FeaturedProductCard";
 
 function FeaturedProducts() {
   const { data: homeProducts, isLoading } = useHomeProducts();
@@ -20,49 +21,59 @@ function FeaturedProducts() {
   if (isLoading) return <SectionLoader />;
 
   if (products.length === 0) return null;
+  const firstProduct = products[0];
 
   return (
     <>
       <section
-        className="featuredProducts homeSection"
-        dir={isAr ? "rtl" : "ltr"}
-        style={{ width: isMobile ? "95%" : "75%" }}
+        className="featuredProducts homeSection p-2"
+        style={{
+          width: isMobile ? "95%" : "75%",
+          direction: isAr ? "rtl" : "ltr",
+        }}
       >
-        <Motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="HomeSectionTitle mb-3"
-        >
-          {t("featured_products")}
-        </Motion.h2>
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={50}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          }}
-          className="productSwiper p-3"
-        >
-          {products.map((product, index) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard product={product} index={index} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="inner row justify-content-center align-items-end gap-1 m-0 p-2 pb-5">
+          <Motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="HomeSectionTitle mb-3"
+          >
+            {t("featured_products")}
+          </Motion.h2>
+          <div
+            className={`col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 ${isMobile ? "order-2" : ""}`}
+          >
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={50}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+              className="productSwiper p-3"
+            >
+              {products.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <FeaturedProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <FirstProduct product={firstProduct} />
+        </div>
       </section>
     </>
   );

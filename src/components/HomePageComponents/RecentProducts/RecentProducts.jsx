@@ -25,46 +25,55 @@ function RecentProducts() {
 
   return (
     <section
-      className="recentProducts homeSection"
+      className="recentProducts homeSection p-2"
       dir={isAr ? "rtl" : "ltr"}
       style={{ width: isMobile ? "95%" : "75%" }}
     >
-      <Motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="HomeSectionTitle mb-3"
-      >
-        {t("latest_products")}
-      </Motion.h2>
+      <div className="inner p-2">
+        <Motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="HomeSectionTitle mb-3"
+        >
+          {t("latest_products")}
+        </Motion.h2>
 
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={50}
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          0: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-        }}
-        className="productSwiper p-3"
-      >
-        {products.map((product, index) => (
-          <SwiperSlide key={product.id}>
-            <ProductCard product={product} index={index} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={50}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+          className="productSwiper p-3"
+        >
+          {products.map((product, index) => (
+            <SwiperSlide key={product.id}>
+              <ProductCard
+                product={product}
+                index={index}
+                style={{
+                  width: isMobile ? "65%" : "",
+                  margin: "0 auto !important",
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }

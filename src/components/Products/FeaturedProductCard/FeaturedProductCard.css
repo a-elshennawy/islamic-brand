@@ -1,0 +1,91 @@
+.featuredProdCard {
+    border-radius: 0.625rem;
+    overflow: hidden !important;
+    transition: all 0.3s ease-in-out;
+
+    .imgContainer {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .discountBadge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0 0 0.625rem 0;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.313rem;
+            display: flex;
+            align-items: center;
+            gap: 0.313rem;
+            z-index: 2;
+            transition: all 0.3s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            margin: 0 auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .addToCartDiv {
+            position: absolute;
+            bottom: -50%;
+            left: 50%;
+            width: 90%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+
+            .featuredCardBtn {
+                padding: 0.625rem;
+                border-radius: 0.625rem;
+                background-color: var(--body-background);
+                color: var(--secondary-color);
+            }
+        }
+    }
+
+    .info {
+        color: var(--body-background);
+        background-color: var(--secondary-color);
+        transition: all 0.3s ease-in-out;
+
+        .prodName {
+            cursor: pointer;
+        }
+
+        .price {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.313rem;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0.25rem 0.62rem var(--secondary-color);
+
+        .imgContainer {
+            .discountBadge {
+                background-color: var(--error);
+            }
+            .addToCartDiv {
+                bottom: 30%;
+                opacity: 1;
+            }
+
+            img {
+                filter: brightness(50%);
+            }
+        }
+        .info {
+            background-color: var(--body-background);
+            color: var(--secondary-color);
+        }
+    }
+}

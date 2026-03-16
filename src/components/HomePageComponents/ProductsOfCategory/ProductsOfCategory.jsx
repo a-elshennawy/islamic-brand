@@ -92,7 +92,7 @@ function ProductsOfCategory({ categoryId }) {
             breakpoints={{
               0: {
                 slidesPerView: 2,
-                spaceBetween: 20,
+                spaceBetween: 15,
               },
               1024: {
                 slidesPerView: 4,

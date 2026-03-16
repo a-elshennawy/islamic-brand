@@ -36,7 +36,7 @@ section {
 .homeSection {
     padding: 0rem 0.625rem 1.25rem 0.625rem;
     box-shadow: 0 0 0.625rem var(--secondary-color);
-    border-radius: 0.625rem;
+    border-radius: 1.25rem;
     margin: 1.25rem auto !important;
 }
 
@@ -70,21 +70,55 @@ section {
 }
 
 .HomeSectionTitle {
+    position: relative;
     font-weight: bold;
-    background: linear-gradient(
-        to right,
-        var(--body-background),
-        var(--secondary-color),
-        var(--body-background)
-    );
-    color: var(--white);
+    color: var(--dark-sec-color);
     text-align: center;
     padding: 0.625rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0.625rem;
+        height: 0.063rem;
+        border-radius: 1.25rem;
+        width: 40%;
+        background: linear-gradient(
+            to right,
+            var(--secondary-color),
+            var(--body-background)
+        );
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0.625rem;
+        height: 0.063rem;
+        border-radius: 1.25rem;
+        width: 40%;
+        background: linear-gradient(
+            to left,
+            var(--secondary-color),
+            var(--body-background)
+        );
+    }
 }
 
 .needCenterSiwper {
     .swiper-wrapper {
         justify-content: center !important;
+    }
+}
+
+.productSwiper {
+    .swiper-slide {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -162,5 +196,12 @@ html {
 @media (max-width: 768px) {
     :root {
         font-size: 14px;
+    }
+
+    .HomeSectionTitle {
+        &::after,
+        &::before {
+            width: 25%;
+        }
     }
 }

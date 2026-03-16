@@ -1,6 +1,5 @@
-import "./ProductCard.css";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import "./FeaturedProductCard.css";
+import { useNavigate } from "react-router-dom";
 import AddToCartBtn from "../AddToCartBtn/AddToCartBtn";
 import { truncateName } from "../../../utils/helpers";
 import { useTranslation } from "react-i18next";
@@ -10,32 +9,26 @@ import { AnimatePresence, motion as Motion } from "motion/react";
 import Rating from "@mui/material/Rating";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 
-function ProductCard({ product, className, style }) {
+function FeaturedProductCard({ product }) {
   const [t] = useTranslation();
   const { isMobile } = useMobile();
   const isAr = useIsAr();
+  const navigate = useNavigate();
+
   const discoutAmount = product?.original_price - product?.discount_price;
   const discountPercentage = (discoutAmount / product?.original_price) * 100;
-
   return (
     <>
       <AnimatePresence mode="wait">
-        <Motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className={`ProductCard row justify-content-center align-items-center m-0 p-2 ${className}`}
-          dir={isAr ? "rtl" : "ltr"}
-          style={{ ...style }}
+          className="featuredProdCard"
+          style={{ direction: isAr ? "rtl" : "ltr" }}
         >
-          <Motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="imgContainer p-0 col-12"
-          >
+          <div className="imgContainer p-0">
             {product.discount_price && (
               <>
                 <span
@@ -46,25 +39,26 @@ function ProductCard({ product, className, style }) {
                 </span>
               </>
             )}
-
-            <Link
-              to={`/product-details/${product?.slug}`}
-              state={{ item: product }}
-            >
-              <img
-                src={product?.main_image}
-                alt={product?.name}
-                loading="eager"
-                style={{ height: isMobile ? "12.5rem" : "18.75rem" }}
-              />
-            </Link>
-          </Motion.div>
+            <img
+              src={product?.main_image}
+              alt={product?.name}
+              loading="eager"
+              style={{ height: isMobile ? "12.5rem" : "18.75rem" }}
+            />
+            <div className="addToCartDiv p-0">
+              <AddToCartBtn product={product} className="featuredCardBtn" />
+            </div>
+          </div>
           <div
-            className="info col-12 px-2 pb-2"
+            className="info col-12 p-1"
             style={{ fontSize: isMobile ? "1rem" : "" }}
           >
-            <h5 style={{ fontSize: isMobile ? "1rem" : "" }}>
-              {truncateName(product.name, 15)}
+            <h5
+              style={{ fontSize: isMobile ? "1rem" : "" }}
+              onClick={() => navigate(`/product-details/${product?.slug}`)}
+              className="prodName"
+            >
+              {truncateName(product?.name, 15)}
             </h5>
 
             <div className="rating p-0">
@@ -89,19 +83,19 @@ function ProductCard({ product, className, style }) {
               />
             </div>
             <div
-              className={`price ${product.discount_price ? "justify-content-between" : "justify-content-center"}`}
+              className={`price ${product?.discount_price ? "justify-content-between" : "justify-content-center"}`}
             >
               {product.discount_price ? (
                 <>
                   <h4 style={{ fontSize: isMobile ? "1rem" : "" }}>
                     <strong>
-                      {product.discount_price} {t("L.E")}
+                      {product?.discount_price} {t("L.E")}
                     </strong>
                   </h4>
 
                   <h6>
                     <del>
-                      {product.original_price} {t("L.E")}
+                      {product?.original_price} {t("L.E")}
                     </del>
                   </h6>
                 </>
@@ -113,30 +107,17 @@ function ProductCard({ product, className, style }) {
                     }}
                   >
                     <strong>
-                      {product.price} {t("L.E")}
+                      {product?.price} {t("L.E")}
                     </strong>
                   </h4>
                 </>
               )}
             </div>
-
-            <AddToCartBtn product={product} />
           </div>
-        </Motion.div>
+        </div>
       </AnimatePresence>
     </>
   );
 }
 
-ProductCard.propTypes = {
-  product: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    image: PropTypes.string,
-  }),
-};
-
-ProductCard.displayName = "ProductCard";
-
-export default ProductCard;
+export default FeaturedProductCard;
