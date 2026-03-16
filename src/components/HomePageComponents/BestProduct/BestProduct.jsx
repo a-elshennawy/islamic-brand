@@ -120,7 +120,9 @@ function BestProduct() {
                     height: isMobile ? "3.75rem" : "5rem",
                   }}
                 />
-                <h5>{item?.title}</h5>
+                <h5 style={{ fontSize: isMobile ? "12px" : "" }}>
+                  {item?.title}
+                </h5>
               </div>
             ))}
           </div>
