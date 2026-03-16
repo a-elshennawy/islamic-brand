@@ -12,20 +12,20 @@ import { useChooseUs } from "../../../hooks/useGeneral";
 import { useProduct } from "../../../hooks/useProducts";
 
 function BestProduct() {
-  const { data: homeProducts, isLoading } = useHomeProducts();
+  const { data: homeProducts, isLoading: dataLoading } = useHomeProducts();
   const { data: chooseUsArray, isLoading: BadgesLoading } = useChooseUs();
   const BestProduct = homeProducts?.best_product || [];
-  const { data: product } = useProduct(BestProduct?.slug || "");
+  const { data: product, isLoading: peoductLoading } = useProduct(
+    BestProduct?.slug,
+  );
   const [t] = useTranslation();
   const isAr = useIsAr();
   const { isMobile } = useMobile();
   const availableColors = product?.grouped_variations;
-
-  if (isLoading) return <SectionLoader />;
+  const loading = dataLoading || BadgesLoading || peoductLoading;
+  if (loading) return <SectionLoader />;
 
   if (!BestProduct) return null;
-
-  console.log(chooseUsArray);
 
   return (
     <>
@@ -58,7 +58,7 @@ function BestProduct() {
                 precision={1}
                 size="large"
                 emptyIcon={
-                  <StarBorderIcon style={{ opacity: 0.4 }} fontSize="inherit" />
+                  <StarBorderIcon style={{ opacity: 1 }} fontSize="inherit" />
                 }
                 sx={{
                   fontSize: "2rem",

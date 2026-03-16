@@ -6,6 +6,7 @@
         box-shadow: 0 0 0.625rem var(--secondary-color);
         border-radius: 1.25rem;
         background-image: url("/background_2.webp");
+        background-size: cover;
 
         h1 {
             color: var(--dark-sec-color);
