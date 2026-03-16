@@ -16,13 +16,18 @@ function CartSummary({ cartSummary }) {
           </h5>
         </span>
         <hr />
-        <span className="cartSummItem my-3">
-          <h5>{t("discounts")}</h5>
-          <h5>
-            {cartSummary?.discount_amount} {t("L.E")}
-          </h5>
-        </span>
-        <hr />
+        {cartSummary?.discount_amount > 0 && (
+          <>
+            <span className="cartSummItem my-3">
+              <h5>{t("discounts")}</h5>
+              <h5>
+                {cartSummary?.discount_amount} {t("L.E")}
+              </h5>
+            </span>
+            <hr />
+          </>
+        )}
+
         <span className="cartSummItem my-3">
           <h5>{t("shipping fees")}</h5>
           <h5>{t("calculated in checkout")}</h5>

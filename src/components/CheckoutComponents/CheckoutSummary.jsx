@@ -102,6 +102,10 @@ function CheckoutSummary({
     }
   };
 
+  if (cartItems.length === 0) {
+    navigate("/cart");
+  }
+
   return (
     <>
       <div className="checkoutSummary col-xl-3 col-lg-3 col-md-10 col-sm-10 col-11">

@@ -51,7 +51,7 @@ function Cart() {
         ) : (
           <>
             <div className="col-xl-4 col-lg-5 col-md-6 col-sm-10 col-10 text-center">
-              <EmptyCart textColor="#000" />
+              <EmptyCart textColor="var(--dark-sec-color)" />
               <button
                 className="emptyCartBtn mt-2"
                 onClick={() => navigate("/shop/category_id/21")}
