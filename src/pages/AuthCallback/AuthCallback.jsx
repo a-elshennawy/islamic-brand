@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Loader from "../../components/Loaders/Loader";
+import { useTranslation } from "react-i18next";
 
 function AuthCallback() {
   const navigate = useNavigate();
   const { updateUser } = useAuthContext();
+  const [t] = useTranslation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -25,6 +27,7 @@ function AuthCallback() {
 
   return (
     <>
+      <title>{t("authCallback_page_title")}</title>
       <Loader />
     </>
   );
