@@ -22,11 +22,11 @@ function Footer({ settings }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`row justify-content-center align-items-start m-0 py-2 pb-5 ${isMobile ? "gap-3" : "gap-1"}`}
+        className={`row justify-content-center align-items-center m-0 py-2  ${isMobile ? "gap-3 pb-5" : "gap-1"}`}
         dir={isAr ? "rtl" : "ltr"}
       >
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 text-center ${isMobile ? "order-2" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-3 col-sm-10 col-12 text-center ${isMobile ? "order-2" : "order-2"}`}
         >
           <h4
             className={`impLinksTrigger text-center justify-content-center`}
@@ -70,7 +70,7 @@ function Footer({ settings }) {
         </div>
 
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-1" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-1" : "order-1"}`}
         >
           <div className="logoContainer">
             <img
@@ -87,18 +87,6 @@ function Footer({ settings }) {
                   <FaFacebookF size={20} />
                 </Link>
               </span>
-
-              {/* <span>
-                <Link to={settings?.instagram} target="_blank">
-                  <FaInstagram size={20} />
-                </Link>
-              </span>
-              <span>
-                <Link to={settings?.tiktok} target="_blank">
-                  <FaTiktok size={20} />
-                </Link>
-              </span>*/}
-
               <span>
                 <Link
                   to={`https://wa.me/${settings?.whatsapp}`}
@@ -112,7 +100,7 @@ function Footer({ settings }) {
         </div>
 
         <div
-          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-3" : ""}`}
+          className={`footerCol col-xl-3 col-lg-3 col-md-4 col-sm-10 col-12 ${isMobile ? "text-center order-3" : "order-3"}`}
         >
           <h4>{t("subscribe_to_newsteller")}</h4>
           <p>{t("susbcribe_text")}</p>

@@ -51,7 +51,7 @@
     nav {
         position: sticky;
         margin: 0 auto;
-        padding: 0.625rem;
+        padding: 0.313rem;
         background-color: var(--secondary-color);
         display: flex;
         justify-content: space-between;
