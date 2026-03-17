@@ -60,11 +60,11 @@ function ProductCard({ product, className, style }) {
             </Link>
           </Motion.div>
           <div
-            className="info col-12 px-2 pb-2"
+            className="info col-12 p-0"
             style={{ fontSize: isMobile ? "1rem" : "" }}
           >
             <h5 style={{ fontSize: isMobile ? "1rem" : "" }}>
-              {truncateName(product.name, 15)}
+              {truncateName(product.name, 12)}
             </h5>
 
             <div className="rating p-0">

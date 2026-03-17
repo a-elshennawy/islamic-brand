@@ -201,7 +201,7 @@ html {
     .HomeSectionTitle {
         &::after,
         &::before {
-            width: 25%;
+            width: 20%;
         }
     }
 }

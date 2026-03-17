@@ -18,8 +18,23 @@
         .infoSide {
             color: var(--dark-sec-color);
 
+            .price {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .bestProdBtn {
-                width: fit-content;
+                text-transform: capitalize;
+                border: none;
+                border-radius: 1.25rem;
+                background-color: var(--secondary-color);
+                color: var(--white);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.313rem;
+                min-width: 12.5rem;
                 padding: 0.625rem;
             }
 
@@ -34,6 +49,36 @@
                     height: 2.188rem;
                     border-radius: 50%;
                     border: 0.063rem solid var(--secondary-color);
+                    transition: all 0.3s ease;
+                }
+
+                .selected {
+                    transform: scale(1.05);
+                    transition: all 0.3s ease;
+                }
+            }
+
+            .sizes {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0.313rem;
+
+                .sizeBtn {
+                    background-color: transparent;
+                    color: var(--dark-sec-color);
+                    border: 0.063rem solid var(--dark-sec-color);
+                    border-radius: 0.313rem;
+                    width: 2.188rem;
+                    height: 2.188rem;
+                    transition: all 0.3s ease;
+                }
+
+                .selected {
+                    background-color: var(--dark-sec-color);
+                    color: var(--white);
+                    transition: all 0.3s ease;
                 }
             }
         }
@@ -45,6 +90,7 @@
             align-items: center;
             gap: 0.313rem;
             text-align: center;
+            padding: 0.625rem;
             background: linear-gradient(
                 to bottom,
                 var(--glass-color),
@@ -52,7 +98,26 @@
             );
             color: var(--body-background);
             border-radius: 6.25rem 6.25rem 0 0;
+            transition: all 0.3s ease-in-out;
+
+            h5 {
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                background: linear-gradient(
+                    to bottom,
+                    var(--dark-sec-color),
+                    var(--glass-color)
+                );
+                transition: all 0.3s ease-in-out;
+
+                h5 {
+                    color: var(--dark-sec-color);
+                }
+            }
         }
+
         .inMobileBadge {
             background: linear-gradient(
                 to bottom,
@@ -60,6 +125,10 @@
                 var(--dark-sec-color)
             );
             border-radius: 0.625rem;
+
+            h5 {
+                font-size: 10px;
+            }
         }
     }
 }

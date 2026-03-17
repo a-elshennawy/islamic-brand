@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AnimatePresence, motion as Motion } from "motion/react";
 import { useAddToCart } from "../../../hooks/useCart";
 
-function VariationAddToCartBtn({ mainProduct, product, productId }) {
+function VariationAddToCartBtn({ mainProduct, product, productId, className }) {
   const [isHovered, setIsHovered] = useState(false);
   const [t] = useTranslation();
 
@@ -25,7 +25,7 @@ function VariationAddToCartBtn({ mainProduct, product, productId }) {
   return (
     <>
       <button
-        className="variationAddToCartBtn mt-3"
+        className={`variationAddToCartBtn mt-3 ${className}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleAddToCart}
