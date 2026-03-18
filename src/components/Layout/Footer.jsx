@@ -118,10 +118,8 @@ function Footer({ settings }) {
           </form>
         </div>
 
-        <div className="footerCol col-12 text-center py-2 order-4">
-          <hr />
-
-          <div className="pageLinks pb-4">
+        <div className="footerCol col-12 text-center py-1 order-4">
+          <div className="pageLinks pb-1">
             <Link to="/privacy-policy">{t("privacy_policy")}</Link>|
             <Link to="/exchange-return">{t("return_policy")}</Link>
           </div>
